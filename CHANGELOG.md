@@ -4,9 +4,9 @@ Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it start
 
 
 ## Unreleased
-**Evals: Go/Drop cases and a plain-prompt baseline.** New planted cases `clear-go` and `clear-drop` show the rubric reaches Go and Drop (not always Pivot). A blind A/B against a plain prompt found Quick scoring 73–81% vs 94–100%; Quick now asks for 2–3 personas, a TAM → SAM → SOM table with stated assumptions, built-ins and general AI assistants as substitutes, and up to 6 searches / 2 page reads. Re-run: 91–93% vs 94–97% (`evals/results.md`).
-
 **Supply chain, payments and workplace accessibility.** `security.md` §5b: NIST SSDF / SLSA checklist (branch protection, signed releases, pinned and audited dependencies, CI checks for unexpected file changes, long lines and hidden characters, secret scanning, clean builds, SBOM, third-party script inventory, post-incident proof PR), mirrored in ship-checklist. `privacy.md` §5b PCI DSS 4.0 scope (hosted fields keep you at SAQ A; masking, tokens, script inventory, hospitality holds and card-on-file; cite the SAQ, never "PCI compliant") and §5c guest and visitor data for pre-check-in flows without accounts. `accessibility-law.md`: staff-facing software is employment software (ADA Title I/503, EU 2000/78/EC, UK EqA, Ontario IASR Part III, RPwD §20–21, AU DDA) with practical audit rules; product-audit cites all three.
+
+**Evals: Go/Drop cases and a plain-prompt baseline.** New planted cases `clear-go` and `clear-drop` show the rubric reaches Go and Drop (not always Pivot). A blind A/B against a plain prompt found Quick scoring 73–81% vs 94–100%; Quick now asks for 2–3 personas, a TAM → SAM → SOM table with stated assumptions, built-ins and general AI assistants as substitutes, and up to 6 searches / 2 page reads. Re-run: 91–93% vs 94–97% (`evals/results.md`).
 
 ## 0.19.1 — 2026-11-04
 Razorpay and Clarity connectors, standards watch list, second-language checklist, engagement template and intake fixes from the first real client intake; quarterly evals scheduled.

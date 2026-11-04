@@ -38,8 +38,8 @@ Test material for reviewers: the ClubSlot pack (`examples/idea-pack-clubslot/`) 
 
 | Component | What it can do | Why |
 |---|---|---|
-| 26 skills | Instructions only. Read and write the connected folder; the build skills create branches and commit | Idea to launch, phase by phase |
-| 8 review and research agents (accessibility-auditor, accessibility-strategist, code-reviewer, devils-advocate, idea-champion, market-researcher, security-reviewer, ux-reviewer) | Read, Grep, Glob, WebSearch, WebFetch; all but one also have Bash (to run tests and checkers) | Reviews and research don't edit files |
+| 30 skills | Instructions only. Read and write the connected folder; the build skills create branches and commit | Idea to launch, phase by phase |
+| 14 review, research and panel agents (accessibility-auditor, accessibility-strategist, code-reviewer, data-analyst, devils-advocate, idea-champion, market-researcher, pricing-analyst, privacy-reviewer, research-synthesizer, security-reviewer, stakeholder-panel, user-panel, ux-reviewer) | Read, Grep and Glob for all; WebSearch and WebFetch for the 9 that research (not data-analyst, privacy-reviewer or the three synthesis and panel agents); Bash for 9 of them (to run tests, checkers and queries) | Reviews, research and panels don't edit files |
 | 6 builder agents (architect, backend-developer, mobile-developer, product-strategist, qa-engineer, web-developer) | All tools, including Write, Edit and Bash | They write the docs and code for approved tasks |
 | `skills/product-kickoff/scripts/check_idea_pack.py` | Reads the Idea Pack and prints pass, warn or fail; standard library only, no network | Checks documents before the user sees them |
 | `.mcp.json` | Two remote MCP servers on by default (GitHub, Figma), URLs only; others documented as opt-in in CONNECTORS.md | Opt-in connectors |

@@ -56,7 +56,7 @@ Either way, Claude now knows the kit's skills (you'll see them as `/makerline:�
 - After you approve: `/makerline:start` *"set it all up"* → names + brand, stack, design system, full PRD, engineering docs and project setup in one go (it asks your picks once, up front).
 - Then `/makerline:start` *"build it"* → one task at a time, each on its own branch.
 - Idea Pack only: `/makerline-idea:start` + your idea.
-You can also just type the idea in plain words — the kit's skills trigger on "I have a new idea…".
+You can also just type the idea in plain words — the kit's skills trigger on "I have a new idea…". Setup and build steps after approval (stack, design system, repo setup, tests, launch) are typed as `/makerline:<name>` or reached through `/makerline:start`; the full list is in `plugin/README.md`.
 
 **Check it worked:** start a new chat and type `/makerline:` — the skill list should appear. In Claude Code: `claude plugin list` shows `makerline` with the version from the release.
 

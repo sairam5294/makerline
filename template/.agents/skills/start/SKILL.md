@@ -31,7 +31,21 @@ Otherwise this is the short entry point to the kit's orchestrator: read `../prod
 | "set it all up" / "everything after approval" (STATUS must say APPROVED) | tool-plan → name + brand → stack → design system → full PRD → engineering docs → project setup |
 | "build it" / "next task" | plan-build, then one build-feature task per session |
 | half-built, delayed, near-launch, or live product decision | `../product-opportunity-review/SKILL.md` and its stage-aware route |
-| nothing specific | read STATUS.md, say the current phase in one line, and offer the next step with the one-go option |
+| nothing specific | read STATUS.md, say the current phase in one line, and offer the next step with the one-go option. **No STATUS.md** → show the *Try it* menu below and stop |
+
+## Try it menu (no project yet)
+
+Show exactly this, then wait:
+
+**Try it**
+- Evaluate my idea honestly: *a booking app for small physio clinics*
+- Give me a quick first look at an idea (about 15 minutes)
+- Who are my competitors, and what's my real differentiator?
+- Should I keep building this half-built app, launch it, or stop?
+- Find where AI could genuinely help my product
+- What should I improve next in my live app?
+
+…or type `/makerline:start` with your idea in any chat.
 
 ## Rules
 

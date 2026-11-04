@@ -30,6 +30,11 @@ Connect an empty folder to a new chat, then type one of these:
 - *"Set it all up"* (after you approve: name and brand, stack, design system, full PRD, engineering docs, repo setup)
 - *"Make my tool plan — I have Claude, ChatGPT and Cursor"*
 - *"Review this branch before I merge"*
+- *"Should I keep building this half-built app, launch it, or stop?"* (opportunity review with an HTML report)
+- *"Find where AI could genuinely help my product"*
+- *"What should I improve next in my live app?"*
+
+Run `/makerline:start` with nothing else in a new folder to see this menu inside Claude.
 
 …or type `/makerline:` in any chat to see every skill.
 

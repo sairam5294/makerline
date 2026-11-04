@@ -89,6 +89,9 @@ Results mode (≤ 8 lines): kill criterion hit? first · each V-id: result vs th
 
 ## If connectors available
 
+If **~~email** / **~~calendar** is connected:
+- Draft interview invites as email **drafts** and suggest slots from free/busy; never send or invite without the owner. Pull replies that match the test into VALIDATION_RESULTS.md (roles only).
+
 If **~~hosting** is connected:
 - Deploy the landing page and read the deployment URL back into VALIDATION.md.
 

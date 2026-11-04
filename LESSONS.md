@@ -38,4 +38,4 @@ After each project (post-launch retro), add what the kit got wrong or missed. Tu
 | 2026-11-03 | kit review | Persona panel, teardown, switching playbook, Industry Brain added in the kit review — **proposed: remove any that no run trips over by 0.18** | persona-panel.md, teardown.md, switching.md, industry-brain.md | 0.17.0 |
 | 2026-11-04 | Lekka opportunity review | Blended roadmap had nowhere to go in REVIEW.json; Leapfrog novelty test assumed a COMPETITORS.md; tech-debt cap of 8 files too tight | `roadmap` field + render + test; rubric wording; tech-debt.md | 0.18.0 |
 | 2026-11-04 | ai-todo re-measure | Panel and teardown as separate edits pushed a Standard run to 62 calls; writing each in one call brought it to 40 | context-budget.md §4.6 | 0.17.0 |
-
+| 2026-11-04 | client-advisory eval | Redaction check read a whole Do-not-mention line including its note, so the bare name passed; options lacked Advantage tags; a problem share was used as a fix estimate | `redact_check.py` + test; exec-pack templates and rule 5 | 0.18.1 |

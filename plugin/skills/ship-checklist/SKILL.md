@@ -75,6 +75,7 @@ Walk every launch gate with evidence, write `docs/product/RELEASE.md`, and stop 
 
 **Security & privacy (MUST)**
 - audit + secrets scan clean, exposed keys rotated
+- supply chain (`../product-standards/references/security.md` §5b): branch protection on, lockfile honoured in CI, release commit or tag signed, unexpected-change check in CI, no unknown third-party scripts; SBOM generated if selling to businesses
 - authz/RLS tests green, admin MFA
 - headers (web) / obfuscation, debug off (mobile)
 - privacy policy, terms, data inventory, store privacy labels accurate

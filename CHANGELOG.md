@@ -3,6 +3,9 @@
 Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it started from in `docs/product/STATUS.md`.
 
 
+## Unreleased
+**Supply chain, payments and workplace accessibility.** `security.md` §5b: NIST SSDF / SLSA checklist (branch protection, signed releases, pinned and audited dependencies, CI checks for unexpected file changes, long lines and hidden characters, secret scanning, clean builds, SBOM, third-party script inventory, post-incident proof PR), mirrored in ship-checklist. `privacy.md` §5b PCI DSS 4.0 scope (hosted fields keep you at SAQ A; masking, tokens, script inventory, hospitality holds and card-on-file; cite the SAQ, never "PCI compliant") and §5c guest and visitor data for pre-check-in flows without accounts. `accessibility-law.md`: staff-facing software is employment software (ADA Title I/503, EU 2000/78/EC, UK EqA, Ontario IASR Part III, RPwD §20–21, AU DDA) with practical audit rules; product-audit cites all three.
+
 ## 0.19.1 — 2026-11-04
 Razorpay and Clarity connectors, standards watch list, second-language checklist, engagement template and intake fixes from the first real client intake; quarterly evals scheduled.
 Razorpay and Microsoft Clarity added as local connectors (keys in env, read-only), with limits in CONNECTORS.md. VERSIONS.md gains a **watch list** for standards not pinned yet (EN 301 549 v4, India Digital Competition Bill, store AI-disclosure rules, AI Act omnibus timing, WCAG 3.0, DPDP dates). `ux.md` §7b second-language checklist (a localisation agent only if it becomes routine). Quarterly evals now run as a scheduled task on the 1st of Jan/Apr/Jul/Oct.

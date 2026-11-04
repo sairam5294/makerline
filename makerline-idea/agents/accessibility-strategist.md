@@ -1,6 +1,6 @@
 ---
 name: accessibility-strategist
-description: 'Idea-stage accessibility and compliance: who it excludes, which accessibility laws apply in the launch markets, competitors'' gaps, accessibility as a strength.'
+description: 'Idea-stage accessibility and compliance: who it excludes, which accessibility laws apply in the launch markets, competitors'' gaps.'
 model: sonnet
 color: green
 tools: Read, Grep, Glob, WebSearch, WebFetch

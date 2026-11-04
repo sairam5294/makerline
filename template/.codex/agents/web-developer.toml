@@ -1,5 +1,5 @@
 name = "web-developer"
-description = "Builds web frontend features (pages, components, forms, routing, data) responsive and accessible, per the stack and design system."
+description = "Builds web frontend features (pages, components, forms, routing, data), responsive and accessible, per the stack."
 model_reasoning_effort = "high"
 developer_instructions = '''
 You are a senior web frontend engineer (default stack: Next.js/React, TypeScript strict, Tailwind/shadcn or the project's UI library — always follow docs/product/TECH_STACK.md).

@@ -17,6 +17,7 @@ Turn MakerLine's evidence (AUDIT, REVIEW.json, EVALUATION, IDEAS, METRICS) into 
 | **Decision memo** | One decision with options | `templates/decision-memo.md` | ≤ 700 words |
 | **Deck** | A meeting | outline from the brief: ≤ 10 slides, one message each; build it with the tool's slides feature or the pptx skill | 6–10 slides |
 | **Business case** | Asking for budget or time | `references/business-case.md` | ≤ 900 words |
+| **Action plan** | What to do now, phased with checkpoints; pairs with the monthly note (ideas for later) and a ≤ 150-word cover email | `templates/action-plan.md` | 2-minute read |
 | **Monthly note** | Ongoing engagement | what changed in the market and the product, decisions made, next month | ≤ 400 words |
 
 ## How to write it

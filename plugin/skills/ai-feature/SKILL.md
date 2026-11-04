@@ -54,6 +54,7 @@ Spec one AI feature so it is justified, safe, evaluated and priced before anyone
    - Then: server-side call, model (cheapest that passes evals; verify current models/prices in official docs), prompt file `src/ai/prompts/<feature>.v1.md`, JSON output schema + Zod validation, timeouts/retries/fallback, rate limits and per-user token caps, moderation.
 4. **Eval set.** Write 20–50 cases in `evals/ai/<feature>.cases.json` (format + runner: `tests/ai-eval.live.test.ts`, run `npm run ai:eval`): typical, edge, other languages, abusive, prompt-injection, each with pass criteria.
    - No launch until pass rate meets the bar the owner sets.
+4b. **Risk register.** `references/ai-risk-register.md` (maps to NIST AI RMF / ISO 42001); agents and tools follow `../product-standards/references/ai.md` §5b; transparency duties §5c.
 5. **Privacy & rights.** Data sent to the provider, consent, redaction, no-training settings, children rules; content ownership/licence per generator; synthetic-media labels (India IT Rules 2026) and store policies (Play AI-content: in-app reporting).
 6. **Cost.** Tokens × price × uses per active user per month; cache/pre-generate options; add to unit economics.
 7. **Write and link.** `docs/product/AI_FEATURE_<name>.md` (all of the above); add stories to PRD (`US-xx`) and tasks to PLAN; log model choice in DECISIONS.md.

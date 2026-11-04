@@ -25,9 +25,11 @@ Judge a product that already exists — yours, a client's or your employer's —
 | Content | Microcopy against `../design-direction/references/ux-copy-checklist.md` | — |
 | Trust and privacy | Consent, permissions, data asks vs need, privacy policy match | `privacy.md` |
 | Funnel (if analytics) | Drop-off per journey step; where the biggest loss is | — |
+| Operations (Standard: from what you can see; Deep: with their data and a walkthrough) | The company behind the product: support, onboarding, sales, billing (`references/ops-scan.md`) | — |
+| Delivery health | DORA metrics from deploys and incidents (`../post-launch/references/heart-metrics.md`) | — |
 | Competitors (Deep) | The same journey in 1–2 leaders: steps, time, patterns worth learning | `../evaluate-idea/references/teardown.md` |
 
-Run the `ux-reviewer` and `accessibility-auditor` agents in parallel where subagents exist (fast model, ≤ 300-word replies); otherwise play them inline.
+Run the `ux-reviewer`, `accessibility-auditor`, `privacy-reviewer` and (with analytics) `data-analyst` agents in parallel where subagents exist (fast model, ≤ 300-word replies); otherwise play them inline.
 
 ## Findings → `docs/product/AUDIT.md` (Standard ≤ 1,800 words; tables)
 

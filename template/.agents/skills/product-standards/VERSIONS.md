@@ -9,6 +9,13 @@
 | OWASP ASVS | 5.0 | 2026-09-27 |
 | OWASP MASVS | v2.1.0 (MASTG v2.0.0, Jun 2026) | 2026-10-20 |
 | OWASP LLM Top 10 | 2025 | 2026-09-27 |
+| OWASP Top 10 for Agentic Applications | 2026 release (watch for revisions) | 2026-11-04 |
+| EU AI Act | In force 1 Aug 2024; prohibited practices Feb 2025; GPAI Aug 2025; transparency duties (Art. 50) in force from 2 Aug 2026; high-risk Annex III timing changed by the Digital Omnibus (re-check) | 2026-11-04 |
+| NIST AI RMF 1.0 / ISO/IEC 42001:2023 | referenced for the AI risk register | 2026-11-04 |
+| ISO 9241-210:2019, 9241-110:2020 | referenced for UX method and audits | 2026-11-04 |
+| Deceptive patterns | EU DSA Art. 25, FTC 2022 report + 2024 click-to-cancel (court status to re-check), India CCPA Dark Patterns Guidelines Nov 2023 (13 patterns) | 2026-11-04 |
+| C2PA content credentials | spec 2.x | 2026-11-04 |
+| HEART, Opportunity Solution Tree, Kano, JTBD, DORA | method references (no version) | 2026-11-04 |
 | India DPDP | Act 2023 + Rules notified Nov 2025; consent managers 13 Nov 2026; core duties 13 May 2027 | 2026-10-20 |
 | GDPR / UK GDPR | current | 2026-09-27 |
 | COPPA | FTC amended rule (effective 23 Jun 2025, compliance 22 Apr 2026) | 2026-10-20 |

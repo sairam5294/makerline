@@ -26,6 +26,8 @@ for f in sorted(plugin.rglob("*.md")):
         bases = [f.parent] + ([skill_dir] if skill_dir else [])
         if ref.startswith("references/"):
             bases += skills
+        if ref.startswith("../skills/") and f.parent.name == "agents":
+            bases.append(plugin / "agents")
         if not any((b / ref).resolve().exists() for b in bases):
             missing.append(f"{f.relative_to(kit)}: {ref}")
 if missing:

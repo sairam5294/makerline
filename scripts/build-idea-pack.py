@@ -68,6 +68,10 @@ def build(out: pathlib.Path) -> None:
         shutil.copytree(SRC / "skills" / s, out / "skills" / s, ignore=shutil.ignore_patterns(".DS_Store", "approve.sh"))
     for a in AGENTS:
         shutil.copy2(SRC / "agents" / f"{a}.md", out / "agents" / f"{a}.md")
+    # Git keeps no empty folders, so drop any left by the ignore list (or --check fails on a fresh clone).
+    for d in sorted((out / "skills").rglob("*"), reverse=True):
+        if d.is_dir() and not any(d.iterdir()):
+            d.rmdir()
 
     orch = out / "skills" / "idea-pack"  # the orchestrator skill keeps its name: /makerline-idea:idea-pack
     (orch / "templates").mkdir(parents=True)

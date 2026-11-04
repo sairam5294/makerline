@@ -4,15 +4,20 @@
 
 **Know if it's worth building. Then build it right.**
 
+> **Half-built product? Three steps, no terminal setup.**
+> 1. Install the plugin: in the Claude app, add the `sairam5294/makerline` marketplace and install **makerline**; in Claude Code, run `claude plugin marketplace add sairam5294/makerline` then `claude plugin install makerline@makerline`.
+> 2. Open your product's folder or project and type `/makerline:product-opportunity-review`.
+> 3. Answer a few questions. You get a decision (finish, narrow, launch, change course or stop), the evidence behind it, one roadmap and the cheapest next test.
+
 MakerLine is a free, open-source Claude plugin for designers and solo makers who build with AI. Describe an idea in a few sentences and it interviews you, researches real competitors, and gives an honest evaluation: a verdict, the strongest version of the idea, who it leaves out and how to make it stronger. It sketches a design direction with clickable wireframes and a draft PRD. Nothing is built until you approve. Then it sets up your brand, stack, design system and engineering docs, and builds one task at a time, with accessibility, security and tests checked by hooks and CI. Accessible worldwide is the baseline: every product meets WCAG 2.2 AA and the accessibility law of the markets it launches in. The same rules work in **Claude**, **Cursor**, **Codex** and 12 more AI tools.
 
 <p><img src="docs/kit/brand/makerline-demo.gif" alt="Demo: you type one sentence about an idea; MakerLine writes the brief, searches competitors and app-store reviews, checks India's accessibility and data laws, argues for and against, then writes a one-pager with the verdict Pivot." width="720"></p>
 
-> **One command:** `/makerline:start` + your idea + "give me everything". **Website: https://sairam5294.github.io/makerline/** · **New here? Read [GETTING-STARTED.md](GETTING-STARTED.md)** — how to run it and how to update it, step by step.
+> **New idea? One command:** `/makerline:start` + your idea + "give me everything". **Website: https://sairam5294.github.io/makerline/** · **New here? Read [GETTING-STARTED.md](GETTING-STARTED.md)** — how to run it and how to update it, step by step.
 
 **Why it exists.** AI tools write working code fast, but they forget accessibility, UX heuristics, security, tests and honest evaluation unless you remind them every session, in every tool. MakerLine packages that know-how as skills, agents, standards, hooks and CI so every tool you use starts thinking like a senior product designer.
 
-**Already building or live?** Run `/makerline:product-opportunity-review` to decide whether to finish, narrow, launch, pivot or improve next. It creates a stage-aware, accessible HTML report with evidence, saved step progress, options and an action plan. See [which workflow and example prompts](docs/PRODUCT-WORKFLOWS.md) and [installation across AI tools](docs/INSTALL-AI-TOOLS.md).
+**More on reviews:** [which workflow and example prompts](docs/PRODUCT-WORKFLOWS.md) · [installation across AI tools](docs/INSTALL-AI-TOOLS.md).
 
 **What you get**
 - A 13-phase workflow from discovery interview to post-launch retro, with an owner-only approval gate (enforced by hooks in Claude Code and by git hook + CI in kit-created projects; other tools are instructed, not stopped)

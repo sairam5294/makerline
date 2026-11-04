@@ -43,7 +43,7 @@ Connect an empty folder to a new chat, then type:
 | `/makerline-idea:tool-plan` | Which AI tool does which job, from the subscriptions you have → `TOOL_PLAN.md` |
 | `/makerline-idea:idea-pack` | The orchestrator: phases, depth (Quick / Standard / Deep), the one-pager and index |
 
-Five agents run inside the evaluation and validation: `market-researcher`, `devils-advocate`, `idea-champion`, `accessibility-strategist`, `user-panel`.
+Eight agents run inside the phases: `market-researcher`, `devils-advocate`, `idea-champion`, `accessibility-strategist`, `user-panel`, `pricing-analyst`, `research-synthesizer`, `product-strategist`.
 
 ## What you end with
 

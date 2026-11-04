@@ -1,12 +1,19 @@
 # Getting started with MakerLine
 
-Plain-language guide. The kit lives in `~/Documents/makerline` on your Mac.
+Plain-language guide.
 
-If you already have a half-built, delayed, near-launch or live product, see [the product workflow guide](docs/PRODUCT-WORKFLOWS.md) for the skill and an example prompt. For ChatGPT, Claude, Codex, Cursor and Copilot installation choices, see [Install in AI tools](docs/INSTALL-AI-TOOLS.md).
+> **Half-built product? Three steps, no terminal setup.**
+> 1. Install the plugin: in the Claude app, add the `sairam5294/makerline` marketplace and install **makerline**; in Claude Code, run `claude plugin marketplace add sairam5294/makerline` then `claude plugin install makerline@makerline`.
+> 2. Open your product's folder or project and type `/makerline:product-opportunity-review`.
+> 3. Answer a few questions. You get a decision (finish, narrow, launch, change course or stop), the evidence behind it, one roadmap and the cheapest next test.
+
+More prompts for products already in progress: [the product workflow guide](docs/PRODUCT-WORKFLOWS.md). The setup below is for the building phases; you don't need it for a review. For ChatGPT, Claude, Codex, Cursor and Copilot installation choices, see [Install in AI tools](docs/INSTALL-AI-TOOLS.md).
 
 ---
 
-## Part 1 — One-time setup (about 20 minutes)
+## Part 1 — One-time setup for building (about 20 minutes)
+
+The kit lives in `~/Documents/makerline` on your Mac.
 
 Works on macOS today. The terminal parts also run on Linux; Windows is untested (use WSL).
 

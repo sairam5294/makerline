@@ -3,6 +3,9 @@
 Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it started from in `docs/product/STATUS.md`.
 
 
+## 0.18.0 — 2026-11-04
+Client and employer work (client-work, product-audit, exec-pack with redaction check, gtm-pack, stakeholder-panel), review roadmap field, real-run fixes. Details:
+
 ## Unreleased
 **Client and employer work.** New `client-work` skill (starts on its own): `ENGAGEMENT.md` (decision makers, goal in their words marked proposed until confirmed, scope, sharing tiers, Do-not-mention list), intake of their docs, tickets, chat, designs and analytics before any question, a day-one question list, and strict separation between clients. New skills on command: `product-audit` (UX heuristics, accessibility and law, performance, copy, funnel; findings by severity and business impact → AUDIT.md), `exec-pack` (exec brief, decision memo, deck outline, business case, monthly note; one source file with internal blocks, client version made by `redact_check.py`, which fails on internal markers, Do-not-mention terms, contact details and internal money), `gtm-pack` (positioning, messaging house, launch plan, store listing, landing page, posts, ad variants; reader-mode and persona checks). New `stakeholder-panel` agent (one decision maker per subagent, cards only from what they said or did). Ideas Bank records who decided and the decision source; handoff gains a handover pack. New eval case `client-advisory` and `tests/client.test.sh` (CI and release). 30 skills, 16 agents; always-loaded text ~790 tokens.
 

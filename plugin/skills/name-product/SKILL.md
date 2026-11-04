@@ -16,7 +16,7 @@ Give the owner a shortlist of names they can check and pick from, then a one-per
 ```
 /name-product                          # Part 1: names from the brief and evaluation
 /name-product avoid English words      # add a criterion
-/name-product brand for "Wisp"         # Part 2: brand kit for the picked name
+/name-product brand for "Tallyho"      # Part 2: brand kit for the picked name
 ```
 
 ## How it works

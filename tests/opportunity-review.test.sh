@@ -162,4 +162,17 @@ p = pathlib.Path(sys.argv[1]) / 'docs/product/opportunity/REVIEW.json'
 d = json.loads(p.read_text()); d['roadmap'][0]['horizon'] = 'someday'; p.write_text(json.dumps(d))
 PY
 if python3 "$KIT/scripts/opportunity_review.py" check "$TMP/idea" >/dev/null 2>&1; then echo 'Invalid roadmap horizon accepted'; exit 1; fi
-echo 'opportunity-review: five routes with access checks, strict records, rules table, no overwrite, safe rendering, progress, source, manifest-version, shared-style, CSP, advantage-tag and roadmap checks passed'
+# Source reuse: fresh sources are reused, old ones flagged for recheck (research rows too).
+python3 - "$TMP/live" <<'PY'
+import json, pathlib, sys, datetime
+p = pathlib.Path(sys.argv[1]) / 'docs/product/opportunity/REVIEW.json'
+d = json.loads(p.read_text()); today = datetime.date.today().isoformat()
+d['sources'] = [{'id': 'S1', 'title': 'Fresh official', 'date': today, 'kind': 'official'},
+                {'id': 'S2', 'title': 'Old vendor page', 'date': '2020-01-01', 'kind': 'vendor'}]
+p.write_text(json.dumps(d))
+r = pathlib.Path(sys.argv[1]) / 'docs/product/research'; r.mkdir(parents=True, exist_ok=True)
+(r / 'market.md').write_text(f"| ID | Date | Fact | URL | Type |\n|---|---|---|---|---|\n| R1 | {today} | Fresh fact | u | evidence |\n| R2 | 2020-01-01 | Old fact | u | reported |\n")
+PY
+out="$(python3 "$KIT/scripts/opportunity_review.py" sources "$TMP/live")"
+grep -q 'REUSE (2)' <<<"$out" && grep -q 'RECHECK (2)' <<<"$out" && grep -q 'S2 Old vendor page' <<<"$out" || { echo "Source reuse wrong: $out"; exit 1; }
+echo 'opportunity-review: five routes with access checks, strict records, rules table, no overwrite, safe rendering, progress, source, manifest-version, shared-style, CSP, advantage-tag, roadmap and source-reuse checks passed'

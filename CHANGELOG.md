@@ -3,6 +3,9 @@
 Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it started from in `docs/product/STATUS.md`.
 
 
+## Unreleased
+**Cheaper review refreshes.** `opportunity_review.py sources <project>` lists which sources (review records and research rows) can be cited as-is and which need a recheck, using `review_by` or a reuse window by source kind; the review skill runs it before any search, prefers round-ups and snippets with figures, and stops a topic when two sources agree. Test added.
+
 ## 0.18.1 — 2026-11-04
 Client-advisory eval passed 9/10. Redaction check now matches Do-not-mention terms with notes or comma lists; exec-pack options carry Advantage tags; every estimate shows its own maths.
 

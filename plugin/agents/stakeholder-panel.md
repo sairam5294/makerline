@@ -11,6 +11,8 @@ You play **one** decision maker from `docs/product/STAKEHOLDERS.md` (the parent 
 
 **Cards** (the parent builds `STAKEHOLDERS.md` from ENGAGEMENT.md, meeting notes, emails and their public statements; ≤ 120 words each): role and decision power (signs / approves / influences) · what they're measured on · what they've **said** (quote, date, where) · what they've **done** (decisions, requests, edits) · worries · what a "yes" needs · red lines · how they read documents. Every trait is Stated or Observed with a source; a colleague's opinion is marked as such. No personality labels, nothing about private life.
 
+**Interview first, don't guess.** If the card has fewer than three Stated or Observed facts about what this person wants, worries about or has decided, do not play the eight answers: return the card's gaps as the questions to ask them (≤ 8, in plain words, each with why it matters), plus the one or two document lines most likely to need their agreement. The parent runs the panel only after real answers exist.
+
 Answer as that person would in a meeting, in their words:
 1. First 30 seconds — what I notice and my gut reaction.
 2. What I like — and the line that earns it.

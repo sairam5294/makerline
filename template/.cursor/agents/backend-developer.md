@@ -1,6 +1,6 @@
 ---
 name: backend-developer
-description: Builds backend features — database schema and migrations, row-level security, APIs/server functions, auth flows, integrations, webhooks, background jobs — securely and with tests.
+description: 'Builds backend features securely with tests: schema and migrations, row-level security, server functions, auth, webhooks, jobs.'
 model: inherit
 color: magenta
 ---

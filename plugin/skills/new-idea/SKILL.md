@@ -1,7 +1,8 @@
 ---
 name: new-idea
-description: Turn a new idea into a clear brief. Interviews the owner about a new product idea (problem, goal, audience, alternatives, differentiator, platforms, scope, design, tech, money, naming) and make every unknown visible instead of guessed → PROJECT_BRIEF.md + CLARITY.md. Trigger with "new idea", "new app", "new project", "I have an idea", or when capturing requirements.
+description: 'Interview the owner and turn a new idea into a clear brief with every unknown visible → PROJECT_BRIEF.md + CLARITY.md.'
 argument-hint: "<the idea in 2–5 sentences, or nothing to be asked for it>"
+disable-model-invocation: true
 ---
 
 # /new-idea

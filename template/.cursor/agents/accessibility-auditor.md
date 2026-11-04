@@ -1,6 +1,6 @@
 ---
 name: accessibility-auditor
-description: Audits UI code, screens or URLs for accessibility against WCAG 2.2 AA plus iOS VoiceOver/Dynamic Type and Android TalkBack/font-scaling requirements.
+description: 'Audits UI code, screens or URLs against WCAG 2.2 AA plus iOS VoiceOver/Dynamic Type and Android TalkBack/font scaling.'
 model: inherit
 color: green
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch

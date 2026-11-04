@@ -1,6 +1,6 @@
 ---
 name: devils-advocate
-description: Stress-tests a product idea or plan by arguing the strongest case against it — fatal flaws, weak assumptions, failure modes, and what would have to be true for it to succeed.
+description: 'Argues the strongest case against an idea, plan or public text: fatal flaws, weak assumptions, failure modes, what must be true.'
 model: inherit
 color: red
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch

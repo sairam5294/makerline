@@ -1,6 +1,6 @@
 ---
 name: security-reviewer
-description: Reviews code, APIs, database policies and configuration for security and privacy issues — OWASP Top 10:2025, MASVS, secrets, authorization, RLS, dependency risk and data-protection compliance.
+description: 'Reviews code, APIs, database policies and config for security and privacy: OWASP Top 10:2025, MASVS, secrets, RLS, dependencies.'
 model: inherit
 color: red
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch

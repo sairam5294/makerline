@@ -1,6 +1,6 @@
 <p><img src="docs/kit/brand/makerline-logo.svg" alt="MakerLine" width="260"></p>
 
-# MakerLine v0.15
+# MakerLine v0.17
 
 **Know if it's worth building. Then build it right.**
 
@@ -133,7 +133,7 @@ One rulebook (`AGENTS.md`) for Claude, Cursor, Codex, Copilot, Gemini CLI, Winds
 
 ## Token-saving design
 
-- Always-loaded text (skill + agent descriptions + AGENTS.md) stays around 2,300 tokens for 20 skills and 12 agents. v0.1 used ~3,000 for 13 skills.
+- Always-loaded text is about 710 tokens in 0.17 (10 skills that trigger on their own + 15 agents, descriptions ≤ 35 words; `tests/budget.test.sh` enforces it). The other 16 skills keep their `/makerline:` commands but load only when `start` routes to them. 0.16 used ~2,400; v0.1 ~3,000 for 13 skills.
 - Checklist agents run on a faster model; research is cached in `docs/product/research/`; drafts can use a free local model (`scripts/local-ai.sh`).
 - Skills load their detail only when used. Standards are split into 10 files, and only the relevant ones are read.
 - Subagents return summaries of 300 words or less. Reviewers get the diff plus one standard file.

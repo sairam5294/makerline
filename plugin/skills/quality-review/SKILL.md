@@ -1,6 +1,6 @@
 ---
 name: quality-review
-description: Review a PR for accessibility, security and UX. Covers parallel accessibility, UX, security, code and test reviewers, verified findings, one prioritised report with a verdict → docs/product/reviews/. Trigger with "review", "audit", "is it ready?", before merge or release, or after build-feature.
+description: 'Review a change before merge or release: accessibility, UX, security, code and tests, one prioritised report. Trigger: "review", "audit", "is it ready?", "before I merge".'
 argument-hint: "<branch, PR, files or screen to review; nothing = diff against main>"
 ---
 

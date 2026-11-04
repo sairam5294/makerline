@@ -1,7 +1,8 @@
 ---
 name: plan-build
-description: Break the PRD into small build tasks. Sequenced tasks with milestones, acceptance criteria, tests, parallel lanes and tool assignment → PLAN.md. Trigger with "plan the build", "break down tasks", "what do we build first?", or after engineering-docs.
+description: 'Break the PRD into small sequenced build tasks with acceptance criteria, tests, lanes and tools → PLAN.md; blends into an existing plan.'
 argument-hint: "<milestone or feature to plan, or nothing to plan the whole PRD>"
+disable-model-invocation: true
 ---
 
 # /plan-build

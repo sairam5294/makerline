@@ -1,6 +1,6 @@
 ---
 name: idea-champion
-description: Builds the strongest honest case for a product idea — the best version of it, the audience and wedge where it can win, what makes it defensible, and how to make it stronger. Counterweight to devils-advocate.
+description: 'Builds the strongest honest case for an idea: best version, winning wedge, defensibility, novelty test. Counterweight to devils-advocate.'
 model: inherit
 color: green
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch

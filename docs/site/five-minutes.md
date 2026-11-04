@@ -70,7 +70,7 @@ Claude plans have usage limits, and research is the expensive part. Measured run
 | Quick Idea Pack (brief, evaluation, one-pager), 0.14.0 | about 106,000 in total; MakerLine's own share about 28,000 | 12 | 1 minute, then about 3 minutes of waiting |
 | Standard evaluation step on its own | about 150,000 in total | 34 | A few answers, then about 10 minutes of waiting |
 
-An empty run in the same setup uses about 78,000 tokens before the kit does anything (the app's own instructions and tools), so totals in your Claude app depend on its setup. What MakerLine adds is the share above that.
+An empty run in the same setup uses about 78,000 tokens before the kit does anything (the app's own instructions and tools), so totals in your Claude app depend on its setup. What MakerLine adds is the share above that. These figures were last measured on 0.14.0; since 0.17 a Quick run does a little more research, which added about 2,000–6,000 tokens in the 4 November 2026 blind test.
 
 Ways to make your limits go further:
 

@@ -22,8 +22,8 @@
 
 <section class="stats" aria-label="MakerLine in numbers" markdown="0">
 <dl>
-<div><dt>Skills, from first idea to post-launch</dt><dd>26</dd></div>
-<div><dt>Specialist agents, from devil's advocate to accessibility auditor</dt><dd>14</dd></div>
+<div><dt>Skills, from first idea to post-launch</dt><dd>30</dd></div>
+<div><dt>Specialist agents, from devil's advocate to accessibility auditor</dt><dd>20</dd></div>
 <div><dt>Lines of code written before you approve the idea</dt><dd>0</dd></div>
 <div><dt>The accessibility floor for everything it helps you build</dt><dd>2.2 AA</dd></div>
 </dl>
@@ -212,7 +212,7 @@ Not sure? Start with MakerLine Idea. If you decide to build, switch to MakerLine
 <div class="section-intro">
 <p class="eyebrow">Measured, not promised</p>
 <h2 id="honest">Every run is logged, and every release gets lighter</h2>
-<p>Blind tests and real projects are written up in <a href="../../LESSONS.md">what the kit got wrong</a>. One result: a Quick Idea Pack now uses about a third fewer tokens than three releases ago, with 12 tool calls instead of 30, so your plan's limits go further.</p>
+<p>Blind tests and real projects are written up in <a href="../../LESSONS.md">what the kit got wrong</a>. One result: from release 0.11.0 to 0.14.0, a Quick Idea Pack came down by about a third in tokens, from 30 tool calls to 12, so your plan's limits go further.</p>
 </div>
 <figure class="chart" data-reveal>
 <svg viewBox="0 0 640 250" role="img" aria-labelledby="chart-t chart-d" focusable="false">
@@ -232,7 +232,7 @@ Not sure? Start with MakerLine Idea. If you decide to build, switch to MakerLine
 <li class="now"><span>0.14.0 · 106k tokens · 12 calls</span><span class="b w106"></span></li>
 <li class="goal">The test setup alone uses about 78k; MakerLine's share of a 0.14.0 run is about 28k.</li>
 </ul>
-<figcaption>Tokens per Quick Idea Pack run in our test setup, from the <a href="../../evals/results.md">evaluation log</a>. An empty run in the same setup uses about 78k, so the line marks what the kit itself adds. Your total depends on your Claude app's own setup.</figcaption>
+<figcaption>Tokens per Quick Idea Pack run in our test setup, from the <a href="../../evals/results.md">evaluation log</a>. An empty run in the same setup uses about 78k, so the line marks what the kit itself adds. Your total depends on your Claude app's own setup. Last measured in this setup on 0.14.0; since 0.17 a Quick run does a little more research (2–6k more tokens in the 4 November 2026 blind test).</figcaption>
 </figure>
 </section>
 

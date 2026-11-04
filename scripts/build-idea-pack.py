@@ -29,7 +29,7 @@ STANDALONE = ROOT / "standalone" / "makerline-idea"
 OUT = ROOT / "makerline-idea"
 
 SKILLS = ["new-idea", "evaluate-idea", "design-direction", "write-prd", "validate-idea", "tool-plan", "product-standards"]
-AGENTS = ["market-researcher", "devils-advocate", "idea-champion", "accessibility-strategist"]
+AGENTS = ["market-researcher", "devils-advocate", "idea-champion", "accessibility-strategist", "user-panel"]
 
 # Path rewrites: the orchestrator replaces product-kickoff, and the one test-plan
 # reference the pack needs is copied into the orchestrator's folder.

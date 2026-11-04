@@ -19,6 +19,7 @@ DEPTHS = ("quick", "standard", "deep")
 MODES = ("first", "refresh")
 STATUSES = ("not_started", "in_progress", "blocked", "done", "skipped")
 OPTION_TYPES = ("build", "fix", "simplify", "pricing", "distribution", "partnership", "stop")
+ADVANTAGE = ("parity", "differentiator", "leapfrog")
 EVIDENCE = ("none", "weak", "some", "strong")
 SOURCE_KINDS = ("official", "independent", "vendor", "community", "repo", "internal")
 MARKET_STATUS = ("proposed", "confirmed")
@@ -179,6 +180,8 @@ def check(data: dict) -> list[str]:
             errors.append(f"option {name}: evidence must be one of {', '.join(EVIDENCE)}")
         if item.get("evidence") == "strong" and not item.get("source_ids"):
             errors.append(f"option {name} claims strong evidence without a source")
+        if "advantage" in item and item.get("advantage") not in ADVANTAGE:
+            errors.append(f"option {name}: advantage must be one of {', '.join(ADVANTAGE)}")
         for sid in item.get("source_ids", []):
             if sid not in source_ids:
                 errors.append(f"option {name} cites unknown source {sid}")
@@ -248,6 +251,10 @@ def warnings(data: dict) -> list[str]:
             out.append(f"source {source.get('id')} isn't cited by any step, option or rule")
         if isinstance(source, dict) and not source.get("kind"):
             out.append(f"source {source.get('id')} has no kind (official, independent, vendor, community, repo, internal)")
+    options = [o for o in data.get("options", []) or [] if isinstance(o, dict)]
+    finished = data.get("steps") and all(isinstance(st, dict) and st.get("status") in ("done", "skipped") for st in data.get("steps", []))
+    if finished and options and not any(o.get("advantage") == "leapfrog" for o in options):
+        out.append("no option is tagged advantage: leapfrog; add one plausible option no direct competitor offers, or say why not in decision_reason")
     if data.get("launch_markets") and data.get("markets_status", "proposed") == "proposed":
         out.append("launch markets are still proposed; ask the owner to confirm them")
     return out
@@ -357,7 +364,7 @@ def _options(options: list) -> str:
     for o in options:
         src = ", ".join(o.get("source_ids", [])) or "none yet"
         cards.append(
-            f'<li class="ml-option"><p class="ml-option-type">{esc(o.get("type", ""))}</p><h3>{esc(o.get("name", ""))}</h3>'
+            f'<li class="ml-option"><p class="ml-option-type">{esc(o.get("type", ""))}{" · " + esc(o["advantage"]) if o.get("advantage") else ""}</p><h3>{esc(o.get("name", ""))}</h3>'
             f'<dl class="ml-option-facts"><div><dt>Value</dt><dd>{esc(o.get("value_range", ""))}</dd></div>'
             f'<div><dt>Effort</dt><dd>{esc(o.get("effort_range", ""))}</dd></div></dl>'
             f'{_level(o.get("evidence", "none"), EVIDENCE_LEVEL, "Evidence")}'

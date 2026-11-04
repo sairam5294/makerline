@@ -80,7 +80,8 @@ The four questions on the Data handling step, as listed in [Submit a plugin](htt
 | Component | What it can do | Why |
 |---|---|---|
 | 9 skills (`skills/*/SKILL.md`) | Instructions only; read and write Markdown and HTML in the connected folder | The Idea Pack phases |
-| 4 agents (`market-researcher`, `devils-advocate`, `idea-champion`, `accessibility-strategist`) | Tools: Read, Grep, Glob, WebSearch, WebFetch; three also list Bash | Research and the four evaluation perspectives; Bash runs the checker |
+| 7 research and panel agents (`market-researcher`, `devils-advocate`, `idea-champion`, `accessibility-strategist`, `pricing-analyst`, `research-synthesizer`, `user-panel`) | Read, Grep and Glob for all; WebSearch and WebFetch for the first five; Bash for `market-researcher`, `devils-advocate` and `idea-champion` | Research, the four evaluation perspectives, pricing, the persona panel and interview synthesis; Bash runs the checker |
+| 1 writing agent (`product-strategist`) | All tools, including Write, Edit and Bash | Writes the PRD and strategy documents in the connected folder; the Idea Pack writes no app code |
 | `skills/idea-pack/scripts/check_idea_pack.py` | Reads the pack's files, prints pass, warn or fail; standard library only, no network | Checks the pack before the user sees it. SKILL.md tells Claude to run it; no hook runs it, so the "scripts the validator couldn't follow" hold should not apply ([checklist](https://claude.com/docs/plugins/pre-submission-checklist)) |
 | `.mcp.json` | Two remote MCP servers (GitHub, Figma), no credentials in the file | Optional connectors |
 | Hooks | **None** in makerline-idea | The approval gate hooks live in projects made with the full kit |

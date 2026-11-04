@@ -4,7 +4,7 @@ Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it start
 
 
 ## Unreleased
-**Docs site counts.** The home page (English, Hindi, Spanish) now says 30 skills and 20 agents, not 26 and 14; `INSTALL-AI-TOOLS.md` and the full-kit directory submission match, and the submission's agent permissions table lists all 20 agents with their real tools. The token chart and five-minute page say their figures were last measured on 0.14.0. New `tests/site-counts.test.sh` (in CI) fails when a hand-written count no longer matches `plugin/`.
+**Docs site counts.** The home page (English, Hindi, Spanish) now says 30 skills and 20 agents, not 26 and 14; `INSTALL-AI-TOOLS.md` and the full-kit directory submission match, and the submission's agent permissions table lists all 20 agents with their real tools. The token chart and five-minute page say their figures were last measured on 0.14.0. The makerline-idea directory submission now lists all 8 agents it ships (0.19.2 added four), including `product-strategist`, which has write tools; the count test checks that table too. New `tests/site-counts.test.sh` (in CI) fails when a hand-written count no longer matches `plugin/`.
 
 ## 0.19.2 — 2026-11-04
 Deep-scan release: self-approval hook checks the result and finds workspace STATUS; borrowed passages rewritten and concepts renamed (Industry File, Idea Log, Predictions); only GitHub and Figma connectors on by default; idea pack ships the agents it calls; half-built product quick start.

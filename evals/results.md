@@ -64,3 +64,5 @@ Scale test (`SCALE.md`), Tindi 1.0: 3 apps, a code monorepo and a product-docs r
 | Opportunity review (partial) | **Narrow and test** (medium); check clean, no warnings | 43 calls, ~175k; 7 searches, 13 fetches (1 failed); 10 files full, 2 partial; 2 redos (week sums). Found: cross-repo evidence, per-app status, sub-country markets — all added |
 | Context recovery, folder + index across both repos | 8/10 keywords, **9/10 by hand**, 0 wrong claims | 16 calls, ~114k; 8 files (6 full). Scorer false positive on a quoted phrase; C04 partial (IDs without reasons) |
 | Task packs | Payments 1,355 · Strategy 2,763 · Customer app 4,679 words | vs ~68k words of docs |
+
+**Graphify trial, Tindi monorepo (2026-11-04, Sonnet-class, one run each, 5 code-navigation questions):** index only 81.6k tokens · 7 calls · 21 s · 5/5 · 0 wrong; index + Graphify 94.7k · 7 calls · 19 s · 5/5 · 0 wrong. Not adopted (`GRAPHIFY.md`).

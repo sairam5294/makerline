@@ -2,6 +2,7 @@
 
 Evaluation: PENDING   <!-- set to "APPROVED (<date>)" only when the owner approves; the gate hook reads this line -->
 Writing: –   <!-- "<tool> on <branch> since <date>" while a tool writes; set back to – at handoff. One writer per branch. -->
+Depth: Standard   <!-- Quick, Standard or Deep; the run that wrote the Idea Pack sets it -->
 
 | # | Phase | Status | Date | Notes |
 |---|---|---|---|---|

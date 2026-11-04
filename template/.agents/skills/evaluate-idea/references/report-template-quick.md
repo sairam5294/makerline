@@ -27,7 +27,7 @@ _Quick · {{date}} · PROJECT_BRIEF v{{n}} · Competitors: COMPETITORS.md (Lite)
 Fatal flaws (or "none found") → fix. Top risks as `| Risk | Likelihood | Impact | Mitigation or test |`. What would have to be true (2–3, each → a §12 test or Q-id).
 
 ## 5. Users and market
-Persona (who, context, pain, accessibility needs) · size: one bottom-up line with maths and R-ids · first 100 users: the channel to try first.
+2–3 personas matching the brief's audience, one line each (who, context, pain, accessibility needs) · size: TAM → SAM → first-year SOM in one small table, bottom-up maths with R-ids; an input you couldn't find gets a stated assumption and a Q-id — never "unknown" alone · first 100 users: the channel to try first.
 
 ## 6–7. Competitors and differentiation
 Leaders in one line each and where this idea could win · differentiators that passed the 5-question test · positioning statement. Detail stays in COMPETITORS.md.

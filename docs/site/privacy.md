@@ -10,7 +10,7 @@ This page covers the **makerline** and **makerline-idea** Claude plugins and thi
 | Your idea and your answers | When you type them | Your Claude conversation, under your Claude account's terms |
 | Web search queries | During evaluation and competitor research | The web search and fetch tools in your Claude session. Queries describe the market and competitors, not you |
 | A local check script | The Idea Pack runs `check_idea_pack.py` to check the documents before you see them | Runs on your machine or Claude's sandbox; reads only the pack's files; makes no network requests |
-| Connectors (GitHub, Figma, Vercel, Supabase, Notion, Linear) | Only if you choose to connect them in Claude | Those services, under their own terms. Every skill works without them. They are listed in each plugin's `CONNECTORS.md` |
+| Connectors (GitHub and Figma on by default; others only if you add them) | Only if you choose to connect them in Claude | Those services, under their own terms. Every skill works without them. They are listed in each plugin's `CONNECTORS.md` |
 
 ## What the plugins never do
 

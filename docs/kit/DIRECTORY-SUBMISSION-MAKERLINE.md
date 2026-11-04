@@ -42,7 +42,7 @@ Test material for reviewers: the ClubSlot pack (`examples/idea-pack-clubslot/`) 
 | 8 review and research agents (accessibility-auditor, accessibility-strategist, code-reviewer, devils-advocate, idea-champion, market-researcher, security-reviewer, ux-reviewer) | Read, Grep, Glob, WebSearch, WebFetch; all but one also have Bash (to run tests and checkers) | Reviews and research don't edit files |
 | 6 builder agents (architect, backend-developer, mobile-developer, product-strategist, qa-engineer, web-developer) | All tools, including Write, Edit and Bash | They write the docs and code for approved tasks |
 | `skills/product-kickoff/scripts/check_idea_pack.py` | Reads the Idea Pack and prints pass, warn or fail; standard library only, no network | Checks documents before the user sees them |
-| `.mcp.json` | Six optional remote MCP servers (GitHub, Figma, Vercel, Supabase, Notion, Linear), URLs only | Opt-in connectors |
+| `.mcp.json` | Two remote MCP servers on by default (GitHub, Figma), URLs only; others documented as opt-in in CONNECTORS.md | Opt-in connectors |
 | Hooks | **None in the plugin bundle** | The approval-gate and safety hooks are files in each project (`.claude/hooks/`), added by `scripts/new-project.sh` or `scripts/upgrade-project.sh` from the repo, so the user can read and change them |
 
 ## Safety notes for the reviewer

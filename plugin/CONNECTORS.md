@@ -4,11 +4,11 @@
 
 Skill files use `~~category` as a placeholder for whatever tool you connect in that category — `~~source control` means GitHub, GitLab or any other repository host with an MCP server. Every skill works **standalone** without connectors; connectors add live data and let the kit act in your tools.
 
-`.mcp.json` pre-configures the hosted servers below; each stays idle until you sign in to it under the plugin's **Connectors** tab. Any MCP server in the same category works.
+`.mcp.json` switches on two hosted servers, GitHub and Figma; each stays idle until you sign in to it under the plugin's **Connectors** tab. The others in the table are opt-in (see **Turn on more connectors**). Any MCP server in the same category works.
 
 ## Connectors for this plugin
 
-| Category | Placeholder | Included server | Other options | Used by |
+| Category | Placeholder | Suggested server | Other options | Used by |
 |---|---|---|---|---|
 | Source control | `~~source control` | GitHub | GitLab, Bitbucket | build-feature, quality-review, project-setup, ship-checklist, portfolio |
 | Design | `~~design` | Figma | Penpot | design-direction, design-system, design-qa, name-product (brand) |
@@ -67,6 +67,63 @@ The kit has no servers of its own and sends no telemetry. A connector runs under
 | Canva | your brand kit and designs | a design from approved copy, in a folder you name | publish or share designs |
 
 Data that leaves your machine goes only to the service you connected, under its own terms. Revoke a connector anytime in the plugin's **Connectors** tab or the service's settings.
+
+## Turn on more connectors
+
+Only GitHub and Figma are switched on when you install the plugin. Each connector adds its tools to every session, so the rest are opt-in: add the ones a project uses to that project's `.mcp.json` (or your own settings), then sign in under the plugin's **Connectors** tab.
+
+```json
+{
+  "mcpServers": {
+    "vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    },
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp"
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "linear": {
+      "type": "http",
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp"
+    },
+    "posthog": {
+      "type": "http",
+      "url": "https://mcp.posthog.com/mcp"
+    },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    },
+    "stripe": {
+      "type": "http",
+      "url": "https://mcp.stripe.com"
+    },
+    "canva": {
+      "type": "http",
+      "url": "https://mcp.canva.com/mcp"
+    },
+    "intercom": {
+      "type": "http",
+      "url": "https://mcp.intercom.com/mcp"
+    }
+  }
+}
+```
+
+For Gmail, Google Calendar and Google Drive, use the Claude app's own Google connectors; the kit finds them through the `~~email`, `~~calendar` and `~~cloud storage` placeholders.
 
 ## Rules
 

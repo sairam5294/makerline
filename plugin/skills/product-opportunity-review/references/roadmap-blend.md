@@ -28,4 +28,4 @@ Rules: in-flight work is Keep unless there's a strong reason (half-built work is
 - Mark every row "existing" or "new". Include at least one Leapfrog item (scoring-rubric.md) somewhere; at Standard and Deep, one per horizon where a plausible one exists.
 - **Weak demand evidence (the evidence gate) or Quick depth → a learning roadmap**, labelled *provisional*: Now = the tests, interviews and data requests; Next = build candidates that start only if named tests pass; Later = bets.
 - Prerequisites first (including any API an AI idea needs).
-- Write the labels and the table into the review's `next_actions`/`options` and the HTML report; `plan-build` turns the Now row into tasks after the owner agrees. The owner decides the final order.
+- Write the table into REVIEW.json's `roadmap` field (review-data.md), which the HTML report renders; `plan-build` turns the Now row into tasks after the owner agrees. The owner decides the final order.

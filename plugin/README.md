@@ -36,14 +36,22 @@ Connect an empty folder to a new chat, then type one of these:
 
 Run `/makerline:start` with nothing else in a new folder to see this menu inside Claude.
 
+## Working on a client's or your employer's product
+
+Say *"this is for my client"* or *"our app at work"* (or type `/makerline:client-work`). MakerLine sets up `ENGAGEMENT.md` (who decides, their goal in their words, what may be shared), reads their existing docs, tickets and analytics before asking anything, and then routes to:
+- `/makerline:product-audit`: UX, accessibility, performance and copy findings by severity and business impact.
+- `/makerline:exec-pack`: a one-page brief, decision memo, deck outline, business case or monthly note, with a client version produced by a redaction check that strips costs, rates, other clients' names and contact details.
+- `/makerline:gtm-pack`: positioning, messaging, launch plan, store listing, landing page, posts and ads, checked by a sceptical reader and the persona panel.
+- The `stakeholder-panel` agent: rehearse the meeting with each decision maker before you send anything.
+
 ## Skills that start on their own, and skills you type
 
-To keep every chat light, 10 skills start on their own when your words match: `start`, `evaluate-idea`, `validate-idea`, `design-direction`, `write-prd`, `build-feature`, `quality-review`, `product-opportunity-review`, `post-launch`, `handoff`.
+To keep every chat light, 11 skills start on their own when your words match: `start`, `client-work`, `evaluate-idea`, `validate-idea`, `design-direction`, `write-prd`, `build-feature`, `quality-review`, `product-opportunity-review`, `post-launch`, `handoff`.
 
-The other 16 don't load into every chat. Reach them any of three ways:
+The other 19 don't load into every chat. Reach them any of three ways:
 
 1. **Just ask through start:** *"/makerline:start set up the repo"*, *"/makerline:start which stack should I use?"* — start routes to the right one.
-2. **Type the command:** `/makerline:new-idea` · `/makerline:name-product` · `/makerline:tech-stack` · `/makerline:design-system` · `/makerline:engineering-docs` · `/makerline:project-setup` · `/makerline:plan-build` · `/makerline:ai-feature` · `/makerline:design-qa` · `/makerline:test-plan` · `/makerline:ship-checklist` · `/makerline:portfolio` · `/makerline:tool-plan` · `/makerline:product-standards` · `/makerline:standards-refresh` · `/makerline:product-kickoff`.
+2. **Type the command:** `/makerline:new-idea` · `/makerline:name-product` · `/makerline:tech-stack` · `/makerline:design-system` · `/makerline:engineering-docs` · `/makerline:project-setup` · `/makerline:plan-build` · `/makerline:ai-feature` · `/makerline:design-qa` · `/makerline:test-plan` · `/makerline:ship-checklist` · `/makerline:portfolio` · `/makerline:tool-plan` · `/makerline:product-standards` · `/makerline:standards-refresh` · `/makerline:product-kickoff` · `/makerline:product-audit` · `/makerline:exec-pack` · `/makerline:gtm-pack`.
 3. **Run the whole sequence:** *"set it all up"* after approval runs naming → stack → design system → PRD → engineering docs → repo setup for you.
 
 …or type `/makerline:` in any chat to see every skill.

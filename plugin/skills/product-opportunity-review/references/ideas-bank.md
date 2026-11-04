@@ -12,13 +12,13 @@ One living file per product that remembers every idea, what you decided, and why
 
 ## Rows
 
-`ID | Idea (one line + example) | Source | Advantage | Evidence | Effort | Decision | Decided on | Reason | Revisit | Result`
+`ID | Idea (one line + example) | Source | Advantage | Evidence | Effort | Decision | Decided by (role) | Decided on | Decision source | Reason | Revisit | Result`
 
 - **ID** = `YYMM-NN`, the month the idea was first suggested (`2611-03` = third idea of Nov 2026). IDs never change; other files cite them.
 - **Source:** where it came from — review, teardown, user panel, post-launch metrics, a user request, look-ahead sweep, pattern library.
 - **Advantage:** Parity / Differentiator / Leapfrog (scoring-rubric.md).
 - **Evidence:** Guess / Some / Strong — from real sources only, never from the persona panel.
-- **Decision** (yours): Pending · Accepted · Declined · Parked (set Revisit) · Already doing (fix how it was missed). Record your reason in your words. Never infer a decision from silence.
+- **Decision** (yours): Pending · Accepted · Declined · Parked (set Revisit) · Already doing (fix how it was missed). Record the reason in the decider's words. Client or employer work: **Decided by** is their role, and **Decision source** (meeting notes, email, "told by <role> on <date>") is required for anything but Pending. Never infer a decision from silence.
 - **Result** (once built or tested): moved the metric / no effect / too early, with the number.
 
 ## Rules

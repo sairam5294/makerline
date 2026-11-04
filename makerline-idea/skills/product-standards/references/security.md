@@ -47,6 +47,19 @@ Baselines: **OWASP Top 10:2025**, **OWASP ASVS 5** (web/API), **OWASP MASVS v2**
 - Cap tokens/cost per user; log prompts responsibly (no personal data unless consented); human review for high-stakes outputs.
 - Child-facing AI: strict content filters, no open-ended chat with strangers' content, parental visibility.
 
+## 5b. Supply chain (NIST SSDF, SLSA) — MUST for anything deployed
+
+Prompted by a real incident: hidden code appended to a service-worker file in a web repo, invisible in normal review.
+
+- **Only reviewed code ships:** branch protection on `main`, at least one review, CI required; no direct pushes; force-push off.
+- **Signed and traceable:** signed commits or tags for releases; the deployed build records the exact commit (SLSA provenance where the platform offers it, e.g. GitHub artifact attestations).
+- **Dependencies pinned and audited:** lockfile committed and installs use it (`npm ci`), no floating ranges for build tools; `npm audit`/Dependabot or Renovate weekly; new dependencies named in the PR with why; no install scripts from unknown packages.
+- **Unexpected-change checks in CI:** fail the build when files that should never change (service workers, manifests, `public/*.js`, CI configs, lockfiles) change outside an allow-listed PR label; fail on very long lines or non-printable characters in text files (how injected code hides); fail on new network destinations in a service worker or CSP.
+- **Secrets never in the repo:** secret scanning on push (gitleaks or the host's scanner); keys rotated the day a leak is found.
+- **Build integrity:** builds run in CI from a clean checkout, not from a laptop; an SBOM (CycloneDX or SPDX) generated per release for anything sold to businesses.
+- **Third-party scripts:** every script tag and SDK listed with purpose; Subresource Integrity for CDN assets; CSP in report-only first, then enforced.
+- **After an incident:** write the when-it-breaks postmortem, add the CI check that would have caught it, and keep a test PR that proves the check fails as intended (never merge it).
+
 ## 6. Process
 
 - Threat model (15 min, STRIDE-lite) for every feature touching auth, money, personal data or user-generated content.

@@ -89,6 +89,12 @@ If **~~product analytics** is connected:
 If **~~monitoring** is connected:
 - Read crash-free % and performance for the week; link the top new error in the findings.
 
+If **~~email** is connected:
+- Search the week's user feedback and support threads (product name, "bug", "refund", "love"); count themes, cite by date and role.
+
+If **~~calendar** is connected:
+- Suggest a recurring 15-minute weekly review slot; add it only when the owner confirms.
+
 If **~~chat** is connected:
 - Scan feedback/support channels for the week's themes; post the ≤ 8-line summary where the owner asks.
 

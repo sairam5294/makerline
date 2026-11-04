@@ -51,6 +51,36 @@ def find_status_files(root: pathlib.Path):
             pass
 
 
+DATE = re.compile(r"\b(20\d\d-\d\d-\d\d)\b")
+
+
+def _dates_in_rows(path: pathlib.Path) -> list:
+    """Dates found in a Markdown file's table rows (STATUS phases, DECISIONS, IDEAS decisions)."""
+    if not path.exists():
+        return []
+    out = []
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        if line.startswith("|"):
+            for d in DATE.findall(line):
+                try:
+                    out.append(dt.date.fromisoformat(d))
+                except ValueError:
+                    pass
+    return out
+
+
+def activity(docs: pathlib.Path) -> dict:
+    """Local, zero-token activity counts from files projects already keep (no telemetry).
+
+    steps_30: STATUS phase rows dated in the last 30 days (a skill finished a phase).
+    decisions_90: DECISIONS.md rows and IDEAS.md decisions dated in the last 90 days (your calls).
+    """
+    today = dt.date.today()
+    steps = [d for d in _dates_in_rows(docs / "STATUS.md") if 0 <= (today - d).days <= 30]
+    decisions = [d for f in ("DECISIONS.md", "IDEAS.md") for d in _dates_in_rows(docs / f) if 0 <= (today - d).days <= 90]
+    return {"steps_30": len(steps), "decisions_90": len(decisions)}
+
+
 def parse_status(path: pathlib.Path) -> dict:
     """Pull the useful fields out of a STATUS.md written from the kit template."""
     text = path.read_text(encoding="utf-8", errors="replace")
@@ -84,6 +114,7 @@ def parse_status(path: pathlib.Path) -> dict:
         "updated": updated,
         "stale": (dt.date.today() - updated).days > STALE_DAYS,
         "cost": cost.group(1) if cost else "—",
+        **activity(path.parent),
         "writing": writing.group(1).strip() if writing and writing.group(1).strip() not in ("", "–", "-") else "—",
     }
 
@@ -198,6 +229,8 @@ th,td{border-top:1px solid var(--line);padding:.6rem .8rem;text-align:left;verti
 thead th{background:var(--tint);font-size:.78rem;letter-spacing:.02em;white-space:nowrap}
 progress{accent-color:var(--accent);width:5rem}
 footer{max-width:80rem;margin:0 auto;padding:0 1.25rem 2.5rem;color:var(--muted);font-size:.85rem}
+.act-grid{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 .5rem;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.act-grid li{padding:1rem 1.1rem;text-align:center}.act-grid li+li{border-left:1px solid var(--line)}.act-grid h3{margin:0 0 .35rem;font:600 .95rem/1.3 var(--body);color:var(--muted)}.act-grid strong{display:block;font:780 1.6rem/1.1 var(--head)}.act-grid span{font-size:.85rem;color:var(--muted)}
+@media (max-width:36rem){.act-grid{grid-template-columns:1fr}.act-grid li+li{border-left:0;border-top:1px solid var(--line)}}
 @media (max-width:60rem){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:36rem){.hero{padding:1.5rem 1.15rem;border-radius:18px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.pill{display:none}main{padding-inline:1rem}.facts div{grid-template-columns:1fr;gap:0}.bar{position:static}}
 @media (prefers-reduced-motion:no-preference){.filters button,.icon{transition:background-color .15s,color .15s}}
@@ -276,7 +309,7 @@ def render_html(projects, outcomes_md) -> str:
         f"<dl class='facts'><div><dt>Now</dt><dd>{esc(p['current'])}</dd></div><div><dt>Next step</dt><dd>{esc(p['next'])}</dd></div>"
         f"<div><dt>Writing</dt><dd>{esc(p['writing'])}</dd></div>"
         f"<div class='{'blocker' if p['blockers'] != '—' else ''}'><dt>Blockers</dt><dd>{esc(p['blockers'])}</dd></div></dl>"
-        f"<p class='card-foot'><span>Updated {esc(p['updated'])}</span><span>Cost {esc(p['cost'])}</span><span>Kit v{esc(p['kit'])}</span></p></li>"
+        f"<p class='card-foot'><span>Updated {esc(p['updated'])}</span><span>{p.get('steps_30', 0)} phases · 30 d</span><span>Cost {esc(p['cost'])}</span><span>Kit v{esc(p['kit'])}</span></p></li>"
         for p in projects
     )
     cards_html = f"<ul class='cards' aria-label='Projects'>{cards}</ul>" if projects else \
@@ -302,6 +335,9 @@ def render_html(projects, outcomes_md) -> str:
     n_ok = sum(approved(p) for p in projects)
     n_attn = sum(attention(p) for p in projects)
     avg = round(100 * sum(p["done"] / p["total"] for p in projects if p["total"]) / n) if n else 0
+    n_active = sum(1 for p in projects if p.get("steps_30") or (dt.date.today() - p["updated"]).days <= 30)
+    steps_30 = sum(p.get("steps_30", 0) for p in projects)
+    decisions_90 = sum(p.get("decisions_90", 0) for p in projects)
     mark = ("<svg viewBox='0 0 64 64' aria-hidden='true' focusable='false'><rect width='64' height='64' rx='14' fill='#2337B0'/>"
             "<path d='M15 44V20l10.5 14L36 20v24h14' fill='none' stroke='#fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/></svg>")
     theme_icon = ("<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true' focusable='false'>"
@@ -322,6 +358,12 @@ def render_html(projects, outcomes_md) -> str:
 <li><strong>{n}</strong><span>project(s)</span></li><li><strong>{n_ok}</strong><span>approved</span></li><li><strong>{n - n_ok}</strong><span>awaiting a decision</span></li>
 <li><strong>{n_attn}</strong><span>need attention (stale or blocked)</span></li><li><strong>{avg}%</strong><span>average progress</span></li></ul>
 </section>
+<section class="block activity" aria-labelledby="act-h"><h2 id="act-h">Kit activity</h2>
+<ul class="act-grid">
+<li><h3>Adoption</h3><strong>{n_active} of {n}</strong><span>projects active · 30 days</span></li>
+<li><h3>Activity</h3><strong>{steps_30}</strong><span>phases finished · 30 days</span></li>
+<li><h3>You</h3><strong>{decisions_90}</strong><span>decisions you logged · 90 days</span></li></ul>
+<p class="muted">Counted on this computer from STATUS, DECISIONS and IDEAS dates. Nothing is sent anywhere.</p></section>
 <div class="bar" id="bar" hidden>
 <div class="filters" role="group" aria-label="Show projects"><button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="attention" aria-pressed="false">Needs attention</button><button type="button" data-f="approved" aria-pressed="false">Approved</button><button type="button" data-f="waiting" aria-pressed="false">Awaiting decision</button></div>
 <label class="sr-only" for="q">Find a project</label><input id="q" type="search" placeholder="Find a project" autocomplete="off">
@@ -349,7 +391,11 @@ def render_html(projects, outcomes_md) -> str:
 
 
 def render_md(projects) -> str:
+    active = sum(1 for p in projects if p.get("steps_30") or (dt.date.today() - p["updated"]).days <= 30)
     lines = ["# Portfolio", f"_Generated {dt.date.today()}_", "",
+             f"**Kit activity** — Adoption: {active} of {len(projects)} projects active · 30 days · "
+             f"Activity: {sum(p.get('steps_30', 0) for p in projects)} phases finished · 30 days · "
+             f"You: {sum(p.get('decisions_90', 0) for p in projects)} decisions logged · 90 days", "",
              "| Project | Gate | Done | Current phase | Next step | Writing | Updated | Cost | Kit |", "|---|---|---|---|---|---|---|---|---|"]
     for p in projects:
         lines.append(f"| {p['product']} | {p['gate']} | {p['done']}/{p['total']} | {p['current']} | {p['next']} | {p['writing']} | "

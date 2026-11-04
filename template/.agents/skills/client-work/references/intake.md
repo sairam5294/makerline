@@ -32,4 +32,4 @@ Context sweep rules apply (`../../../CONNECTORS.md`): search by product name, op
 
 Only what's needed to judge value: the goal and how they measure it, live and paying users, why users haven't adopted or why they leave, who they lose deals to, revenue streams, what's already planned or ruled out, analytics access, and introductions to 5–8 users. No questions about features or delivery status. ≤ 10 questions, each with why it matters.
 
-When answers come back, save them word for word in `docs/product/research/client-answers-<date>.md` (question · answer · what it changes), mark the goal confirmed by the named person, and turn unclear answers into open questions.
+Store their replies verbatim in `docs/product/research/client-answers-<date>.md` (question · answer · what it changes). Mark the goal as confirmed by the person who answered, and log any vague reply as an open question.

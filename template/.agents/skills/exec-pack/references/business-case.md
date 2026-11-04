@@ -16,7 +16,7 @@ Always three: the recommended option, a smaller first step, and doing nothing (w
 
 ## 4. Cost
 
-Build effort (person-weeks, from the delivery lead where possible), running cost per month (hosting, AI usage at expected volume, tools), and the people's time on their side (training, migration, reviews).
+Three parts. Building it: person-weeks, ideally estimated by whoever will deliver it. Running it each month: hosting, AI usage at the expected volume, tools. Their people's time: training, migration, reviews.
 
 ## 5. Payback and sensitivity
 

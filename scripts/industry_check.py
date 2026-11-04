@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Check an Industry File file: due theses, stale theses, hit rate, patterns ready to move, log freshness.
+"""Check an Industry File: predictions due, predictions gone quiet, hit rate, patterns ready to move, signal freshness.
 
     python3 scripts/industry_check.py portfolio/industries/<industry>.md [--today YYYY-MM-DD]
 
-Reads Markdown tables; no network. Exit 1 if the file has no Theses table.
+Reads Markdown tables; no network. Exit 1 if the file has no Predictions table (older files may call it Theses).
 """
 import datetime as dt
 import pathlib
@@ -51,9 +51,9 @@ def main() -> int:
         sys.exit(__doc__)
     text = pathlib.Path(args[0]).read_text(encoding="utf-8")
     t = tables(text)
-    theses = next((rows for sec, rows in t.items() if "thes" in sec.lower()), None)
-    if theses is None:
-        print("No Theses table found (a '## Theses' heading with a table).")
+    preds = next((rows for sec, rows in t.items() if "predict" in sec.lower() or "thes" in sec.lower()), None)
+    if preds is None:
+        print("No Predictions table found (a '## Predictions' heading with a table).")
         return 1
     log = next((rows for sec, rows in t.items() if "signal" in sec.lower()), [])
     patterns = next((rows for sec, rows in t.items() if "pattern" in sec.lower()), [])
@@ -68,12 +68,12 @@ def main() -> int:
     for r in log:
         d = row_date(r)
         if d and 0 <= (today - d).days <= 60:
-            recent_ids.update(re.findall(r"TH-[A-Z0-9]+-\d+", " ".join(r.values())))
+            recent_ids.update(re.findall(r"\b(?:P|TH)-[A-Z0-9]+-\d+", " ".join(r.values())))
 
     due, stale, scored, hi = [], [], [], []
-    for r in theses:
+    for r in preds:
         tid, status = col(r, "id"), col(r, "status").lower()
-        by = DATE.search(col(r, "by when", "when", "by"))
+        by = DATE.search(col(r, "check by", "by when", "when", "by"))
         conf = re.search(r"\d+", col(r, "confidence"))
         if status.startswith(("right", "wrong", "partly")):
             scored.append(status)
@@ -94,11 +94,11 @@ def main() -> int:
     ready = [col(r, "pattern") for r in patterns if "not yet" in col(r, "status").lower() and any(
         k in " ".join(r.values()).lower() for k in ("2026", "2027", "signal"))]
 
-    print(f"Industry File check — {today}")
+    print(f"Industry check — {today}")
     print(f"Dated signals: {len(log)} rows; last entry {last or 'none'}" + (" — STALE (over 45 days)" if last and (today - last).days > 45 else ""))
-    print(f"Theses: {len(theses)} total, {len(theses) - len(scored)} open; hit rate {rate(scored)}; at 70%+ confidence {rate(hi)}")
+    print(f"Predictions: {len(preds)} total, {len(preds) - len(scored)} open; hit rate {rate(scored)}; at 70%+ confidence {rate(hi)}")
     print("Due for scoring:\n  " + ("\n  ".join(due) if due else "none"))
-    print("Open theses with no signal in 60 days:\n  " + (", ".join(stale) if stale else "none"))
+    print("Open predictions with no signal in 60 days:\n  " + (", ".join(stale) if stale else "none"))
     print("Patterns marked 'Not yet' with a dated signal (candidates for 'Happening now'):\n  " + ("\n  ".join(ready) if ready else "none"))
     return 0
 

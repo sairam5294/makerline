@@ -1,36 +1,45 @@
-# Where could AI help? A workflow scan with seven patterns
+# Where could AI help? Scanning workflows against seven patterns
 
-Use before choosing an AI feature, or in a Deep `product-opportunity-review`. Go module by module through the product's real workflows (who does it, how often, how many steps, how long) and check each against the seven patterns. Most good findings are boring time-savers, not chatbots.
+Run this before you pick an AI feature, or inside a Deep `product-opportunity-review`. Take one module at a time. For each real workflow, note who does it, how often, the step count and the minutes. Then hold it against the patterns below. Most wins are quiet time-savers, not chat windows.
 
-| Pattern | What AI does | Example (illustrative: a personal finance app) |
+## The patterns, from least to most autonomy
+
+Lower rows can go wrong unnoticed, so need more approval.
+
+| Pattern | The job AI takes on | Finance-app example (illustrative) |
 |---|---|---|
-| **Do it for me** (agent) | Carries out a multi-step task from one instruction, through the app's own APIs | "Split last night's dinner bill with Ravi and remind him Friday" |
-| **Answer and explain** | Answers how-to and policy questions inside the product | "Why is this month's total different from my bank's?" |
-| **Read and fill** | Pulls data out of photos, PDFs, emails, SMS into forms | Snap a receipt → amount, shop, category filled in |
-| **Predict and suggest** | Forecasts and recommends an action | "You usually overspend on food in the last week; ₹2,400 left" |
-| **Write for me** | Drafts text a person approves | A polite payment reminder to a friend |
-| **Watch and alert** | Spots unusual patterns and flags them | A subscription price went up; a duplicate charge |
-| **Talk** | Voice or chat with the end user | Log an expense by voice while driving |
+| **Guide** | Explains a screen or a product rule in the user's words | "Why doesn't my total match the bank statement?" |
+| **Capture** | Turns a photo, PDF, email, SMS or voice note into fields | A bill photo becomes amount, payee and due date |
+| **Sort** | Tags, groups, routes or de-duplicates records | A card payment at "SWGY*" filed under Food |
+| **Draft** | Writes a first version the person edits and sends | A friendly nudge to a flatmate about rent |
+| **Spot** | Notices something odd and raises it | A streaming plan that doubled in price |
+| **Forecast** | Looks ahead and proposes a next step | "At this pace the grocery budget runs out on the 24th" |
+| **Act** | Completes several steps from one request via the product's own API | "Move ₹5,000 to savings every payday", set up in one go |
 
-## For each opportunity, record
+Voice and chat are channels, not patterns: any row can be spoken or typed.
 
-Module · workflow today (steps, time) · pattern · what AI does, with an example · value (time saved, revenue, retention; labelled estimate) · **data needed and whether the product already has it** · risk (wrong answers, money movement, personal or health data) and the **human approval step** for anything that moves money or speaks to other people · **running cost per use** vs value · **the non-AI alternative** (a better form, a rule, a template) and why AI beats it · effort · already in PLAN.md or IDEAS.md?
+## Write down for every candidate
 
-## Readiness and scoring (so the scan ends in decisions, not a list)
+- **Where:** module, the workflow now (steps, minutes), pattern.
+- **What changes:** what AI does, with one concrete example; the gain (minutes, revenue, retention) as a labelled estimate.
+- **Inputs:** the data it needs, and whether the product holds it yet.
+- **Exposure:** wrong answers, money moving, personal or health data. Name the person who approves anything that moves money or messages other people.
+- **Economics:** cost per run against the gain.
+- **The plain fix:** a better form, rule or template, and why AI still beats it.
+- **Effort**, and whether PLAN.md or IDEAS.md has it already.
 
-| Check | Question | Why |
+## Turn the list into decisions
+
+| Check | Ask | What it tells you |
 |---|---|---|
-| **API readiness** | Can an agent do this through the product's own APIs today? | Missing endpoints are usually the real first build; list them |
-| **Data readiness** | Is the data clean, labelled and allowed for this use (consent, DPDP/GDPR)? | A pattern without its data is a research project |
-| **Risk class** | Does it inform, suggest, act with approval, or act alone? Money, health, children or other people involved? | Sets the approval step and the risk register (`ai-risk-register.md`) |
-| **Cost at scale** | tokens × price × uses per active user per month, vs the value | Some "wins" lose money at 10× users |
-| **Non-AI first** | Would a rule, template or better form get 80% of the value? | Cheaper, predictable, offline |
+| **API readiness** | Could an agent run this today through the product's own endpoints? | Gaps are usually the first build. List each missing endpoint |
+| **Data readiness** | Is the data clean, labelled and permitted for this purpose (consent, DPDP/GDPR)? | Without the data, it's research, not a feature |
+| **Risk class** | Inform, suggest, act after approval, or act alone? Money, health, children or third parties? | Sets the approval step and the row in `ai-risk-register.md` |
+| **Cost at scale** | tokens × price × runs per active user per month, against the gain | Some wins become losses at ten times the users |
+| **Non-AI first** | Would a rule, template or better form deliver about 80%? | Then take it: cheaper, predictable, offline |
 
-Score each opportunity 1–5 on value, data readiness and inverse risk; shortlist the top 3; each becomes an `AI_FEATURE_<name>.md` through this skill. The same scan runs on the company's own operations in `../../product-audit/references/ops-scan.md`.
+1. Score each 1–5 for value, data readiness and inverse risk. Rank on value × data you hold × low risk. On a tie, the plain fix wins.
+2. Shortlist three. At Deep, prototype the top one to three before any spec.
+3. Each pick becomes an `AI_FEATURE_<name>.md` through this skill's workflow; the rest go to IDEAS.md.
 
-## Rules
-
-- **AI-readiness:** an agent can only do what the product's APIs allow. List which workflows have the APIs an agent needs; missing APIs are often the real first build.
-- The non-AI fix wins ties: cheaper, predictable, works offline.
-- Rank by value × data you already have × low risk. Prototype the top 1–3 (Deep) before spec'ing any of them with the rest of this skill.
-- Every chosen opportunity becomes an `AI_FEATURE_<name>.md` through this skill's workflow; the rest go to IDEAS.md.
+The same scan, aimed at the team behind the product, is `../../product-audit/references/ops-scan.md`.

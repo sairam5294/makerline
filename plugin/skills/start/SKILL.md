@@ -1,6 +1,6 @@
 ---
 name: start
-description: Give me everything for my product idea. Covers all of the Idea Pack in one go, all of the setup after approval in one go, or one phase at a time. Trigger with "/makerline:start", "start", "run everything", "run the whole kit", "continue", or "what's next".
+description: 'Start or continue MakerLine: a new idea, the whole Idea Pack, setup after approval, or what''s next; routes every MakerLine job. Trigger: "start", "I have an idea", "continue", "set it all up".'
 argument-hint: "<idea + 'everything' | 'set it all up' | 'build it' | nothing to resume>"
 ---
 
@@ -21,6 +21,29 @@ Otherwise this is the short entry point to the kit's orchestrator: read `../prod
 /start set it all up                     # everything after approval, in one go
 /start build it                          # plan-build, then one build-feature task per session
 ```
+
+## Routes to the other skills
+
+Ten MakerLine skills trigger on their own. The other sixteen stay out of every session's context to save tokens: run them by **reading their `SKILL.md` file** (not the Skill tool). The owner can still type any of them as `/makerline:<name>`.
+
+| Owner asks for | Read |
+|---|---|
+| a brief / "interview me about my idea" | `../new-idea/SKILL.md` |
+| names, logo, brand, colours | `../name-product/SKILL.md` |
+| which stack / framework, costs | `../tech-stack/SKILL.md` |
+| tokens, theme, component list | `../design-system/SKILL.md` |
+| architecture, database, project rules docs | `../engineering-docs/SKILL.md` |
+| repo setup, README, AI tool rules | `../project-setup/SKILL.md` |
+| break into tasks, "what do we build first?" | `../plan-build/SKILL.md` |
+| an AI feature | `../ai-feature/SKILL.md` |
+| does it match the design? handoff spec | `../design-qa/SKILL.md` |
+| test plan, write tests | `../test-plan/SKILL.md` |
+| launch / release / store submission | `../ship-checklist/SKILL.md` |
+| all my projects, which next, kit activity | `../portfolio/SKILL.md` |
+| which AI tool for which job, hitting limits | `../tool-plan/SKILL.md` |
+| which rules apply, definition of done | `../product-standards/SKILL.md` |
+| are the kit's standards current? | `../standards-refresh/SKILL.md` |
+| the whole pack or the whole setup | `../product-kickoff/SKILL.md` |
 
 ## Modes
 

@@ -1,6 +1,6 @@
 ---
 name: ux-reviewer
-description: Reviews screens, flows, prototypes or UI code for usability — heuristics, states, platform conventions, copy, forms, onboarding and design-system conformance.
+description: 'Reviews screens, flows, prototypes or UI code for usability: heuristics, states, platform conventions, copy, forms, onboarding.'
 model: inherit
 color: yellow
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch

@@ -1,7 +1,8 @@
 ---
 name: engineering-docs
-description: Write the engineering docs for an approved idea. Covers docs/ARCHITECTURE.md, DATABASE.md, SECURITY.md, CODE_STYLE.md, TESTING.md, RULES.md, MEMORY.md, LIFECYCLE.md (stages and growth) and a docs/README.md index that also points at PRD, DESIGN_SYSTEM, PLAN (tasks) and AGENTS.md. Trigger with "engineering docs", "architecture doc", "database schema doc", "project rules", "set up the docs folder", or after write-prd (full) and before plan-build.
+description: 'Write the engineering docs for an approved product: architecture, database, security, code style, testing, rules, memory, lifecycle.'
 argument-hint: "<one doc to (re)write, e.g. 'DATABASE', or nothing for the full set>"
+disable-model-invocation: true
 ---
 
 # /engineering-docs

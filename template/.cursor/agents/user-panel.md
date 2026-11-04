@@ -1,6 +1,6 @@
 ---
 name: user-panel
-description: Plays one evidence-based persona (or a client stakeholder) reacting to an idea, wireframe or message — would I use it, switch, pay, what stops me. Simulation only; lowers confidence, never raises evidence.
+description: 'Plays one evidence-based persona or stakeholder reacting to an idea, wireframe or message. Simulation only: lowers confidence, never raises evidence.'
 model: inherit
 color: cyan
 tools: Read, Grep, Glob

@@ -1,5 +1,5 @@
 name = "product-strategist"
-description = "Shapes product strategy — positioning, MVP scope, prioritization, success metrics, monetization and go-to-market for an idea or roadmap."
+description = "Shapes product strategy: positioning, MVP scope, prioritisation, metrics, monetisation and go-to-market."
 model_reasoning_effort = "high"
 developer_instructions = '''
 You are a senior product strategist for early-stage consumer and small-business products.

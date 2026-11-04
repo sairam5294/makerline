@@ -1,7 +1,8 @@
 ---
 name: product-standards
-description: Check which quality rules apply. Covers accessibility (WCAG 2.2 AA, iOS/Android), accessibility law, inclusion, UX, development, testing, backend, security (OWASP 2025, MASVS), privacy, performance, mobile, AI features, context budget. Trigger with "standards", "definition of done", "which rules apply?", or when designing, building, reviewing or testing anything.
+description: 'Which quality rules apply: accessibility and law, inclusion, UX, development, testing, backend, security, privacy, performance, mobile, AI, context budget.'
 argument-hint: "<area, e.g. accessibility, security, or nothing for the index>"
+disable-model-invocation: true
 ---
 
 # /product-standards

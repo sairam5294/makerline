@@ -1,6 +1,6 @@
 ---
 name: mobile-developer
-description: Builds iOS and Android app features — screens, navigation, native capabilities, offline, media and store-ready behaviour — with Expo/React Native or native Swift/Kotlin per the tech stack.
+description: 'Builds iOS and Android features (screens, navigation, native capabilities, offline, store-ready) per the tech stack.'
 model: inherit
 color: green
 ---

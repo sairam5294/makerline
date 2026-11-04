@@ -1,6 +1,6 @@
 ---
 name: product-strategist
-description: Shapes product strategy — positioning, MVP scope, prioritization, success metrics, monetization and go-to-market for an idea or roadmap.
+description: 'Shapes product strategy: positioning, MVP scope, prioritisation, metrics, monetisation and go-to-market.'
 model: inherit
 color: magenta
 ---

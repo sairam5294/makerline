@@ -1,7 +1,8 @@
 ---
 name: design-qa
-description: Check a built screen against its design. Covers layout, spacing, tokens, typography, colour, components, states, responsive, dark mode, a11y — and list fixes by severity. Trigger with "design QA", "does it match Figma?", "pixel check", or from build-feature for a UI task with a Figma frame.
+description: 'Check a built screen against its design (layout, tokens, states, responsive, dark mode, a11y) and write the screen''s handoff spec; fixes by severity.'
 argument-hint: "<screen or component name, Figma frame link, or nothing for the current task's screen>"
+disable-model-invocation: true
 ---
 
 # /design-qa
@@ -48,6 +49,7 @@ Put the design and the build side by side and report every difference that matte
 
 ## Workflow
 
+0. **No spec yet for this screen?** Write the handoff spec first (`references/handoff-spec.md`) so any AI tool builds the same thing; then QA against both the frame and the spec.
 1. **Get the design.** Start from the kit library file or the product's duplicate; if Code Connect is published, use its component mapping to name the exact code component.
    - Figma frame via Figma MCP (screenshot + design context/variables), or the spec in `DESIGN_SYSTEM.md`.
 2. **Get the build.** Run the app (web or Expo web) and screenshot the same screen at the same viewport via Playwright MCP / Playwright.

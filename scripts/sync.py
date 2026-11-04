@@ -27,6 +27,9 @@ def parse_agent(text: str):
     field = lambda key: re.search(rf"^{key}:\s*(.+)$", frontmatter, re.M)  # noqa: E731
     name = field("name").group(1).strip()
     description = field("description").group(1).strip()
+    if len(description) > 1 and description[0] == description[-1] and description[0] in "'\"":
+        q = description[0]  # YAML-quoted: drop the quotes and undo '' / \" escapes
+        description = description[1:-1].replace("''", "'") if q == "'" else description[1:-1].replace('\\"', '"')
     readonly = bool(re.search(r"^readonly:\s*true", frontmatter, re.M))
     return name, description, readonly, body
 

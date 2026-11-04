@@ -1,6 +1,6 @@
 ---
 name: design-direction
-description: Sketch the design direction and wireframes for an idea. Covers experience principles, competitor UX teardown, information architecture, core flows, screen inventory with states, content and voice, 2–3 visual directions, accessibility plan and clickable low-fi wireframes (HTML, optionally Figma) → DESIGN_DIRECTION.md + design/wireframes/. Trigger with "design direction", "wireframes", "what would it look like?", "user flows", or after evaluate-idea.
+description: 'Design direction and clickable low-fi wireframes: flows, screens with states, voice and copy, visual options, accessibility plan → DESIGN_DIRECTION.md. Trigger: "wireframes", "design direction", "what would it look like?".'
 argument-hint: "<focus (e.g. 'phone-first'), or nothing to use docs/product/EVALUATION.md>"
 ---
 
@@ -53,7 +53,7 @@ Give the owner a draft design direction and clickable wireframes before any code
 4. **Information architecture** — navigation model (tabs, sidebar, single flow) with the reason, and a sitemap (Mermaid).
 5. **Core flows** — 2–4 journeys as Mermaid flowcharts: first run → first value (the "aha"), the core action, and one recovery path (error, offline, permission denied). Count the steps to the core action; compare with the leaders.
 6. **Screen inventory** — every MVP screen: purpose · primary action · key content · states (empty, loading, error, offline, success) · MVP or later.
-7. **Content and voice** — tone in 3 words with do/don't, a terminology list (one word per concept), and real microcopy for the key moments: onboarding promise, empty states, the main error, the success moment.
+7. **Content and voice** (check the microcopy with `references/ux-copy-checklist.md`) — tone in 3 words with do/don't, a terminology list (one word per concept), and real microcopy for the key moments: onboarding promise, empty states, the main error, the success moment.
 8. **Visual directions** — 2–3 distinct options. Recommend one and say why; follow platform conventions (Apple HIG / Material 3) where the brief targets native apps. Never imitate a specific brand's identity. Each option has:
    - name, mood words, one reference product
    - palette with text/background pairs and contrast ratios (text ≥ 4.5:1; borders, icons, focus ring ≥ 3:1; both themes)

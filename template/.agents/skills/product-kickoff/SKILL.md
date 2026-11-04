@@ -41,7 +41,7 @@ Run the kit's phases in order. Each phase is a skill in `../<skill>/SKILL.md`; o
 
 ## Phases
 
-Run each phase by **reading `../<skill>/SKILL.md`** and following it. Sixteen of these skills don't trigger on their own (to save context), so the Skill tool can't start them; reading the file always works.
+Run each phase by **reading `../<skill>/SKILL.md`** and following it. Most of these skills don't trigger on their own (to save context), so the Skill tool can't start them; reading the file always works.
 
 
 | # | Skill | Output | Gate |
@@ -86,7 +86,7 @@ The **Idea Pack** (1–2b + one-pager) is everything the owner needs to decide b
 6. **"Set it all up"** (after approval): tool-plan → 4 → 5 → 6 → 7 (full PRD) → 7a → 7b in one go. Ask the picks in one round up front (name from the top 3, stack A/B, visual direction); unanswered → recommended option as `[Default]`. One summary at the end; stop before app code.
 7. **"Build it"** (after setup): plan-build, then build-feature — one task per session and branch, quality-review before each merge.
 8. **Owner unavailable** (scheduled run, "just do it", no reply): don't pause. Recommended default for every decision, marked `[Default]` and "default (unconfirmed)" in DECISIONS; those phases `Waiting for owner`; ≤ 3 defaults in the one-pager's *Defaults to confirm* line. Facts stay unknown with a Q-id — never guess. Details: `../new-idea/SKILL.md` → Owner unavailable.
-9. **Gate.** Phases 4+ need `Evaluation: APPROVED`, set **only by the owner** (`scripts/approve.sh`, or their explicit words quoted in DECISIONS where there's no shell). Re-check before every build phase. Owner insists on skipping → state the top 2 risks, obey, log it.
+9. **Gate.** Phases 4+ need `Evaluation: APPROVED`, set **only by the owner** (`bash scripts/approve.sh` in their terminal — copy it from `../evaluate-idea/scripts/approve.sh` if the project lacks it — or their explicit words quoted in DECISIONS where there's no terminal). Re-check before every build phase. Owner insists on skipping → state the top 2 risks, obey, log it.
 10. **Changes later.** Goal/audience/scope changes → new brief version, log it, offer to re-evaluate. Any doc re-run updates only affected sections, adds a *What changed in v{n}* block (≤ 5 bullets citing brief version, Q-id or V-id) and a revision-log row. The one-pager just gets a new date.
 11. **End each turn:** `Produced: <files> · Decision needed: <one> · Next: <phase>`.
 
@@ -109,7 +109,7 @@ If **~~knowledge base** is connected: pull the owner profile and prior decisions
 - Never write `Evaluation: APPROVED` yourself.
 - Phases 1–8 (docs) work anywhere, incl. the Claude app. Phases 9–12 need a shell and the repo (Claude Code, Cursor, Codex); without hooks, follow the gate yourself.
 - Overlapping plugins: the MakerLine skill wins for kit phases; complementary skills (ux-copy, research-synthesis, debug, metrics-review) are welcome inside phases.
-- Owner = senior UX designer, light coding: plain language, 3–5 questions per round with a recommended option. Honest coach, not judge — every weakness comes with how to make the idea stronger.
+- Owner: read OWNER.md for their role and experience; default to plain language, 3–5 questions per round with a recommended option. Honest coach, not judge — every weakness comes with how to make the idea stronger.
 
 ## Tips
 

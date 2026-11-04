@@ -85,6 +85,9 @@ def main() -> None:
     for name in ("tokens.json", "build-tokens.mjs"):
         shutil.copy(ROOT / "design" / name, design_dst / name)
 
+    # 4. Owner-only approval script: one source in the plugin, copied for kit-created projects.
+    shutil.copy(SRC_SKILLS / "evaluate-idea" / "scripts" / "approve.sh", TEMPLATE / "scripts" / "approve.sh")
+
     n_skills = len(list(skills_dst.iterdir()))
     n_agents = len(list(cursor_dst.iterdir()))
     print(f"Synced {n_skills} skills and {n_agents} agents into template/")

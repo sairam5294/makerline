@@ -3,6 +3,9 @@
 Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it started from in `docs/product/STATUS.md`.
 
 
+## 0.19.1 — 2026-11-04
+Razorpay and Clarity connectors, standards watch list, second-language checklist, engagement template and intake fixes from the first real client intake; quarterly evals scheduled.
+
 ## Unreleased
 Razorpay and Microsoft Clarity added as local connectors (keys in env, read-only), with limits in CONNECTORS.md. VERSIONS.md gains a **watch list** for standards not pinned yet (EN 301 549 v4, India Digital Competition Bill, store AI-disclosure rules, AI Act omnibus timing, WCAG 3.0, DPDP dates). `ux.md` §7b second-language checklist (a localisation agent only if it becomes routine). Quarterly evals now run as a scheduled task on the 1st of Jan/Apr/Jul/Oct.
 

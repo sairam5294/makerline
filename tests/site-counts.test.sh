@@ -32,6 +32,21 @@ for doc in ["docs/INSTALL-AI-TOOLS.md", "docs/kit/DIRECTORY-SUBMISSION-MAKERLINE
         if int(n) not in allowed:
             errors.append(f"{doc}: says {n} skills, plugin has {skills}")
 
+# makerline-idea directory submission: its permissions table must match makerline-idea/.
+idea = kit / "makerline-idea"
+i_skills = len(list((idea / "skills").glob("*/SKILL.md")))
+i_agents = len(list((idea / "agents").glob("*.md")))
+sub = (kit / "docs/kit/DIRECTORY-SUBMISSION.md").read_text(encoding="utf-8")
+m = re.search(r"^\| (\d+) skills", sub, re.M)
+if not m or int(m.group(1)) != i_skills:
+    errors.append(f"DIRECTORY-SUBMISSION.md: skills row says {m.group(1) if m else '?'}, makerline-idea has {i_skills}")
+rows = sum(int(n) for n in re.findall(r"^\| (\d+) [a-z ,-]*agents?\b", sub, re.M))
+if rows != i_agents:
+    errors.append(f"DIRECTORY-SUBMISSION.md: agent rows add up to {rows}, makerline-idea has {i_agents}")
+for a in sorted(p.stem for p in (idea / "agents").glob("*.md")):
+    if f"`{a}`" not in sub:
+        errors.append(f"DIRECTORY-SUBMISSION.md: agent {a} is not listed")
+
 if errors:
     print("site counts: FAIL"); print("\n".join(errors)); sys.exit(1)
 print(f"site counts: ok ({skills} skills, {agents} agents)")

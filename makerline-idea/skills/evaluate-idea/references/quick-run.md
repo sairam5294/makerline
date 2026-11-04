@@ -60,4 +60,4 @@ Tag unconfirmed lines [Pitch] [Owner] [Default] [Assumption] [Research]; make va
 **README.md:** `# name — Idea Pack` + table Document | What it answers | Status, linking ONE_PAGER, PROJECT_BRIEF, CLARITY, EVALUATION, COMPETITORS, STATUS, DECISIONS, COSTS (+ INTERVIEW_ROUND1); design direction and PRD rows: "not yet — run Standard", no link.
 
 ## Rules
-Honest coach, not judge: every weakness gets a fix or a test. Never invent competitors, reviews, prices or numbers ("Unknown + how to find out"). Never write `Evaluation: APPROVED`. Plain language for a senior UX designer who codes lightly.
+Honest coach, not judge: every weakness gets a fix or a test. Never invent competitors, reviews, prices or numbers ("Unknown + how to find out"). Never write `Evaluation: APPROVED`. Plain language, pitched to the owner in OWNER.md.

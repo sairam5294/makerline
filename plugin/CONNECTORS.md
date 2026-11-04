@@ -4,7 +4,7 @@
 
 Skill files use `~~category` as a placeholder for whatever tool you connect in that category — `~~source control` means GitHub, GitLab or any other repository host with an MCP server. Every skill works **standalone** without connectors; connectors add live data and let the kit act in your tools.
 
-`.mcp.json` pre-configures the servers below; any MCP server in the same category works. Connecting is your choice, per tool, under the plugin's **Connectors** tab.
+`.mcp.json` pre-configures the hosted servers below; each stays idle until you sign in to it under the plugin's **Connectors** tab. Any MCP server in the same category works.
 
 ## Connectors for this plugin
 
@@ -23,10 +23,10 @@ Skill files use `~~category` as a placeholder for whatever tool you connect in t
 | Product analytics | `~~product analytics` | PostHog | Amplitude, Mixpanel, GA4 | evaluate-idea (existing products), post-launch, product-audit, data-analyst |
 | Monitoring | `~~monitoring` | Sentry | Datadog | post-launch (when it breaks), build-feature (debug), ship-checklist |
 | Project tracker (work) | `~~project tracker` | Atlassian (Jira, Confluence) | Linear, Asana, GitHub Issues | client-work intake, product-audit, plan-build |
-| Payments | `~~payments` | Stripe, Razorpay (India; local npm server, keys in env — read-only key recommended) | Paddle | post-launch (revenue, churn), pricing-analyst, business case |
+| Payments | `~~payments` | Stripe; Razorpay opt-in (below) | Paddle | post-launch (revenue, churn), pricing-analyst, business case |
 | Support desk | `~~support desk` | Intercom | Zendesk, Freshdesk, Help Scout | client-work intake, ops-scan, post-launch feedback, research-synthesizer |
 | Design output | `~~design output` | Canva | Figma (exists) | gtm-pack (posts, ads, store images in the brand kit) |
-| Session replay | `~~session replay` | Microsoft Clarity (local npm server, API token in env; free) | Hotjar, PostHog replay | product-audit (where users stall) |
+| Session replay | `~~session replay` | Microsoft Clarity opt-in (below) | Hotjar, PostHog replay | product-audit (where users stall) |
 | Search and web analytics | `~~web analytics` | — | Google Search Console, GA4, Plausible | gtm-pack (demand, landing page results) |
 | App stores | `~~app stores` | — | App Store Connect, Play Console (community MCPs: vet before use) | ship-checklist, post-launch (reviews, crashes) |
 
@@ -73,3 +73,20 @@ Data that leaves your machine goes only to the service you connected, under its 
 - Secrets, keys and users' personal data never go into prompts or documents, whatever is connected.
 - A connector reads first; writes (creating tickets, pushing, deploying) happen only when you ask in chat.
 - If a connector isn't available, the skill says so once and continues standalone — it never asks you to connect one.
+
+## Opt-in local servers
+
+Razorpay and Microsoft Clarity run as local programs (`npx`) that would start in every session for every user, so they are not pre-configured. Add one only in a project that needs it, in that project's `.mcp.json`, with a **read-only** key:
+
+```json
+{
+  "mcpServers": {
+    "razorpay": { "type": "stdio", "command": "npx", "args": ["-y", "@razorpay/mcp-server"],
+                  "env": { "RAZORPAY_KEY_ID": "", "RAZORPAY_KEY_SECRET": "" } },
+    "clarity":  { "type": "stdio", "command": "npx", "args": ["-y", "@microsoft/clarity-mcp-server"],
+                  "env": { "CLARITY_API_TOKEN": "" } }
+  }
+}
+```
+
+Put the keys in your shell or the app's connector settings, never in a committed file.

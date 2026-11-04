@@ -2,13 +2,13 @@
 
 ## How tool references work
 
-Skill files use `~~category` as a placeholder for whatever tool you connect in that category. Every Idea Pack skill works **standalone** — your words and the web are enough. Connectors are optional; connecting is your choice, per tool, under the plugin's **Connectors** tab. `.mcp.json` pre-configures the servers below; any MCP server in the same category works.
+Skill files use `~~category` as a placeholder for whatever tool you connect in that category. Every Idea Pack skill works **standalone** — your words and the web are enough. Connectors are optional; connecting is your choice, per tool, under the plugin's **Connectors** tab. `.mcp.json` switches on GitHub and Figma only. For the others below, add the server to your project's `.mcp.json` (URLs are in the full kit's CONNECTORS.md) or, for Gmail, Google Calendar and Google Drive, use the Claude app's own Google connectors. Any MCP server in the same category works.
 
 **Context sweep:** with email, cloud storage or chat connected, new-idea and evaluate-idea first search them for the idea's name (≤ 3 searches each, ≤ 5 items opened), pre-fill what they find, cite items by type, date and role (never names or message bodies), and end with a *"Used: …"* line.
 
 ## Connectors the Idea Pack can use
 
-| Category | Placeholder | Included server | Used by | The kit reads | The kit may write (only when you ask) | Never |
+| Category | Placeholder | Suggested server | Used by | The kit reads | The kit may write (only when you ask) | Never |
 |---|---|---|---|---|---|---|
 | Knowledge base | `~~knowledge base` | Notion | new-idea, evaluate-idea | pages you share with the integration (prior research, notes) | a page you ask for (e.g. the one-pager) | edit or delete existing pages |
 | Design | `~~design` | Figma | design-direction | frames and screenshots you point to | a new wireframe file you name | change or delete your existing frames |

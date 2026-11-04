@@ -71,7 +71,7 @@ The four questions on the Data handling step, as listed in [Submit a plugin](htt
 | How long does it keep data? | **It keeps nothing.** | Files live in the user's folder until the user deletes them. |
 | Is it intended for people under 18? | **No.** | Audience: designers and solo makers planning products. |
 
-**Connectors** (`makerline-idea/.mcp.json`): GitHub, Figma, Vercel, Supabase, Notion, Linear, all remote `https://` servers. They are opt-in: connecting each is the user's choice in the plugin's Connectors settings, every skill works without them, and `CONNECTORS.md` lists them. A connector reads first and writes only when asked in chat. _Unconfirmed: whether all six are approved directory connectors (policy 3F lets plugins connect to "any Connector approved in the Software Directory"). Check each in the directory before submitting._
+**Connectors** (`makerline-idea/.mcp.json`): GitHub and Figma, both remote `https://` servers. They are opt-in: connecting each is the user's choice in the plugin's Connectors settings, every skill works without them, and `CONNECTORS.md` lists them. A connector reads first and writes only when asked in chat. _Unconfirmed: whether all six are approved directory connectors (policy 3F lets plugins connect to "any Connector approved in the Software Directory"). Check each in the directory before submitting._
 
 **Privacy policy link:** https://sairam5294.github.io/makerline/privacy.html (source: `docs/site/privacy.md`).
 
@@ -82,7 +82,7 @@ The four questions on the Data handling step, as listed in [Submit a plugin](htt
 | 9 skills (`skills/*/SKILL.md`) | Instructions only; read and write Markdown and HTML in the connected folder | The Idea Pack phases |
 | 4 agents (`market-researcher`, `devils-advocate`, `idea-champion`, `accessibility-strategist`) | Tools: Read, Grep, Glob, WebSearch, WebFetch; three also list Bash | Research and the four evaluation perspectives; Bash runs the checker |
 | `skills/idea-pack/scripts/check_idea_pack.py` | Reads the pack's files, prints pass, warn or fail; standard library only, no network | Checks the pack before the user sees it. SKILL.md tells Claude to run it; no hook runs it, so the "scripts the validator couldn't follow" hold should not apply ([checklist](https://claude.com/docs/plugins/pre-submission-checklist)) |
-| `.mcp.json` | Six remote MCP servers, no credentials in the file | Optional connectors |
+| `.mcp.json` | Two remote MCP servers (GitHub, Figma), no credentials in the file | Optional connectors |
 | Hooks | **None** in makerline-idea | The approval gate hooks live in projects made with the full kit |
 
 ## 7. Safety notes

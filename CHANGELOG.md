@@ -3,7 +3,9 @@
 Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it started from in `docs/product/STATUS.md`.
 
 
-## Unreleased
+## 0.19.2 — 2026-11-04
+Deep-scan release: self-approval hook checks the result and finds workspace STATUS; borrowed passages rewritten and concepts renamed (Industry File, Idea Log, Predictions); only GitHub and Figma connectors on by default; idea pack ships the agents it calls; half-built product quick start.
+
 **Connectors opt-in.** Only GitHub and Figma are switched on at install (`plugin/.mcp.json`, `makerline-idea/.mcp.json`); the other eleven hosted servers are a copy-paste snippet in CONNECTORS.md, and Google services come from the Claude app's own connectors. Fewer tools load into every session.
 
 **Deep-scan fixes (4 Nov).** The self-approval hook now judges an edit by how STATUS.md would look afterwards (swapping `PENDING` for `APPROVED` is caught), finds STATUS.md in a product workspace (`04_repos/<slug>/`), and catches glob and `cd docs/product` shell routes; it parses its input once and warns when python3 is missing. `approve.sh` escapes the owner's note. Template: pinned context7 and Playwright MCP versions, `.env` reads denied in subfolders, unused `id-token` permission dropped. Quick mode: start points at the right quick-run step; STATUS gains a `Depth:` line. README claims about what is enforced now match the hooks; makerline-idea README commands are namespaced.

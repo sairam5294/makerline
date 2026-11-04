@@ -1,6 +1,6 @@
 ---
 name: quality-review
-description: 'Review a change before merge or release: accessibility, UX, security, code and tests, one prioritised report. Trigger: "review", "audit", "is it ready?", "before I merge".'
+description: 'Review a change before merge or release: accessibility, UX, security, privacy, code and tests, one prioritised report. Trigger: "review", "is it ready?", "before I merge".'
 argument-hint: "<branch, PR, files or screen to review; nothing = diff against main>"
 ---
 
@@ -8,7 +8,7 @@ argument-hint: "<branch, PR, files or screen to review; nothing = diff against m
 
 > If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
-Run five specialist reviews on the same change and hand the owner one verified, prioritised findings report with a verdict (Ready / Ready after fixes / Not ready).
+Run six specialist reviews on the same change and hand the owner one verified, prioritised findings report with a verdict (Ready / Ready after fixes / Not ready).
 
 **Why:** each reviewer sees the diff plus one standard, so nothing is missed for lack of context and nothing is invented for lack of code.
 
@@ -27,7 +27,7 @@ Run five specialist reviews on the same change and hand the owner one verified, 
 │                      QUALITY REVIEW                          │
 ├──────────────────────────────────────────────────────────────┤
 │  STANDALONE (always works)                                   │
-│  ✓ Five reviewers: accessibility, UX, security, code, QA     │
+│  ✓ Six reviewers: a11y, UX, security, privacy, code, QA      │
 │  ✓ Each gets only the diff + its standard files (table)      │
 │  ✓ Findings verified against code, deduped, severity-rated   │
 │  ✓ One report: verdict · MUST / SHOULD / Suggestion table    │
@@ -58,7 +58,7 @@ Reviewers: accessibility, UX, security, **privacy** (`privacy-reviewer`: DPDP, G
    - Diff touches AI calls/prompts → security-reviewer + ux-reviewer also get `ai.md`.
 3. **Verify each finding** against the code; drop speculative ones; dedupe.
    - Severity: breaking any standards MUST (incl. injection, missing UI states, secrets, authz, a11y AA) = MUST-violation — never downgrade because code is unused or "small".
-   - Agents rate in their own scales; map them: Critical/High, P0/P1, blocker/serious → **MUST**; Medium, P2, moderate → **SHOULD**; Low, P3, minor → **Suggestion**.
+   - Agents rate in their own scales; map them (product-audit and design-qa: Blocker → MUST, Major/Visible issue → SHOULD, Minor → Suggestion): Critical/High, P0/P1, blocker/serious → **MUST**; Medium, P2, moderate → **SHOULD**; Low, P3, minor → **Suggestion**.
 4. **Write the report** `docs/product/reviews/YYYY-MM-DD-<scope>.md` (shape below); `<scope>` = branch name, `pr-<n>` or the screen name in kebab-case.
    - Verdict: **Ready** = no MUST, ≤ 3 SHOULD · **Ready after fixes** = MUSTs that are small and local (≤ ~1 h each) · **Not ready** = any MUST in security, privacy or data, or MUSTs needing redesign.
 5. **Offer to fix MUSTs now;** SHOULDs become PLAN tasks.
@@ -69,7 +69,8 @@ Reviewers: accessibility, UX, security, **privacy** (`privacy-reviewer`: DPDP, G
 |---|---|
 | accessibility-auditor | `accessibility.md` |
 | ux-reviewer | `ux.md` + `docs/product/DESIGN_SYSTEM.md` (if it exists) |
-| security-reviewer | `security.md`, `privacy.md`, `backend.md` |
+| security-reviewer | `security.md`, `backend.md` |
+| privacy-reviewer | `privacy.md` |
 | code-reviewer | `development.md`, `performance.md`, `mobile.md` |
 | qa-engineer | `testing.md` |
 | (AI in the diff) | security-reviewer + ux-reviewer also get `ai.md` |

@@ -11,7 +11,7 @@ disable-model-invocation: true
 
 Turn the chosen visual direction and brand into tokens and component specs that Figma and code share.
 
-**Stance: design-systems partner.** The owner is a senior UX designer and leads aesthetics; this skill supplies the structure, the token plumbing and the contrast checks.
+**Stance: design-systems partner.** When OWNER.md says the owner is a designer, they lead aesthetics; otherwise recommend one option. this skill supplies the structure, the token plumbing and the contrast checks.
 
 ## Usage
 

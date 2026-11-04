@@ -49,6 +49,7 @@ Load only these (use search / grep instead of reading whole large files):
 - The standards files the task touches (`../product-standards/references/`).
 - `references/pr-evidence-template.md` — for any UI task (step 9).
 - Gate: STATUS.md says `Evaluation: APPROVED` and the task is in PLAN.md.
+- **Existing repo without these files** (not created by MakerLine, no `docs/product/STATUS.md`): there is no gate to check. Take the task from the owner's words, find the repo's own commands in `package.json` scripts, `Makefile`, `pyproject.toml` or the CI workflow, and use `git switch -c <type>/<Mon>-<DD>-<summary>` for the branch. Skip PLAN/STATUS updates; say which kit files are missing once, then carry on.
 - Ask the owner only if blocked.
 
 ## Workflow
@@ -57,16 +58,17 @@ Load only these (use search / grep instead of reading whole large files):
 
 1. **Load context** — only the inputs above; grep rather than read large files whole.
 2. **State scope** in 3–7 bullets; ask only if blocked.
-3. **Branch:** `scripts/branch.sh feat "<T-xx summary>"` → `feat/<Mon>-<DD>-<summary>` (or the task's worktree).
+3. **Branch:** `scripts/branch.sh feat "<T-xx summary>"` → `feat/<Mon>-<DD>-<summary>` (or the task's worktree; no `scripts/branch.sh` → `git switch -c` with the same name).
 4. **Write failing tests** for the acceptance criteria, including unhappy paths.
 5. **Implement in small steps:** tokens + existing components, all UI states, a11y props, server-side validation + authorization.
+   - Large or specialist work, where subagents exist: hand screens to `web-developer` or `mobile-developer` and schema, RLS, server functions and webhooks to `backend-developer`, each with the task, its tests and the standards files; you review and merge their work.
    - Comment the *why* of non-obvious code (the owner is learning).
-6. **Run checks:** `npm run check` (or typecheck + lint + test + build). Fix; never weaken tests.
+6. **Run checks:** `npm run check` (or the repo's own typecheck + lint + test + build). Fix; never weaken tests.
 7. **Self-review** against the checklist below.
 8. **Design QA:** a UI task with a Figma frame → run `design-qa`.
 9. **Evidence and commit:** what changed, how to see it, test results. Commit `feat(scope): … (T-xx, US-xx)`; tick PLAN; update STATUS.
    - Keep the docs in step (table below).
-   - **UI task → fill `references/pr-evidence-template.md`** as the PR body: before/after screenshots in `docs/product/evidence/<task-id>/` (Playwright for web; simulator or the web export for Expo), axe result by impact from `npm run test:e2e` (zero serious/critical), keyboard path, test summary, and each acceptance criterion → its test.
+   - **UI task → fill `references/pr-evidence-template.md`** as the PR body: before/after screenshots in `docs/product/evidence/<task-id>/` (Playwright for web; simulator or the web export for Expo), axe result by impact from `npm run test:e2e` or the repo's e2e command (zero serious/critical; no axe set up → say so under "Not captured"), keyboard path, test summary, and each acceptance criterion → its test.
    - No shell or no browser → write what wasn't captured under "Not captured"; never leave a section blank.
 
 ### Self-review checklist

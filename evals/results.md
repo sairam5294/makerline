@@ -88,3 +88,19 @@ Cost: 173k tokens total, 62 tool calls (over the 45 Standard target), 11 searche
 
 **Real intake, 2026-11-04: three agency engagements, from tracker and wiki facts (two batches).** 13 + 22 tool calls, no web. Proposed goals marked "proposed by us"; first runs chosen per engagement (one starts with a security-focused quality-review rather than a product audit). Fixes: ENGAGEMENT gains Regulated data, Your role, Status rows and goal-provenance labels; intake gains a facts-in-hand step with a cite format and a defects-by-label note; client-work names the three starter questions when your own role is unknown. Client names and details stay in the owner's private workspace.
 
+
+## Run — 2026-11-04 · kit 0.19.1 · evaluate-idea Quick vs a plain prompt (blind, A/B randomised, separate grader per case)
+
+Why: an outside review said every verdict so far was Pivot and that nothing compared the kit with plain Claude. Two new planted cases, **clear-go** (paid pre-orders, an owner-run community, one-job scope) and **clear-drop** (general scanner vs free built-ins, owner rules out every change), plus ai-todo. Arm "plain" = one ~120-word prompt asking for the same report sections, web search allowed, no kit files. Same model for both arms. Graders saw A.md / B.md only (kit bookkeeping files removed, kit name stripped), scored the universal checklist (10) + the case's must-catch items, and fact-checked 3 claims per side.
+
+| Case | Expected | MakerLine Quick | Plain prompt | MakerLine score | Plain score | Hallucinations | Grader prefers |
+|---|---|---|---|---|---|---|---|
+| clear-go | Go · Go with changes | **Go** (Medium) ✅ | Go with changes ✅ | 13/16 (81%) | 15/16 (94%) | 0 / 0 | Plain |
+| clear-drop | Drop/Park | **Drop/Park** (High) ✅ | Drop ✅ | 11/15 (73%) | 15/15 (100%) | 0 / 0 | Plain |
+| ai-todo | Drop · Pivot | Pivot (Medium) ✅ | Pivot ✅ | 13/16 (81%) | 15.5/16 (97%) | 0 / 0 | Plain |
+
+Cost: MakerLine 116–118k tokens, 11–12 tool calls, 4 searches, 0–1 page reads · plain 103–110k tokens, 18–25 tool calls, ~10 searches with page reads.
+
+**What it shows.** (1) The rubric can reach Go and Drop: the "always Pivot" worry is not borne out on planted cases. (2) **On the report checklist, a plain prompt beat Quick on all three cases, for slightly fewer tokens.** Quick lost the same points every time: market size left "unknown", one persona instead of 2–3, sources from title-only search results (0 page reads), and on ai-todo general AI assistants missed as substitutes. Those are the Quick template's own instructions (one persona, one-line sizing, ≤ 4 searches, 0 fetches) — the token caps cut research, while the tokens went on writing 8 bookkeeping files. (3) Kit-only strengths the graders named: the weighted scorecard with a "path to Go" table, the learning/portfolio lens, and the accessibility and data-law section — none of which the plain arm produced. Caveats: n = 1 per arm per case; the checklist was written for the kit's report, and the plain prompt was told to cover the same sections (a casual one-line prompt would likely score lower); both arms lost half a point where the checklist's "critique before strengths" conflicts with the kit's strongest-version-first order.
+
+**Fix in the same branch:** Quick now asks for 2–3 personas, a TAM → SAM → SOM table with stated assumptions (never "unknown" alone), free built-ins and general AI assistants in COMPETITORS Lite, up to 6 searches and 2 page reads, and no "Evidence" label on title-only results. Re-run below.

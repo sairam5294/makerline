@@ -15,7 +15,7 @@ _Lite — run Standard for the full analysis · {{date}}_
 |---|---|---|---|---|---|
 | Direct | | | | | |
 | Doing nothing | Tolerating the problem | | Free | | |
-(top 3 direct + doing nothing; one line for indirect or substitutes, if any)
+(top 3 direct + doing nothing + **free built-ins** (phone OS, Google/Microsoft/Apple apps) and **general AI assistants** (ChatGPT, Gemini, Claude) wherever they can do the job; one line for other indirect options)
 
 ## Differentiator test
 | Differentiator | Users care? | Noticeably better? | Copyable in a quarter? | Owner can deliver? | One sentence? | Keep / reframe / drop |

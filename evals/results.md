@@ -69,7 +69,7 @@ Scale test (`SCALE.md`), Tindi 1.0: 3 apps, a code monorepo and a product-docs r
 
 ## Run — 2026-11-04 · kit 0.17.0 (pre-release) · evaluate-idea Standard · ai-todo (blind runner, separate grader)
 
-| Case | Verdict (expected) | Score | Universal | Case-specific | Idea Pack items | New rules (advantage tag · novelty-tested Leapfrog · persona pack · teardown) | Hallucinations | Result |
+| Case | Verdict (expected) | Score | Universal | Case-specific | Idea Pack items | New rules (advantage tag · novelty-tested Leapfrog · panel personas · teardown) | Hallucinations | Result |
 |---|---|---|---|---|---|---|---|---|
 | ai-todo | Pivot (Drop · Pivot) ✅ | 3.05 | 9.5/10 (SAM unsourced) | 8/8 | 10/12 (complaints from blogs, not reviews; competitor accessibility not checked) | 3/4 — Leapfrog left "candidate, unverified" | 0 (3 spot checks) | **Pass, 92%** |
 

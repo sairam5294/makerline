@@ -26,7 +26,7 @@ MakerLine has 30 skills and 20 agents, but you only need to remember one command
 | "how is it doing" / "retro" / "it's down" | `post-launch` (+ data-analyst; when-it-breaks) | METRICS, LESSONS, IDEAS, incident notes |
 | "keep building or stop?" / "what to improve next" | `product-opportunity-review` (+ tech-debt, roadmap, user-panel, devils-advocate) | REVIEW.json, index.html, IDEAS |
 | "handoff" / "status update" / "hand over to their team" | `handoff` | HANDOFF, stakeholder update, handover pack |
-| "my projects" / "which next" | `portfolio` (+ Industry Brains, patterns, kit activity) | portfolio/index.html |
+| "my projects" / "which next" | `portfolio` (+ Industry Files, patterns, kit activity) | portfolio/index.html |
 | "which tool for which job" | `tool-plan` | TOOL_PLAN |
 | "which rules apply" / "are the standards current" | `product-standards`, `standards-refresh` | — / VERSIONS |
 
@@ -49,5 +49,5 @@ Research and judgement: market-researcher · pricing-analyst · data-analyst · 
 ## Where the knowledge lives
 
 - `docs/product/` in each project: the product's own files.
-- `portfolio/industries/<industry>.md` in the kit: one Industry Brain per industry (`brain_check.py` keeps it honest); `portfolio/PATTERNS.md`; `portfolio/OUTCOMES.md`.
+- `portfolio/industries/<industry>.md` in the kit: one Industry File per industry (`industry_check.py` keeps it honest); `portfolio/PATTERNS.md`; `portfolio/OUTCOMES.md`.
 - `plugin/skills/product-standards/references/`: the standards every skill cites; `VERSIONS.md` says when each was last checked.

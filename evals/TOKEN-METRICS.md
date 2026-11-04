@@ -19,6 +19,7 @@ _Last measured 2026-10-22 · kit 0.14.1 plus the 0.15.0 changes · model: Claude
 | Quick Idea Pack, 0.11.0 | brief → one-pager | 157k | ~79k | 30 | — | checker clean after 3 trims |
 | Quick Idea Pack, 0.14.0 | same, after budget caps | 106k | **~28k** | 12 | — | checker clean first time |
 | Evaluation, Standard (ai-todo), 0.17 | evaluate-idea with persona panel + teardown | 159k | ~81k | 40 | 5.8 min | checker clean, verdict in range |
+| Opportunity review, Lekka, 0.17 (+ persona panel, tech debt, Ideas Bank, roadmap blend) | standard, 9 searches, 6 fetches | 187k | ~109k | 35 | 6.3 min | check clean, 1 warning |
 | Opportunity review, Lekka (half-built) | standard depth, 8 searches, 8 fetches | 147k | ~69k | 29 | 3.4 min | check clean |
 | Opportunity review, Trust Kit (idea) | standard, 10 searches, 13 fetches (4 failed) | 142k | ~64k | 34 | 13.2 min | check clean |
 | Opportunity review, RhythmBuddy (live) | standard, 8 searches, 12 fetches (2 blocked) | 137k | ~59k | 36 | 13.3 min | check clean |

@@ -20,6 +20,8 @@ MODES = ("first", "refresh")
 STATUSES = ("not_started", "in_progress", "blocked", "done", "skipped")
 OPTION_TYPES = ("build", "fix", "simplify", "pricing", "distribution", "partnership", "stop")
 ADVANTAGE = ("parity", "differentiator", "leapfrog")
+ROADMAP_HORIZONS = ("now", "next", "later", "hold")
+ROADMAP_LABELS = ("keep", "trim", "move up", "hold", "drop", "new")
 EVIDENCE = ("none", "weak", "some", "strong")
 SOURCE_KINDS = ("official", "independent", "vendor", "community", "repo", "internal")
 MARKET_STATUS = ("proposed", "confirmed")
@@ -185,6 +187,13 @@ def check(data: dict) -> list[str]:
         for sid in item.get("source_ids", []):
             if sid not in source_ids:
                 errors.append(f"option {name} cites unknown source {sid}")
+    for i, item in enumerate(data.get("roadmap", []) or []):
+        if not isinstance(item, dict) or not str(item.get("item", "")).strip():
+            errors.append(f"roadmap row {i + 1} needs an item")
+        elif item.get("horizon") not in ROADMAP_HORIZONS:
+            errors.append(f"roadmap row {i + 1}: horizon must be one of {', '.join(ROADMAP_HORIZONS)}")
+        elif item.get("label") and item["label"] not in ROADMAP_LABELS:
+            errors.append(f"roadmap row {i + 1}: label must be one of {', '.join(ROADMAP_LABELS)}")
     for i, item in enumerate(data.get("next_actions", [])):
         if not isinstance(item, dict) or not all(str(item.get(f, "")).strip() for f in ("action", "owner", "success_measure")):
             errors.append(f"next action {i + 1} needs an action, an owner and a success measure")
@@ -281,6 +290,16 @@ def _items(values: list, fields: tuple[str, ...], empty: str) -> str:
         rows.append("<tr>" + "".join(cells) + "</tr>")
     heads = "".join(f'<th scope="col">{esc(k.replace("_", " ").title())}</th>' for k in fields)
     return '<div class="scroll" tabindex="0" role="region" aria-label="Scrollable table"><table><thead><tr>' + heads + "</tr></thead><tbody>" + "".join(rows) + "</tbody></table></div>"
+
+
+def _roadmap(rows: list) -> str:
+    if not rows:
+        return ""
+    order = {h: i for i, h in enumerate(ROADMAP_HORIZONS)}
+    rows = sorted((r for r in rows if isinstance(r, dict)), key=lambda r: order.get(r.get("horizon"), 9))
+    return ('<section class="panel ml-section" id="roadmap" aria-labelledby="roadmap-h"><h2 id="roadmap-h">Roadmap: Now / Next / Later</h2>'
+            '<p class="muted">Existing plan items carry their Keep / Trim / Move up / Hold / Drop label; new items say "new".</p>'
+            + _items(rows, ("horizon", "item", "label", "why", "gate"), "") + "</section>")
 
 
 def _sources(values: list) -> str:
@@ -477,7 +496,7 @@ def render_body(data: dict) -> str:
 {_areas(data)}<section class="panel ml-section" id="options" aria-labelledby="options-h"><h2 id="options-h">Options to compare</h2>
 <p class="muted">Value, effort and evidence are estimates until a source or test confirms them. Include non-build options.</p>
 {_options(data["options"])}</section>
-<section class="panel ml-section" id="actions" aria-labelledby="actions-h"><h2 id="actions-h">Next actions</h2>
+{_roadmap(data.get("roadmap") or [])}<section class="panel ml-section" id="actions" aria-labelledby="actions-h"><h2 id="actions-h">Next actions</h2>
 {_items(data["next_actions"], ("action", "owner", "when", "success_measure"), "Actions will appear as the review progresses.")}</section>
 <section class="panel ml-section" id="tools" aria-labelledby="tools-h"><h2 id="tools-h">Working across AI tools</h2>
 <p class="muted">One tool owns each output. Give a new tool the source files and the latest handoff before it continues.</p>

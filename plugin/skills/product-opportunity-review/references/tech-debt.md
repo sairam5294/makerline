@@ -1,6 +1,6 @@
 # Tech debt check (half-built, delayed and live products)
 
-"How messy is it to finish?" changes the decision as much as demand does. A quick, evidence-based scan, not a code audit. Standard: 30 minutes, ≤ 8 files opened; Deep: add the build and tests run.
+"How messy is it to finish?" changes the decision as much as demand does. A quick, evidence-based scan, not a code audit. Standard: 30 minutes, ≤ 10 files opened (README, AGENTS/CLAUDE, package manifest, CI config, the 2–3 hot spots, the schema or policies); Deep: add the build and tests run.
 
 ## Look (cite file paths and commands as `repo` sources)
 

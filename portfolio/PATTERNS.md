@@ -1,29 +1,26 @@
-# Pattern library
+# Cross-industry patterns
 
-Moves that reshaped one industry and might travel to another — the source of most genuinely new ideas. Used by the Industry Brain ("Patterns that apply here"), `evaluate-idea` (strengthening plan) and `product-opportunity-review` (Leapfrog options). Format and upkeep: `plugin/skills/portfolio/references/industry-brain.md`.
+Moves that changed one market and could travel to another. Each Industry File marks every card under "Patterns to borrow" Already happened, Happening now, Not yet (say why) or Won't fit; `evaluate-idea` and `product-opportunity-review` (Leapfrog options) read them. File rules: `plugin/skills/portfolio/references/industry-file.md`.
 
-**Seed cards are starting points: verify each against current public sources the first time you use it, and add the R-id.** Add a card when a teardown, review or watch finds a move that could travel; merge duplicates once a quarter.
+"Verify before use" means unchecked: find a current source, then swap in the link and an R-id. Add cards from teardowns, reviews or the watch; merge look-alikes quarterly.
 
-## Card format
+## Card
 
-**Name** — the move in one line · **Why it works** (the economics or behaviour) · **Preconditions** (what must be true) · **Where it worked** (industry, company, year, result — sourced) · **Where it stalled, and why** · **Early signs it's arriving elsewhere**.
+**Move** · **Example** (company, date, link) · **Had to be true** · **Arrival signal** (seen first in Dated signals) · **Idea** (one thing to build or test).
 
-## Seed patterns
+## Cards
 
-1. **Software, then payments:** sell the workflow tool, then earn on the money flowing through it (restaurant and salon software adding payments, payroll, lending).
-2. **Vertical financial services:** once you hold the books and payments, offer credit, insurance or savings tuned to that audience.
-3. **Tool to marketplace:** a tool used by many suppliers becomes the place buyers find them.
-4. **Self-serve replaces sales-led:** a free trial and in-product onboarding cut the cost of winning a small customer.
-5. **Usage or outcome pricing:** charge per booking, transaction or result instead of per seat or per month.
-6. **Agent does the job:** AI carries out a whole workflow the user used to do or pay someone for, priced against that cost.
-7. **The customer's customer does it:** self check-in, self-scheduling and self-service changes remove staff work.
-8. **Compliance as a product:** be first and best at a new rule everyone must follow, and win switchers.
-9. **Pooled data advantage:** benchmarks, advice or risk scores that improve with every user and rivals can't match.
-10. **Bundle or unbundle:** replace 4–6 point tools with one system of record — or pull one painful job out of a bloated suite.
-11. **Embedded in the platform:** ship inside what people already use (WhatsApp, the OS, a marketplace) instead of as another app.
-12. **Hardware-light:** replace dedicated devices with the phone people already own.
-13. **Old-to-new migration:** move loyal users to a new product with a day-one gain, a risk-free move (data carried over, a way back), a reason to act now and peer proof; announce any end of support far ahead. Backfires when forced and combined with price rises (`plugin/skills/product-opportunity-review/references/switching.md`).
+1. **Phone replaces the gadget.** Apple's Tap to Pay on iPhone, 8 Feb 2022: cards without a terminal ([Apple Newsroom](https://www.apple.com/newsroom/2022/02/apple-unveils-contactless-payments-via-tap-to-pay-on-iphone/)). True: the device was costly. Signal: "can I skip the scanner?" posts. Idea: a camera-based version of a gadget tool.
+2. **Templates as the shop window.** Figma Community, 22 Oct 2019: files others remix ([Figma blog](https://www.figma.com/blog/bringing-the-community-together-in-figma/)). True: users make reusable things. Signal: files swapped on Discord. Idea: a public gallery of setups.
+3. **Price the finished job.** Intercom bills its Fin agent per resolved conversation (verify before use). True: "done" is easy to count. Signal: buyers resent idle seats. Idea: a per-result price for your main job.
+4. **Earn on money passing through.** Shopify added its own merchant payments in 2013 (verify before use). True: real volume in your tool. Signal: users paying invoices elsewhere. Idea: built-in payment links with a small fee.
+5. **Sellers' accounts become a directory.** Salon booking tools listing salons for consumers (verify before use). True: many sellers, buyers can't find them. Signal: requests for a public profile. Idea: an opt-in "find a pro" page.
+6. **Free answer, paid follow-through.** Zillow's free home estimate, 2006 (verify before use). True: your data answers a common question. Signal: searches for a number nobody shows. Idea: a free calculator leading to the paid flow.
+7. **A new rule opens a door.** India's GST e-invoicing for larger firms, Oct 2020 (verify before use). True: deadline, penalty, slow incumbents. Signal: a draft rule. Idea: the smallest tool that meets the deadline.
+8. **Live inside the chat app.** Shops taking orders on WhatsApp Business (verify before use). True: buyers already message sellers there. Signal: chat screenshots in support. Idea: a chat-first main flow.
+9. **Software does the work.** AI agents doing support end to end (verify before use). True: repeatable task, mistakes easy to catch. Signal: fewer job ads for that role. Idea: price against the person's cost.
+10. **Move loyal users gently.** Day-one gain, data carried over, a way back, peer proof, long notice; forced moves with price rises backfire (`plugin/skills/product-opportunity-review/references/switching.md`).
 
 ## Your outcomes
 
-When a pattern is tried in one of your products, add a line: Pattern | Product (or "anonymised") | What was built | Result with numbers | Do again / avoid | Date. Calibration for the verdicts lives in `OUTCOMES.md`.
+Per card tried: Card | Product (or "anonymised") | What you built | Result with numbers | Repeat or avoid | Date. Verdict calibration: `OUTCOMES.md`.

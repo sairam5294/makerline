@@ -1,36 +1,34 @@
 # Getting people to switch (to your product, or to your new version)
 
-Use when the goal depends on people leaving what they use today — another app, a spreadsheet, WhatsApp, or your own old version. Features are rarely the blocker; the effort and risk of moving are.
+Use when the goal needs people to leave what they use now: another app, a spreadsheet, WhatsApp, or your older version. What holds them back is seldom a feature; it is the work and risk of moving.
 
-## 1. Why they stay
+## 1. What keeps them where they are
 
-From research (R-ids) and your own users: the top reasons people stay with today's way. Typical: setting up again, moving their data, learning a new screen, fear of losing history, family or staff already used to the old way, "it works well enough".
+The main reasons people stick with their current way, from research (R-ids) and your own users. Common ones: redoing setup, carrying their data across, learning new screens, worry about losing history, family or staff used to the old way, "it's good enough".
 
-## 2. The four things a switcher needs at once
+## 2. Four levers, all needed together
 
 | Lever | Question | Example (illustrative: moving users from a spreadsheet to a finance app) |
 |---|---|---|
-| **Day-one gain** | What do they get in the first session that the old way can't give? | A month's spending chart from their imported sheet in 2 minutes |
-| **No-risk move** | Can they move without losing anything, and go back? | Import keeps every row; export to CSV any time |
-| **Reason to act now** | Why this week, not "someday"? | Free for early users until a date; a monthly ritual moment (salary day) |
-| **Someone they trust did it** | Who like them already moved? | A friend's referral; a short story from a real early user (with consent) |
+| **Day-one gain** | What does the first session give them that the old way can't? | A month's spending chart from their imported sheet in 2 minutes |
+| **No-risk move** | Can they move with nothing lost, and undo it? | Import keeps every row; export to CSV any time |
+| **Reason to act now** | Why this week rather than "someday"? | Free for early users until a date; a monthly ritual moment (salary day) |
+| **Someone they trust did it** | Who like them has already moved? | A friend's referral; a short story from a real early user (with consent) |
 
-Any lever you can't offer is a gap in the plan, not a footnote.
+A lever you can't offer is a hole in the plan, not a footnote.
 
-## 3. Gap check per first users
+## 3. Get ready before you invite anyone
 
-Everything they rely on today (imports, exports, integrations, devices, reports, languages, payment methods) → ready / needs fix. Fix the needs-fix items before inviting them.
+- **Gap check for the first users.** Everything they rely on today (imports, exports, integrations, devices, reports, languages, payment methods) → ready or needs fix; close every needs-fix before inviting.
+- **One repeatable import.** Build a single tested route from the old format (CSV, another app's export, the old version's database), never hand setup. AI may draft a messy mapping; a person checks anything about money or health.
+- **Safe cutover.** Move during the users' quiet time. Run old and new in parallel for a period. Write the rollback ("how to go back") first.
 
-## 4. A repeatable import, not hand setup
+## 4. Learn from others who did it
 
-One tested path from the old format (CSV, another app's export, the old version's database). AI can draft messy mapping; a person checks anything involving money or health.
+Find products that migrated users before and what they offered: upgrade discounts with a deadline, free data migration, end-of-support dates announced years early.
 
-## 5. Safe cutover
+What backfires: forcing the move while raising prices, short notice, and retiring the old version before the new one covers everything people relied on.
 
-Move at the users' quiet time, let old and new run side by side for a while, and write a rollback ("how to go back") before inviting anyone.
+Offers, prices and end dates are the owner's call: show them as options backed by precedents, never as promises to users.
 
-## 6. Precedents and what backfires
-
-Look for who moved users from an old product to a new one and what they offered (upgrade discounts with a deadline, free data migration, end-of-support dates announced years ahead). **Backfires:** forced moves combined with price rises, short notice, removing the old version before the new one does everything people used. Offers, prices and end dates are your decisions: present them as options with precedents, never as promises to users.
-
-The first roadmap phase for a switching goal is usually "make moving safe", with a checkpoint such as "5 outside users moved and still active after 2 weeks".
+For a switching goal, the first phase is usually "make moving safe". A typical checkpoint: "5 outside users moved and still active after 2 weeks".

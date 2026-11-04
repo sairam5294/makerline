@@ -1,33 +1,33 @@
 # Account health (internal): when a client or employer may be drifting away
 
-Signals: slower decisions, requests for knowledge transfer, "we want to be less dependent", interest in your people, budget questions, a new in-house hire. Write `docs/product/ACCOUNT_HEALTH.md` (tier: internal, never shared) and revisit it monthly.
+Warning signs: slower decisions, knowledge-transfer requests, "we want to be less dependent", interest in your people, budget questions, an in-house hire. Write `docs/product/ACCOUNT_HEALTH.md` (tier: internal, never shared) and revisit it monthly.
 
-## 1. Diagnosis (one paragraph)
+## 1. What's going on (one paragraph)
 
-Why, in plain words. Usually: the product isn't producing the outcome they wanted yet, so you look like a cost rather than a partner; or the goal changed and nobody re-stated it.
+Why, in plain words. Most often the product hasn't delivered their outcome yet, so you read as a cost, not a partner; or the goal moved and no one restated it.
 
-## 2. What only you can do — tested row by row
+## 2. Your real value, checked line by line
 
-| Thing you provide | Could they get it elsewhere by the decision date? | Evidence |
+| What you bring | Could someone else give them this before the decision date? | Evidence |
 |---|---|---|
-| First customers live on the new product | No: a new team needs months to learn it | |
+| Getting the first customers onto the new product | No: a fresh team would need months | |
 | Product knowledge | Fading: they own the code and docs | |
 | A discount | Yes, anyone can; not leverage | |
 
-Only rows with "No" are real value; the plan is built on those.
+Only "No" rows are real value; build the plan on them.
 
-## 3. A 90-day plan to the decision date
+## 3. The next 90 days, up to the decision date
 
-Milestones tied to **their** outcome (customers live, tickets down, revenue up), owners, and a weekly one-page scoreboard to their leaders. Pay for it inside the current scope where possible (roadmap swaps they already allow).
+Milestones on **their** outcome (customers live, tickets down, revenue up), each with an owner, and a one-page scoreboard sent to their leaders weekly. Fund it from current scope where you can (roadmap swaps they already permit).
 
-## 4. Options for the next term, all tied to outcomes they care about
+## 4. Choices for the next term
 
-Present 2–3 honestly, with what each means for both sides: outcome-linked work (base plus success measure) · a smaller, well-defined scope · build, run and hand over (a planned transfer with a support tail, so independence doesn't mean losing people mid-launch). Rehearse with the `stakeholder-panel` before proposing.
+Offer 2–3 honestly, each tied to an outcome they care about, saying what it means for both sides: outcome-linked work (base fee plus a success measure) · a smaller scope with firm edges · build, run, then hand over (a planned transfer plus a support period, so independence doesn't leave them short-handed mid-launch). Rehearse with the `stakeholder-panel` first.
 
-## 5. What you won't do
+## 5. Lines you won't cross
 
-No lock-in: no slowing a handover, holding back documents, access or knowledge; no promises you can't keep; no discount race. If leaving is right for them, say so and make the handover pack (`../../handoff/references/handover-pack.md`) excellent — it is also your reputation.
+No lock-in: never slow a handover or hold back documents, access or knowledge. No promises you can't keep, no price race. If leaving is right for them, say so and make the handover pack (`../../handoff/references/handover-pack.md`) excellent; your reputation rides on it.
 
 ## 6. Risks and this month's decisions
 
-Each risk with a mitigation and an early sign; the two decisions you need to make this month.
+Each risk with a mitigation and an early warning sign; then the two decisions you must take this month.

@@ -18,7 +18,7 @@ Read the brief (and any evaluation draft). Then produce:
 4. Competitive reality — why incumbents or free alternatives (YouTube, WhatsApp, ChatGPT, doing nothing) may win.
 5. Retention & distribution critique — why users might try it once and never return; why acquisition may be expensive.
 6. "What would have to be true" — the 3–5 conditions under which this succeeds.
-7. Veteran's questions — has this been tried before here, and why did it stall? Who in the chain will resist it (a platform, a payment provider, a regulator, the user's family or staff)? Is the "why now" real, or was it just as true five years ago? What would a funded incumbent do within 6 months?
+7. Veteran's questions — was this tried in this market, and what stalled it? Who in the chain will resist it (a platform, a payment provider, a regulator, the user's family or staff)? Is the "why now" real, or was it just as true five years ago? What would a funded incumbent do within 6 months?
 
 **Reader mode** reviews the **real draft** the skill produced, never a throwaway version written to be criticised; at Quick depth one pass on the single draft is enough. (When asked to review something public — one-pager, store listing, landing page, launch post, pitch): read it as the most sceptical busy reader. Per section return Keep / Cut / Rewrite with the reason, and where you'd stop reading. Cut on sight: claims not true today ("ready" with no outside users, "loved by" with no users), visions without evidence, lectures, promises that aren't the owner's to make, jabs at alternatives, fear selling, self-praise, teasers that can't be delivered, and any market fact without an opened source.
 

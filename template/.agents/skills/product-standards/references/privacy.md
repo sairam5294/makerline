@@ -43,6 +43,23 @@ Not legal advice — a builder's checklist. For launches that handle children's 
 - Use a payment provider (Razorpay, Stripe, App Store / Play Billing for digital goods inside apps); never store card data.
 - Digital content/subscriptions consumed in-app must generally use Apple/Google in-app purchase — check current store rules and regional exceptions before designing monetization.
 
+### 5b. PCI DSS 4.0 scope (MUST when card data could pass through anything you build)
+
+PCI DSS 4.0 has been fully in force since 31 March 2025. The design goal is to keep **your** systems out of scope:
+- Card numbers are entered only into the payment provider's hosted fields, iframe, redirect page or terminal; your pages never see, log or store a PAN. That keeps you at SAQ A (web) or SAQ P2PE/B-IP (terminals) rather than a full assessment.
+- Anything that **does** touch card data (a front-desk app taking cards, a desktop bridge to a card terminal, a reports screen showing card numbers, a "daily credit-card summary") is in scope: show at most the last four and the brand, mask everywhere else, no card data in logs, exports, emails or screenshots; tokens from the processor replace numbers.
+- Requirement 6.4.3 and 11.6.1 (4.0): keep an inventory of scripts on payment pages, authorise each one, and detect unauthorised changes — the same supply-chain checks as `security.md` §5b.
+- Hospitality specifics: pre-authorisations, incidental holds, no-show and cancellation charges follow the card brands' rules and must be disclosed to the guest at booking; card-on-file for a stay needs the guest's consent recorded; refunds go back to the same card.
+- Ask the processor (Shift4, Stripe, Razorpay, Adyen…) which SAQ applies and record it in SECURITY.md; audits and client briefs cite the SAQ, never "PCI compliant".
+
+### 5c. Guest and visitor data (hotels, clinics, venues — pre-check-in and self-service flows)
+
+- A guest who completes paperwork from an email link is a data subject with **no account**: tell them who processes the data, why, for how long, and how to get a copy or deletion, on that page, before they type (GDPR Arts. 13–14; CCPA/CPRA notice at collection; DPDP notice and consent for Indian guests).
+- Collect the legal minimum for the stay (identity document fields required by local law, contact, payment token); passport and ID scans are special-category-adjacent: encrypt, restrict to front-desk roles, delete on the legal schedule (often 1–3 years by jurisdiction, not "forever").
+- Links expire; no guest data in URLs; one-time tokens; the staff view shows the guest only what the role needs (housekeeping never sees payment or passport data).
+- Marketing consent is separate from arrival paperwork and off by default; children's data (minors on a booking) is collected only as the law requires.
+- Record the lawful basis per field in the data inventory; the privacy-reviewer checks these flows before they go live.
+
 ## 6. Required documents before launch
 
 - Privacy policy, terms of service, data inventory, store privacy labels, cookie notice (web), grievance/contact officer details where required (India DPDP).

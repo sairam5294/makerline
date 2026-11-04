@@ -18,8 +18,10 @@ echo "Verdict in EVALUATION.md:"; grep -m1 -E "^\*\*(Go|Pivot|Drop|Go with chang
 read -r -p "Type YES to approve building this product: " answer
 [ "$answer" = "YES" ] || { echo "Not approved."; exit 1; }
 
-# Replace the gate line (portable sed for macOS + Linux).
-sed -i.bak "s/^Evaluation: .*/Evaluation: APPROVED ($today)${note:+ — $note}/" "$status" && rm -f "$status.bak"
+# Replace the gate line (portable sed for macOS + Linux). The note is escaped so /, &, \ or a newline
+# in it can neither break the edit nor run anything.
+note_sed=$(printf '%s' "$note" | tr '\n' ' ' | sed 's/[\/&\\]/\\&/g')
+sed -i.bak "s/^Evaluation: .*/Evaluation: APPROVED ($today)${note_sed:+ — $note_sed}/" "$status" && rm -f "$status.bak"
 printf '| %s | Owner approved the evaluation%s | — | Owner decision | — |\n' "$today" "${note:+ ($note)}" >> docs/product/DECISIONS.md
 if git rev-parse >/dev/null 2>&1; then
   git add "$status" docs/product/DECISIONS.md && git commit -q -m "chore: owner approved evaluation${note:+ ($note)}" --no-verify

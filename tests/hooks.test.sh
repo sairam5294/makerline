@@ -65,6 +65,15 @@ python3 -c 'import json;print(json.dumps({"tool_name":"MultiEdit","tool_input":{
   | CLAUDE_PROJECT_DIR="$Q" bash "$SH" 2>/dev/null; check "plugin hook blocks MultiEdit self-approval" 2 $?
 ej "$Q/docs/product/PRD.md" 'Evaluation: APPROVED' Write | CLAUDE_PROJECT_DIR="$Q" bash "$SH" 2>/dev/null; check "plugin hook ignores other files" 0 $?
 R="$(mktemp -d)"; pj "sed -i 's/x/APPROVED/' docs/product/STATUS.md" | CLAUDE_PROJECT_DIR="$R" bash "$SH" 2>/dev/null; check "plugin hook ignores projects without STATUS.md" 0 $?
+# Edits judged on the result, the workspace layout (repo in 04_repos/<slug>/), and glob / cd routes
+python3 -c 'import json;print(json.dumps({"tool_name":"Edit","tool_input":{"file_path":"'"$Q"'/docs/product/STATUS.md","old_string":"PENDING","new_string":"APPROVED (today)"}}))' \
+  | CLAUDE_PROJECT_DIR="$Q" bash "$SH" 2>/dev/null; check "plugin hook blocks Edit that swaps PENDING for APPROVED" 2 $?
+W="$(mktemp -d)"; mkdir -p "$W/04_repos/demo/docs/product"; cp "$KIT/template/docs/product/STATUS.md" "$W/04_repos/demo/docs/product/"
+pj "sed -i 's/PENDING/APPROVED/' 04_repos/demo/docs/product/STATUS.md" | CLAUDE_PROJECT_DIR="$W" bash "$SH" 2>/dev/null; check "plugin hook blocks in a product workspace (Bash)" 2 $?
+ej "$W/04_repos/demo/docs/product/STATUS.md" 'Evaluation: APPROVED (today)' Write | CLAUDE_PROJECT_DIR="$W" bash "$SH" 2>/dev/null; check "plugin hook blocks in a product workspace (Write)" 2 $?
+for c in "sed -i 's/PENDING/APPROVED/' docs/product/ST*.md" "cd docs/product && sed -i 's/PENDING/APPROVED/' S*.md"; do
+  pj "$c" | CLAUDE_PROJECT_DIR="$Q" bash "$SH" 2>/dev/null; check "plugin hook blocks: $c" 2 $?
+done
 sed -i.bak 's/^Evaluation: PENDING.*/Evaluation: APPROVED (2026-01-01)/' "$Q/docs/product/STATUS.md"
 pj "sed -i 's/APPROVED (2026-01-01)/APPROVED (2026-01-01) — note/' docs/product/STATUS.md" | CLAUDE_PROJECT_DIR="$Q" bash "$SH" 2>/dev/null; check "plugin hook quiet after owner approval" 0 $?
 python3 -c 'import json;d=json.load(open("'"$KIT"'/plugin/hooks/hooks.json"));assert "no-self-approval.sh" in d["hooks"]["PreToolUse"][0]["hooks"][0]["command"]' ; check "plugin hooks.json wires the hook" 0 $?

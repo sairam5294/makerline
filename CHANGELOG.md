@@ -5,8 +5,6 @@ Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it start
 
 ## 0.19.0 — 2026-11-04
 Strategy depth: agentic-AI, AI Act and risk-register standards; HEART, OST, JTBD, Kano, DORA; four agents; six connectors; weekly review, ops scan, account health; Industry Brain loop with brain_check; research isolation (refresh measured at −35%); skill map. Details:
-
-## Unreleased
 **Cheaper review refreshes.** `opportunity_review.py sources <project>` lists which sources (review records and research rows) can be cited as-is and which need a recheck, using `review_by` or a reuse window by source kind; the review skill runs it before any search, prefers round-ups and snippets with figures, and stops a topic when two sources agree. Test added.
 
 ## Unreleased

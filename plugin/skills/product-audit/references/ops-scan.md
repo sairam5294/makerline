@@ -11,7 +11,7 @@ The product's users are one audience; the team that supports, onboards, sells an
 | Tickets and support exports | volume, top themes, time to first reply, repeat issues (`research-synthesizer` counts them) |
 | Analytics | onboarding steps and days to first value; where customers stall and then ask for help |
 | Public | the help centre's gaps, job ads (hiring support = support load), reviews about support or onboarding |
-| Industry Brain | how leaders run support, onboarding and sales (self-serve, AI first line) |
+| Industry File | how leaders run support, onboarding and sales (self-serve, AI first line) |
 
 ## 2. What to ask for (one short request through the right person)
 

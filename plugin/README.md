@@ -43,7 +43,7 @@ Say *"this is for my client"* or *"our app at work"* (or type `/makerline:client
 - `/makerline:exec-pack`: a one-page brief, decision memo, deck outline, business case or monthly note, with a client version produced by a redaction check that strips costs, rates, other clients' names and contact details.
 - `/makerline:gtm-pack`: positioning, messaging, launch plan, store listing, landing page, posts and ads, checked by a sceptical reader and the persona panel.
 - The `stakeholder-panel` agent: rehearse the meeting with each decision maker before you send anything.
-- For teams: a weekly review rhythm (suggestion cards, review log), an operations scan of the company behind the product, and an internal account-health note when a client may be drifting.
+- For teams: a weekly review rhythm (proposal cards, review log), an operations scan of the company behind the product, and an internal account-health note when a client may be drifting.
 
 See `docs/SKILL-MAP.md` in the repo for the full "what to say → what runs" table.
 

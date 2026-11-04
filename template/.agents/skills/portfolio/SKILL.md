@@ -47,7 +47,7 @@ Give the owner one table of every project and one recommendation for what to do 
 1. **Run the script** if a shell is available: `python3 <kit>/scripts/portfolio.py [folders]` (kit folder from `docs/product/OWNER.md`; default scans ~/Projects and ~/Documents).
    - It writes `portfolio/index.html` (open in a browser) and `portfolio/PORTFOLIO.md`. Each card shows what the product is in one line, from `ONE_PAGER.md` ("The idea in one line") or the opportunity review's `overview.what`.
 2. **No shell:** read each project's `docs/product/STATUS.md` you can reach and build the same table.
-2b. **Shared learning (on request):** keep one Industry Brain per industry in `portfolio/industries/` (`references/industry-brain.md`) and the cross-product `portfolio/PATTERNS.md`; reviews and evaluations in that industry read only their summary, patterns and theses.
+2b. **Shared learning (on request):** keep one Industry File per industry in `portfolio/industries/` (`references/industry-file.md`) and the cross-product `portfolio/PATTERNS.md`; reviews and evaluations in that industry read only their summary, patterns and theses.
 3. **Summarise** in ≤ 8 lines: what's active, what's blocked, what's stale (> 14 days), which projects wait on the owner's approval, and one recommendation (e.g. "park X, it missed its kill criteria").
    - Use `portfolio/OUTCOMES.md` for parked/launched ideas.
 

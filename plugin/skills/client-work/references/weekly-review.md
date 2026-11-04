@@ -2,7 +2,7 @@
 
 One meeting, one card format, one log, so anyone can read anyone's work and nothing good is lost. Works for one person too (then it's your Monday 20 minutes).
 
-## Before the meeting: suggestion cards (≤ 3 per product, by the day before)
+## Before the meeting: proposal cards (≤ 3 per product, by the day before)
 
 Each card is an idea already in `docs/product/IDEAS.md` (so it has an ID, Advantage and Evidence). Write it under the idea's row, exactly in this shape (≤ 180 words):
 

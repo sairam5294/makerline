@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Check an Industry Brain file: due theses, stale theses, hit rate, patterns ready to move, log freshness.
+"""Check an Industry File file: due theses, stale theses, hit rate, patterns ready to move, log freshness.
 
-    python3 scripts/brain_check.py portfolio/industries/<industry>.md [--today YYYY-MM-DD]
+    python3 scripts/industry_check.py portfolio/industries/<industry>.md [--today YYYY-MM-DD]
 
 Reads Markdown tables; no network. Exit 1 if the file has no Theses table.
 """
@@ -94,8 +94,8 @@ def main() -> int:
     ready = [col(r, "pattern") for r in patterns if "not yet" in col(r, "status").lower() and any(
         k in " ".join(r.values()).lower() for k in ("2026", "2027", "signal"))]
 
-    print(f"Industry Brain check — {today}")
-    print(f"Signals log: {len(log)} rows; last entry {last or 'none'}" + (" — STALE (over 45 days)" if last and (today - last).days > 45 else ""))
+    print(f"Industry File check — {today}")
+    print(f"Dated signals: {len(log)} rows; last entry {last or 'none'}" + (" — STALE (over 45 days)" if last and (today - last).days > 45 else ""))
     print(f"Theses: {len(theses)} total, {len(theses) - len(scored)} open; hit rate {rate(scored)}; at 70%+ confidence {rate(hi)}")
     print("Due for scoring:\n  " + ("\n  ".join(due) if due else "none"))
     print("Open theses with no signal in 60 days:\n  " + (", ".join(stale) if stale else "none"))

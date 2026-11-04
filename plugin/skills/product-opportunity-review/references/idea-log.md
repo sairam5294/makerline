@@ -1,4 +1,4 @@
-# Ideas Bank: `docs/product/IDEAS.md`
+# Idea Log: `docs/product/IDEAS.md`
 
 One living file per product that remembers every idea, what you decided, and why, so the same idea isn't re-suggested and the kit learns what you actually build. Created by the first `product-opportunity-review` or `post-launch` run that produces ideas; kept by both.
 
@@ -15,7 +15,7 @@ One living file per product that remembers every idea, what you decided, and why
 `ID | Idea (one line + example) | Source | Advantage | Evidence | Effort | Decision | Decided by (role) | Decided on | Decision source | Reason | Revisit | Result`
 
 - **ID** = `YYMM-NN`, the month the idea was first suggested (`2611-03` = third idea of Nov 2026). IDs never change; other files cite them.
-- **Source:** where it came from — review, teardown, user panel, post-launch metrics, a user request, look-ahead sweep, pattern library.
+- **Source:** where it came from — review, teardown, user panel, post-launch metrics, a user request, look-ahead sweep, Cross-industry patterns.
 - **Advantage:** Parity / Differentiator / Leapfrog (scoring-rubric.md).
 - **Evidence:** Guess / Some / Strong — from real sources only, never from the persona panel.
 - **Decision** (yours): Pending · Accepted · Declined · Parked (set Revisit) · Already doing (fix how it was missed). Record the reason in the decider's words. Client or employer work: **Decided by** is their role, and **Decision source** (meeting notes, email, "told by <role> on <date>") is required for anything but Pending. Never infer a decision from silence.

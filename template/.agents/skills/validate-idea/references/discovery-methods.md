@@ -2,7 +2,7 @@
 
 ## Opportunity Solution Tree (continuous discovery)
 
-One tree per product in `docs/product/OPPORTUNITIES.md` (≤ 400 words, a Mermaid tree plus a table). It links the outcome you're chasing to what you've heard from users to the ideas you're testing, so the Ideas Bank isn't a flat list.
+One tree per product in `docs/product/OPPORTUNITIES.md` (≤ 400 words, a Mermaid tree plus a table). It links the outcome you're chasing to what you've heard from users to the ideas you're testing, so the Idea Log isn't a flat list.
 
 ```
 Outcome (north star or one input metric)
@@ -28,7 +28,7 @@ Goal: the story of the last time they did the job or switched tools, not opinion
 7. **Workarounds:** what do you still do by hand, in a spreadsheet, on paper or by asking someone?
 8. **Money:** what do you pay today, including time? What would feel fair?
 
-Avoid: leading questions, your pitch, "would you use…" (people say yes). After five interviews, count themes (`synthesis` by the `research-synthesizer` agent) and update the tree, the personas (Stated traits) and the Ideas Bank evidence.
+Avoid: leading questions, your pitch, "would you use…" (people say yes). After five interviews, count themes (`synthesis` by the `research-synthesizer` agent) and update the tree, the personas (Stated traits) and the Idea Log evidence.
 
 ## Kano (which features matter, and how)
 

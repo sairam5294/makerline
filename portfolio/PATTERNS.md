@@ -1,6 +1,6 @@
-# Pattern library
+# Cross-industry patterns
 
-Moves that reshaped one industry and might travel to another — the source of most genuinely new ideas. Used by the Industry Brain ("Patterns that apply here"), `evaluate-idea` (strengthening plan) and `product-opportunity-review` (Leapfrog options). Format and upkeep: `plugin/skills/portfolio/references/industry-brain.md`.
+Moves that reshaped one industry and might travel to another — the source of most genuinely new ideas. Used by the Industry File ("Patterns to borrow"), `evaluate-idea` (strengthening plan) and `product-opportunity-review` (Leapfrog options). Format and upkeep: `plugin/skills/portfolio/references/industry-file.md`.
 
 **Seed cards are starting points: verify each against current public sources the first time you use it, and add the R-id.** Add a card when a teardown, review or watch finds a move that could travel; merge duplicates once a quarter.
 

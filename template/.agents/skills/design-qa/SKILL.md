@@ -52,7 +52,7 @@ Put the design and the build side by side and report every difference that matte
 0. **No spec yet for this screen?** Write the handoff spec first (`references/handoff-spec.md`) so any AI tool builds the same thing; then QA against both the frame and the spec.
 1. **Get the design.** Start from the kit library file or the product's duplicate; if Code Connect is published, use its component mapping to name the exact code component.
    - Figma frame via Figma MCP (screenshot + design context/variables), or the spec in `DESIGN_SYSTEM.md`.
-2. **Get the build.** Run the app (web or Expo web) and screenshot the same screen at the same viewport via Playwright MCP / Playwright.
+2. **Get the build.** Run the app (web or Expo web) and screenshot the same screen at the same viewport with Playwright (a Playwright MCP if you've added one; it isn't in the kit's connectors), or ask the owner for a screenshot.
    - Mobile → owner-provided simulator screenshots.
 3. **Compare in this order:** layout & hierarchy → spacing (token scale) → typography (style, weight, line height, truncation) → colour (semantic token used, not just similar hex) → components & variants → states (loading/empty/error/disabled/focus) → responsive breakpoints → dark mode → a11y (contrast, targets, focus visible).
 4. **Write the findings table** (shape below). Include the two screenshots side by side when possible.

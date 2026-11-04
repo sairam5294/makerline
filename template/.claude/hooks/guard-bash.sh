@@ -30,4 +30,17 @@ printf '%s' "$cmd" | grep -Eq '(^|[;&|][[:space:]]*)(printenv|env)([[:space:]]|$
 printf '%s' "$cmd" | grep -Eqi 'supabase[[:space:]]+db[[:space:]]+reset[[:space:]].*--linked|drop[[:space:]]+(table|database|schema)' \
   && block "destructive database command. Ask the owner first."
 
+# 5. Self-approval through the shell (the Edit/Write route is in approval-gate.sh).
+#    Not a security boundary: it stops accidents and the obvious routes.
+status="${CLAUDE_PROJECT_DIR:-$(pwd)}/docs/product/STATUS.md"
+if [ -f "$status" ] && ! grep -q "Evaluation: APPROVED" "$status"; then
+  copy_ok='^[[:space:]]*(mkdir -p [^;&|]+&&[[:space:]]*)?(cp|install|chmod)[[:space:]][^;&|]*approve\.sh[^;&|]*([[:space:]]*&&[[:space:]]*chmod[^;&|]*)?$'
+  printf '%s' "$cmd" | grep -Eq '(^|[^[:alnum:]_])approve\.sh' && ! printf '%s' "$cmd" | grep -Eq "$copy_ok" \
+    && block "only the owner runs scripts/approve.sh, in their own terminal."
+  writes='sed[^|;&]*-i|perl[^|;&]*-[a-zA-Z]*i|>|tee|python|node|ruby|awk|(^|[[:space:]])(cp|mv|ed|ex|dd|truncate)[[:space:]]|git[[:space:]]+(apply|checkout|restore)'
+  if printf '%s' "$cmd" | grep -q 'STATUS' && printf '%s' "$cmd" | grep -q 'APPR' && printf '%s' "$cmd" | grep -Eq "$writes"; then
+    block "only the owner approves the evaluation (scripts/approve.sh)."
+  fi
+fi
+
 exit 0

@@ -10,7 +10,7 @@ argument-hint: "<focus (e.g. 'phone-first'), or nothing to use docs/product/EVAL
 
 Give the owner a draft design direction and clickable wireframes before any code — groundwork and options, not the design system.
 
-**Stance: design partner, not lead.** The owner is a senior UX designer: do the groundwork and propose options; they lead taste and make the calls. This is a **draft direction**, not the design system (that comes after approval, in `design-system`).
+**Stance: design partner, not lead.** Do the groundwork and propose options; the owner makes the calls (a designer owner, per OWNER.md, leads taste — otherwise give a clear recommendation). This is a **draft direction**, not the design system (that comes after approval, in `design-system`).
 
 ## Usage
 

@@ -42,6 +42,8 @@ MakerLine has 30 skills and 20 agents, but you only need to remember one command
 
 ## Agents (never called directly; skills pick them)
 
+`readonly: true` in an agent file makes its Codex copy run in a read-only sandbox. Claude Code doesn't read that field: reviewer agents there are read-only by instruction, not by permission.
+
 Research and judgement: market-researcher · pricing-analyst · data-analyst · research-synthesizer · devils-advocate · idea-champion · product-strategist · user-panel · stakeholder-panel. Reviewers: ux-reviewer · accessibility-auditor · accessibility-strategist · security-reviewer · privacy-reviewer · code-reviewer · qa-engineer. Builders: architect · web-developer · mobile-developer · backend-developer.
 
 ## Where the knowledge lives

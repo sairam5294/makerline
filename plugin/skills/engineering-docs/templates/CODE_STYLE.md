@@ -28,7 +28,7 @@ _Updated {{date}} · Standard: `.agents/skills/product-standards/references/deve
 - Accessible name on every control; roles and states for custom widgets (APG patterns); focus management on route change and after actions; live region for status; `allowFontScaling` never disabled; targets ≥ 44pt / 48dp.
 
 ## 6. Comments and docs
-- Comment the **why** of non-obvious code in plain English — the owner is a senior UX designer learning to code. No commented-out code.
+- Comment the **why** of non-obvious code in plain English — the owner may be learning to code (see OWNER.md). No commented-out code.
 - A public function gets a one-line doc comment; a module with rules gets a top comment pointing at the doc that holds them.
 
 ## 7. Dependencies

@@ -6,7 +6,7 @@
 
 MakerLine turns a product idea into an honest verdict, real competitors, wireframes and a draft PRD. Once you approve, it helps you build and ship the product — engineering docs, repo setup, build, review, test, ship — with WCAG 2.2 AA accessibility, UX, security (OWASP 2025) and tests enforced at every step. Designed for the Claude desktop app and Claude Code; the same rules travel to Cursor, Codex, Copilot and 12 more AI tools through every project it creates.
 
-Nothing is built until **you** approve the idea: the kit cannot write `Evaluation: APPROVED` itself.
+Nothing is built until **you** approve the idea. In Claude Code the plugin's hook stops the AI from writing `Evaluation: APPROVED` or running your approval script; projects created with `new-project.sh` also block app code until you approve, in a git hook and CI. Cursor, Codex and other tools are told the same rule but not stopped — and no hook is a security boundary, so read what you approve.
 
 ## Installation
 
@@ -148,7 +148,7 @@ The kit asks your picks once (name from the top 3, stack A or B, visual directio
 ```
 /makerline:start — build it
 ```
-Picks the next `PLAN.md` task, creates a correctly named branch (`feat/Oct-19-booking-form`), writes failing tests, builds, runs the checks, and opens a pull request.
+Picks the next `PLAN.md` task, creates a correctly named branch (`feat/Oct-19-booking-form`), writes failing tests, builds, runs the checks, and offers to open a pull request. Works in a repo you already have too (it uses your own test and lint commands).
 
 ## Standalone + supercharged
 

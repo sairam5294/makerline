@@ -63,6 +63,29 @@
     "intercom": {
       "type": "http",
       "url": "https://mcp.intercom.com/mcp"
+    },
+    "razorpay": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@razorpay/mcp-server"
+      ],
+      "env": {
+        "RAZORPAY_KEY_ID": "",
+        "RAZORPAY_KEY_SECRET": ""
+      }
+    },
+    "clarity": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@microsoft/clarity-mcp-server"
+      ],
+      "env": {
+        "CLARITY_API_TOKEN": ""
+      }
     }
   }
 }

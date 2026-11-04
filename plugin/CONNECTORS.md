@@ -23,10 +23,10 @@ Skill files use `~~category` as a placeholder for whatever tool you connect in t
 | Product analytics | `~~product analytics` | PostHog | Amplitude, Mixpanel, GA4 | evaluate-idea (existing products), post-launch, product-audit, data-analyst |
 | Monitoring | `~~monitoring` | Sentry | Datadog | post-launch (when it breaks), build-feature (debug), ship-checklist |
 | Project tracker (work) | `~~project tracker` | Atlassian (Jira, Confluence) | Linear, Asana, GitHub Issues | client-work intake, product-audit, plan-build |
-| Payments | `~~payments` | Stripe | Razorpay (India; MCP via npm), Paddle | post-launch (revenue, churn), pricing-analyst, business case |
+| Payments | `~~payments` | Stripe, Razorpay (India; local npm server, keys in env — read-only key recommended) | Paddle | post-launch (revenue, churn), pricing-analyst, business case |
 | Support desk | `~~support desk` | Intercom | Zendesk, Freshdesk, Help Scout | client-work intake, ops-scan, post-launch feedback, research-synthesizer |
 | Design output | `~~design output` | Canva | Figma (exists) | gtm-pack (posts, ads, store images in the brand kit) |
-| Session replay | `~~session replay` | — | Microsoft Clarity, Hotjar, PostHog replay | product-audit (where users stall) |
+| Session replay | `~~session replay` | Microsoft Clarity (local npm server, API token in env; free) | Hotjar, PostHog replay | product-audit (where users stall) |
 | Search and web analytics | `~~web analytics` | — | Google Search Console, GA4, Plausible | gtm-pack (demand, landing page results) |
 | App stores | `~~app stores` | — | App Store Connect, Play Console (community MCPs: vet before use) | ship-checklist, post-launch (reviews, crashes) |
 
@@ -62,6 +62,8 @@ The kit has no servers of its own and sends no telemetry. A connector runs under
 | Atlassian (Jira, Confluence) | issues, pages and spaces you can see, by search | an issue or page you ask for | transition or delete others' issues, change permissions |
 | Stripe / Razorpay | aggregate revenue, churn, failed payments; product and price lists | — | create charges, refunds, payouts; read card details |
 | Intercom / support desk | conversation themes and counts; a conversation you point to | a **draft** reply | send replies, close or assign conversations, export contacts |
+| Razorpay | aggregate payments, settlements, refunds, failed-payment reasons | — | create payments, refunds or payouts; read card or bank details |
+| Microsoft Clarity | aggregate session metrics (rage clicks, dead clicks, scroll depth) and a recording you point to | — | export recordings or identify individuals |
 | Canva | your brand kit and designs | a design from approved copy, in a folder you name | publish or share designs |
 
 Data that leaves your machine goes only to the service you connected, under its own terms. Revoke a connector anytime in the plugin's **Connectors** tab or the service's settings.

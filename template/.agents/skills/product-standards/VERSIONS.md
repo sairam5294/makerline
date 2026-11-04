@@ -19,6 +19,17 @@
 | PCI DSS 4.0 | fully in force 31 Mar 2025; SAQ types per processor | 2026-11-04 |
 | Workplace accessibility (ADA Title I/503, EU 2000/78/EC, UK EqA, Ontario IASR Part III, India RPwD §20–21, AU DDA) | staff-software section in `accessibility-law.md` | 2026-11-04 |
 | HEART, Opportunity Solution Tree, Kano, JTBD, DORA | method references (no version) | 2026-11-04 |
+
+## Watch list (not pinned yet; `standards-refresh` checks these each quarter)
+
+| Watch | Why it matters | What would trigger a kit change |
+|---|---|---|
+| EN 301 549 v4 (harmonised with WCAG 2.2) | EU/EAA procurement will cite the new version | Publication in the OJEU → update `accessibility-law.md` and the ACR/VPAT reference |
+| India Digital Competition Bill | Could add duties for large platforms and app stores in India | Passage → note in `accessibility-law.md` and `gtm-pack` store rules |
+| Apple App Store and Google Play rules on AI features and disclosures | Store listings must say what AI does and with whose data | Guideline change → `ship-checklist` store section and `gtm-pack` listing rules |
+| EU AI Act Digital Omnibus (high-risk timing) | Changes when Annex III duties start | Final text → `ai.md` §5c dates |
+| WCAG 3.0 | Future conformance model (scores, not pass/fail) | Candidate Recommendation → plan a migration note; until then, watch only |
+| India DPDP enforcement (consent managers 13 Nov 2026; duties 13 May 2027) | Lekka-class products must be ready | Dates pass → `privacy.md` becomes "in force" wording |
 | India DPDP | Act 2023 + Rules notified Nov 2025; consent managers 13 Nov 2026; core duties 13 May 2027 | 2026-10-20 |
 | GDPR / UK GDPR | current | 2026-09-27 |
 | COPPA | FTC amended rule (effective 23 Jun 2025, compliance 22 Apr 2026) | 2026-10-20 |

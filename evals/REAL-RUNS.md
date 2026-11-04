@@ -11,8 +11,8 @@ A feature counts as **proven** only after a run on a real product that the owner
 | Advantage tag + Leapfrog warning | 0.16 | 2026-11-04 | Lekka, client-advisory eval | tagged; eval missed one, templates fixed | **proven** |
 | client-work → product-audit → exec-pack | 0.18 | 2026-11-04 (planted case) | SlotEase (fictional) | 9/10; redaction bug found and fixed | eval-proven; **real run pending: ASI** |
 | Switching playbook | 0.16 | — | Lekka (spreadsheet → app), ASI (old PMS → new) | — | **pending** |
-| gtm-pack | 0.18 | 2026-11-04 | Lekka beta invite | see results.md | first real run |
-| stakeholder-panel | 0.18 | 2026-11-04 | Lekka (partner as first decision maker) | see results.md | first real run |
+| gtm-pack | 0.18 | 2026-11-04 | Lekka beta invite | invite + landing section written; 6 claims cut; verdict fix first; beta-invite channel added to the skill | first real run; **owner to send after fixes** |
+| stakeholder-panel | 0.18 | 2026-11-04 | Lekka (partner as first decision maker) | too few Stated facts → produced 7 interview questions; "interview first" rule added | first real run; **owner to ask the questions** |
 | Industry Brain + brain_check | 0.16–0.19 | 2026-11-04 (built), scoring from 2027-01 | personal finance India | 3 theses open; first scoring due Q1 2027 | **pending scoring** |
 | Weekly review rhythm | 0.19 | — | ASI product team | — | **pending** |
 | Ops scan, account health | 0.19 | — | ASI (ops scan); any client engagement (account health) | — | **pending** |

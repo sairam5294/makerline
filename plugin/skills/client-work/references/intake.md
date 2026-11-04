@@ -4,7 +4,7 @@ Goal: in one pass, know what they already know, without re-asking it. Budget: St
 
 ## 0. Facts already in hand
 
-If someone already gathered facts (a colleague's notes, an earlier session's file), start from that file: cite it as `internal`, dated, and search connectors only for what it lacks. Never re-ask what it answers.
+If someone already gathered facts (a colleague's notes, an earlier session's file), start from that file: cite each fact as `(internal, <file>, <date>)`, for example `(internal, facts.md, 2026-11-04)`, and search connectors only for what it lacks. Word budgets count tables. Never re-ask what it answers.
 
 ## 1. Read what exists (search first, ask second)
 

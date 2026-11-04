@@ -70,6 +70,9 @@ The kit's one list: **loading, empty, error, offline, success, permission denied
 - Write for a reading age of ~12; avoid jargon; localise dates, numbers and currency (₹, lakh/crore if Indian audience).
 - Plan for text expansion in translation (+30–40%) and for Indic scripts' taller line heights.
 
+## 7b. Second language (when a product ships one)
+A fluent human reviews every string in the new language before release (AI translation alone is a draft); numbers, dates, money and plural rules follow the locale; text may grow 30%; right-to-left layouts are checked with real content; screenshots and store listings are translated too. If a second language becomes routine across products, add a `localisation-reviewer` agent; until then this checklist is enough.
+
 ## 8. Motion
 
 - Motion explains change (where something came from/went); 150–300 ms for UI transitions; respect reduced-motion.

@@ -16,6 +16,8 @@ No `docs/product/ENGAGEMENT.md` → copy `templates/ENGAGEMENT.md` and fill what
 - **Approval gate:** STATUS `Evaluation: APPROVED (by <role/name>, <date>)` only after that person says so — never on your own say-so and never inferred from silence.
 - **Sharing tier** for every output: `internal` (you only) · `team` (your colleagues) · `client` (leaves your workspace). External outputs go through the redaction check (exec-pack).
 
+**Your own role is unclear?** (You were added to an engagement without a brief.) Fill only the Who, Product and Regulated data rows, then ask whoever added you three things: who decides on this product (client and agency side), what your role and limits are, and what the client has said they want this year; after that, `references/intake.md` §3 for the rest; don't audit or advise until a decision maker and a goal exist.
+
 ## 2. Intake before analysis
 
 Follow `references/intake.md`: read what they already have (docs, tickets, chat, designs, analytics) through connectors or files they give you, write *what we know / what we assume / what to ask*, and send the question list on day one. Save their answers word for word.

@@ -16,6 +16,17 @@
 | Deceptive patterns | EU DSA Art. 25, FTC 2022 report + 2024 click-to-cancel (court status to re-check), India CCPA Dark Patterns Guidelines Nov 2023 (13 patterns) | 2026-11-04 |
 | C2PA content credentials | spec 2.x | 2026-11-04 |
 | HEART, Opportunity Solution Tree, Kano, JTBD, DORA | method references (no version) | 2026-11-04 |
+
+## Watch list (not pinned yet; `standards-refresh` checks these each quarter)
+
+| Watch | Why it matters | What would trigger a kit change |
+|---|---|---|
+| EN 301 549 v4 (harmonised with WCAG 2.2) | EU/EAA procurement will cite the new version | Publication in the OJEU → update `accessibility-law.md` and the ACR/VPAT reference |
+| India Digital Competition Bill | Could add duties for large platforms and app stores in India | Passage → note in `accessibility-law.md` and `gtm-pack` store rules |
+| Apple App Store and Google Play rules on AI features and disclosures | Store listings must say what AI does and with whose data | Guideline change → `ship-checklist` store section and `gtm-pack` listing rules |
+| EU AI Act Digital Omnibus (high-risk timing) | Changes when Annex III duties start | Final text → `ai.md` §5c dates |
+| WCAG 3.0 | Future conformance model (scores, not pass/fail) | Candidate Recommendation → plan a migration note; until then, watch only |
+| India DPDP enforcement (consent managers 13 Nov 2026; duties 13 May 2027) | Lekka-class products must be ready | Dates pass → `privacy.md` becomes "in force" wording |
 | India DPDP | Act 2023 + Rules notified Nov 2025; consent managers 13 Nov 2026; core duties 13 May 2027 | 2026-10-20 |
 | GDPR / UK GDPR | current | 2026-09-27 |
 | COPPA | FTC amended rule (effective 23 Jun 2025, compliance 22 Apr 2026) | 2026-10-20 |

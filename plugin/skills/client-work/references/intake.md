@@ -2,6 +2,10 @@
 
 Goal: in one pass, know what they already know, without re-asking it. Budget: Standard ≤ 15 items opened across connectors and files, ≤ 6 web page reads; Deep adds a 30-minute walkthrough with their product or ops lead.
 
+## 0. Facts already in hand
+
+If someone already gathered facts (a colleague's notes, an earlier session's file), start from that file: cite each fact as `(internal, <file>, <date>)`, for example `(internal, facts.md, 2026-11-04)`, and search connectors only for what it lacks. Word budgets count tables. Never re-ask what it answers.
+
 ## 1. Read what exists (search first, ask second)
 
 | Source | Look for | Connector |
@@ -20,7 +24,7 @@ Context sweep rules apply (`../../../CONNECTORS.md`): search by product name, op
 
 - **What we know** — facts with source labels (evidence / reported / first-party / estimate) and IDs into `research/`.
 - **What we assume** — each with how to check it and what it would change.
-- **Designed vs built vs planned** — one table by module.
+- **Designed vs built vs planned** — one table by module, with a *Defects seen* column (teams often log defects as labelled subtasks, not Bug issues, so count labels, not issue types).
 - **Their current roadmap** — latest version and where it lives (feeds roadmap-blend).
 - **Gaps** — what's missing and what it blocks.
 

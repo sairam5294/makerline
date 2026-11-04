@@ -13,6 +13,9 @@
 | Scope and limits | <what's in, what's out, contract or team capacity, deadline> |
 | Cadence | weekly update to <role>; monthly refresh; review meetings <day> |
 | Launch markets | <countries/regions> (drives accessibility and privacy law) |
+| Regulated data | <none / patient data (HIPAA) / payment cards (PCI) / children / financial> — what must never be read or copied |
+| Your role | <designer / PM / engineer / advisor>, <since when>; what you may and may not decide |
+| Status | intake in progress · goal proposed · goal confirmed · audit done · plan agreed |
 
 ## Sharing tiers
 

@@ -9,7 +9,7 @@ A feature counts as **proven** only after a run on a real product that the owner
 | Persona panel (`user-panel`) | 0.16 | 2026-11-04 | Lekka review; ai-todo eval | verdict "test with real users"; panel never raised evidence | proven in a review; **still to compare with real interviews** |
 | Ideas Bank, roadmap blend, tech debt | 0.16–0.18 | 2026-11-04 | Lekka | IDEAS.md created; roadmap rendered; 4–8 days of debt found | **proven** |
 | Advantage tag + Leapfrog warning | 0.16 | 2026-11-04 | Lekka, client-advisory eval | tagged; eval missed one, templates fixed | **proven** |
-| client-work → product-audit → exec-pack | 0.18 | 2026-11-04 (planted case) | SlotEase (fictional) | 9/10; redaction bug found and fixed | eval-proven; **real run pending: ASI** |
+| client-work → product-audit → exec-pack | 0.18 | 2026-11-04 (planted case; real intake) | SlotEase (fictional); ASI and Cascaid (intake only) | 9/10 on the eval; real intake produced the engagement files and day-one questions; template gaps fixed | intake proven; **audit pending the account owner's answers** |
 | Switching playbook | 0.16 | — | Lekka (spreadsheet → app), ASI (old PMS → new) | — | **pending** |
 | gtm-pack | 0.18 | 2026-11-04 | Lekka beta invite | invite + landing section written; 6 claims cut; verdict fix first; beta-invite channel added to the skill | first real run; **owner to send after fixes** |
 | stakeholder-panel | 0.18 | 2026-11-04 | Lekka (partner as first decision maker) | too few Stated facts → produced 7 interview questions; "interview first" rule added | first real run; **owner to ask the questions** |

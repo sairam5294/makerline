@@ -58,6 +58,7 @@ Give the owner a draft design direction and clickable wireframes before any code
    - name, mood words, one reference product
    - palette with text/background pairs and contrast ratios (text ≥ 4.5:1; borders, icons, focus ring ≥ 3:1; both themes)
    - type pairing, shape and spacing feel, imagery and iconography, motion
+8b. **Persona walk-through (Standard/Deep)** — once wireframes exist, the `user-panel` personas narrate their real task through them (`../validate-idea/references/persona-panel.md`); steps where 2+ stall become open issues. Simulation only — the prototype test with real people still decides.
 9. **Accessibility and inclusion plan** — from personas and EVALUATION §11. State the conformance target (WCAG 2.2 AA everywhere, plus what launch markets add) and lock in the "cheap now, expensive later" choices. Add accessibility notes to each wireframe (heading, focus order, what the screen reader says for icons and status). Cover:
    - the persona spectrum (permanent, temporary, situational), languages and scripts, text scaling
    - low vision and screen readers; motor (targets, one-handed, no drag-only)

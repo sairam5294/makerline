@@ -49,6 +49,7 @@ Turn the PRD and engineering docs into `docs/product/PLAN.md`: small, sequenced,
 
 1. **Read the docs.** PRD, stack, design system, STATUS, and `docs/ARCHITECTURE.md` + `docs/DATABASE.md` (engineering-docs; if missing, run it first).
    - M1 tasks come from DATABASE.md tables and ARCHITECTURE.md containers.
+   - A `PLAN.md` or roadmap already exists (adopted or re-planned product)? Don't start over: label each item Keep / Trim / Move up / Hold / Drop and blend new work in (`../product-opportunity-review/references/roadmap-blend.md`). Check `docs/product/IDEAS.md` so declined ideas don't sneak back as tasks.
 2. **Lay out milestones** in `docs/product/PLAN.md`:
    - **M0 Setup** — start from a kit starter (`--starter` Expo / `--web` Next.js) if the stack matches (else: TS strict, lint, tests, CI, env, secrets scan, error tracking); fill AGENTS.md commands.
    - **M1 Foundations** — tokens/base components, navigation, auth, schema + RLS + migrations, analytics.

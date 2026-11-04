@@ -42,8 +42,8 @@ _Last measured 2026-10-22 · kit 0.14.1 plus the 0.15.0 changes · model: Claude
 | Pack for browser tools | Send ChatGPT one generated pack, not the repo | `context_check.py pack` | Shipped (0.15.0) |
 | Research once, cite by ID | Facts get IDs (S1, A-01, D-01); later runs cite the ID | `context-budget.md` rule 1, review record | Shipped |
 | Evidence expiry | Re-open a source only after its review-by date | `ASSUMPTIONS.md`, review `sources` dates | Shipped (0.15.0) |
-| Fetch budget for reviews | Standard review: ≤ 10 searches, ≤ 6 page reads; skip a page that doesn't open on the first try and use the kit's own reference with its date | review SKILL.md | Shipped (0.16.0) — target share ≤ 50k, not yet re-measured |
-| Panels off at Quick | Persona panel and teardown run only at Standard/Deep; personas on the fast model, ≤ 150-word replies | `persona-panel.md`, `context-budget.md` §4–5 | Shipped (0.16.0) |
+| Fetch budget for reviews | Standard review: ≤ 10 searches, ≤ 6 page reads; skip a page that doesn't open on the first try and use the kit's own reference with its date | review SKILL.md | Shipped (0.17.0) — target share ≤ 50k, not yet re-measured |
+| Panels off at Quick | Persona panel and teardown run only at Standard/Deep; personas on the fast model, ≤ 150-word replies | `persona-panel.md`, `context-budget.md` §4–5 | Shipped (0.17.0) |
 | Code graph for big repos | Optional Graphify report instead of reading code files; adopt only if `GRAPHIFY.md` trial passes | `project-setup/references/graphify.md` | Tried 2026-11-04: +16% tokens, same accuracy — not adopted |
 | Lighter always-loaded text | 10 auto skills, 16 hidden (`disable-model-invocation`, still typeable), descriptions ≤ 35 words: ~2,400 → ~710 tokens per session | `tests/budget.test.sh`, start's route table | Shipped (0.17.0) — trigger accuracy to watch |
 | Model routing | Fast model for filling records and summaries; strongest for the decision | `context-budget.md` §5 | Shipped; not yet measured |

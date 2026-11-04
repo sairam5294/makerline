@@ -34,7 +34,7 @@ Follow `references/intake.md`: read what they already have (docs, tickets, chat,
 | Users' reactions to an idea or screen | `user-panel` agent (`../validate-idea/references/persona-panel.md`) |
 | A new feature to spec or build | the normal phases through `/makerline:start`, with ENGAGEMENT.md as the owner file |
 | Wrap up, weekly update, or hand over to their team | `../handoff/SKILL.md` (stakeholder update; handover pack) |
-| A team that pitches weekly, or several products | `references/weekly-review.md` (suggestion cards, review log, monthly shortlist) |
+| A team that pitches weekly, or several products | `references/weekly-review.md` (proposal cards, review log, monthly shortlist) |
 | The client seems to be drifting away | `references/account-health.md` (internal only) |
 | A first conversation about money, tiers or price | `pricing-analyst` agent |
 

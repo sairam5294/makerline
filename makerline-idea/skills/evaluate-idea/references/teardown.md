@@ -26,7 +26,7 @@ Picture one leader's whole product from public material, name where it differs f
 
 **Keep only rows that change a decision** (what to build, how to position, what to test); each ends "→ so we…".
 
-**Dated moves** (releases, pricing, hiring, funding, rules) also go to the industry's Dated signals (`../../portfolio/references/industry-file.md`) for the next product in this industry.
+**Dated moves** (releases, pricing, hiring, funding, rules) also go to the industry's Dated signals (`portfolio/references/industry-file.md` in the full MakerLine kit) for the next product in this industry.
 
 ## What to write (tables, not prose)
 

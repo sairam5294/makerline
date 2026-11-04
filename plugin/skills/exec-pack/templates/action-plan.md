@@ -1,38 +1,38 @@
 # <Product> — Action plan · <date>
 
-<!-- About a 2-minute read. Pairs with the Innovation Ideas / monthly note (ideas for later) so neither dilutes the other. Cover email: ≤ 150 words — thank them for their goal in their words, one line per attachment, one ask (a 30-minute meeting with a concrete outcome). -->
+<!-- Two-minute read. Only what to do now; the monthly ideas note holds ideas for later, so each stays sharp. Cover email, 150 words at most: thank them, quoting their goal; one line per attachment; one ask, usually a 30-minute call that ends in something specific. -->
 
 **Your goal:** "<their words>" · **Target:** <e.g. 3 clinics live and paying by June>.
 
 ## Where it stands (honest)
 
-What is solid · what blocks the goal (the blockers you named, plus what we found) · one line on why the plan starts where it does (evidence ID).
+Solid today · in the way of the goal (blockers you raised, plus any we found) · why the plan begins here, in one line with its evidence ID.
+
+## The decision we need from you
+
+<As a question, with our estimate marked "to confirm in sizing".>
 
 ## The plan: phases with checkpoints
 
-We start the next phase only when its checkpoint is met; if we miss one, we fix what blocked it and you see it in the weekly scoreboard.
+A phase opens only when the one before reaches its checkpoint. If one slips, we clear the blocker; the weekly scoreboard shows it.
 
-| Phase | What it's for | We move on when | Roughly when |
+| Phase | Purpose | Checkpoint to move on | Timing |
 |---|---|---|---|
 | 1 | <make moving safe / fix activation> | <measurable checkpoint> | <weeks> |
 | 2 | | | |
 | 3 | | | |
 
-## Phase 1 in detail
+## Phase 1, step by step
 
-| Step | The problem | Example | How we help |
+| Step | What's wrong | For example | What we do |
 |---|---|---|---|
 
-## One decision for you
+## Our side of it
 
-<The question, as a question, with the estimate and "to confirm in sizing">.
-
-## What we commit to
-
-Who owns what · cover hours · a weekly one-page scoreboard · how to reach us.
+An owner for each piece of work · when we're reachable · a one-page scoreboard every week · how to contact us.
 
 <!-- internal -->
-Commercial terms, margins, staffing and anything about individuals stay here until internal sign-off; outcome-linked terms are offered only after that.
+Commercial terms, margins, staffing and notes on individuals stay in this block. Outcome-tied terms are offered only after internal sign-off.
 <!-- /internal -->
 
 Sources: <IDs>

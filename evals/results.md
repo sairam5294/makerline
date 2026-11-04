@@ -113,3 +113,12 @@ Cost: MakerLine 116–118k tokens, 11–12 tool calls, 4 searches, 0–1 page re
 | ai-todo | Pivot ✅ · 81% → **91%** (15.5/17) | 94% (16/17) | 6 / 2 | 120k | Plain (labels every claim; cost maths) |
 
 Personas, sizing and built-in/AI substitutes now pass on both. The gap is ~3 points (within grader noise: the same plain outputs scored 100% → 97% and 97% → 94% between graders). Remaining losses: (a) "critique before strengths" — Quick puts *Promising* and *strongest version* before the reality check by design, which the universal checklist marks down (left as is; an owner decision, not a silent grading change); (b) this environment's search often returns titles only, so with 2 page reads some sources stay "title only". Kit-only items the graders credited again: learning/portfolio lens (an ai-todo must-catch the plain arm missed), weighted scorecard with path to Go, accessibility and data-law section. Cost moved +2–6k tokens for the extra research.
+
+## Run — 2026-11-04 · kit 0.16.0 (pre-release) · evaluate-idea Standard · ai-todo (blind runner, separate grader)
+
+| Case | Verdict (expected) | Score | Universal | Case-specific | Idea Pack items | New rules (advantage tag · novelty-tested Leapfrog · persona panel · teardown) | Hallucinations | Result |
+|---|---|---|---|---|---|---|---|---|
+| ai-todo | Pivot (Drop · Pivot) ✅ | 3.05 | 9.5/10 (SAM unsourced) | 8/8 | 10/12 (complaints from blogs, not reviews; competitor accessibility not checked) | 3/4 — Leapfrog left "candidate, unverified" | 0 (3 spot checks) | **Pass, 92%** |
+
+Cost: 173k tokens total, 62 tool calls (over the 45 Standard target), 11 searches + 10 page reads (inside budget), 7.8 min. Grader: 107k. Fixes in the same release: Leapfrog without the four novelty lines is scored Differentiator; persona panel and teardown are written in one call each. Note: the runner's environment exposed the owner's account memory (it cited the owner's hosting stack in §10) — run evals from a session without personal memory next time.
+

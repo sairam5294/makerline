@@ -28,8 +28,14 @@ def engagement_terms(start: pathlib.Path) -> list:
             m = re.search(r"^## Do not mention.*?\n(.*?)(?=^## |\Z)", text, re.S | re.M)
             if not m:
                 return []
-            terms = [re.sub(r"^[-*]\s*", "", ln).strip() for ln in m.group(1).splitlines()]
-            return [t for t in terms if t and not t.startswith("<") and not t.startswith("(")]
+            terms = []
+            for ln in m.group(1).splitlines():
+                t = re.sub(r"^[-*]\s*", "", ln).strip()
+                if not t or t.startswith(("<", "(", "#")):
+                    continue
+                t = re.split(r"\s+[(—–-]\s*|\s*[(—–:]", t, maxsplit=1)[0].strip(" ,;")  # drop "(note)" or "— note"
+                terms += [x.strip() for x in t.split(",") if x.strip()]  # "Acme, Project Falcon" → two terms
+            return terms
     return []
 
 

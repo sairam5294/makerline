@@ -8,9 +8,9 @@
 |---|---|---|
 | Mostly docs (an Idea Pack, the kit itself) | **No** | Markdown extraction needs model calls (tokens up front); the index already points at sections. The project itself reports ~1x savings on small corpora. |
 | One small app (< ~30 code files) | Not yet | Reading the 2–3 files a task touches is cheaper than building a graph. |
-| Several apps or repos, hundreds of code files (e.g. customer + partner + admin apps) | **Trial it** | Code extraction is local and free (tree-sitter, no model calls); the report is a cheap map. |
+| Several apps or repos, hundreds of code files (e.g. customer + partner + admin apps) | Optional | Trial on a 3-app monorepo (129 code files): same accuracy as the index, 16% more tokens (`evals/GRAPHIFY.md`). Worth it only on much larger code bases. |
 
-Measured in the kit (2026-11-03, graphify 0.9.101): 36 code files from `scripts/` + the web starter (~191 KB) → `GRAPH_REPORT.md` of 4 KB, 222 nodes, built in seconds with 0 model tokens; `graphify benchmark` estimated 4.7x fewer tokens per query (2.5x–32x by question) against reading all ~14,800 tokens of that code. That compares with reading everything, not with the index, and says nothing about answer quality — the real test is `evals/GRAPHIFY.md`.
+Measured in the kit (2026-11-03, graphify 0.9.101): 36 code files from `scripts/` + the web starter (~191 KB) → `GRAPH_REPORT.md` of 4 KB, 222 nodes, built in seconds with 0 model tokens; `graphify benchmark` estimated 4.7x fewer tokens per query (2.5x–32x by question) against reading all ~14,800 tokens of that code. That compares with reading everything, not with the index. Real test on a 3-app monorepo (2026-11-04): index alone 81.6k tokens, index + graph 94.7k, both 5/5 — so the index stays the default (`evals/GRAPHIFY.md`).
 
 ## Setup (owner runs it; needs Python 3.10+)
 

@@ -1,6 +1,6 @@
 ---
 name: post-launch
-description: Review how the launched product is doing. Covers weekly metrics review, feedback synthesis, retros, next priorities and lessons fed back into the kit → METRICS.md, COSTS.md, LESSONS.md, OUTCOMES.md row. Trigger with "how is it doing", "metrics review", "user feedback", "retro", "what next after launch", or weekly after ship-checklist.
+description: 'Weekly check on a live product: metrics, feedback, ideas, costs, retros, and what to do when it breaks. Trigger: "how is it doing", "user feedback", "retro", "it''s down".'
 argument-hint: "<weekly | retro | outcome | end, or nothing for the weekly review>"
 ---
 
@@ -49,6 +49,8 @@ Turn a launched product into evidence: what the numbers and users say, what to d
 
 ## Workflow
 
+**Something is broken for users?** Stop here and follow `references/when-it-breaks.md` (size it, stop the harm, tell people, fix, short postmortem).
+
 1. **Weekly review (15 min)** → append to `docs/product/METRICS.md`.
    - Pull the success metric + inputs: activation, retention D1/D7/D30, conversion, crash-free %, performance.
    - Compare to last week and target; flag changes > 20%; one-line hypothesis each.
@@ -82,6 +84,9 @@ Decision: persevere / iterate / pivot — because <kill criterion>
 ```
 
 ## If connectors available
+
+If Anthropic's **Data** plugin is on and the product runs on a SQL database (Supabase/Postgres):
+- Use it for the week's metric queries and charts; paste only the aggregates into METRICS.md, never user rows.
 
 If **~~product analytics** is connected:
 - Pull activation, retention D1/D7/D30 and conversion directly; ask the owner only for what it lacks.

@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Reviews code changes for correctness, readability, maintainability, performance and adherence to the project's development standard and tech-stack conventions.
+description: 'Reviews code changes for correctness, readability, maintainability, performance and the project''s standards.'
 model: inherit
 color: blue
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch

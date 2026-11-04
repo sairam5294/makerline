@@ -1,7 +1,8 @@
 ---
 name: name-product
-description: Name my product and make a simple brand kit. Covers 12–15 contextual product names scored and conflict-checked (NAMING.md), then BRAND.md with a logo concept and an easy way to make it, logo usage guidelines, colour theme, font pairing and icon style, each with rules the code and design must follow. Trigger with "name ideas", "what should I call it?", "logo", "brand", "colours and fonts", or after approval.
+description: 'Name the product and make a simple brand kit: scored names, logo concept, colours, fonts, icon style → NAMING.md + BRAND.md.'
 argument-hint: "<naming constraints or chosen name, or nothing to start from the brief>"
+disable-model-invocation: true
 ---
 
 # /name-product

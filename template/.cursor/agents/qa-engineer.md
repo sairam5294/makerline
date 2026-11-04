@@ -1,6 +1,6 @@
 ---
 name: qa-engineer
-description: Plans and writes tests — maps acceptance criteria to unit, integration, e2e and accessibility tests, finds untested edge cases, runs suites and reports results.
+description: 'Plans and writes tests from acceptance criteria (unit, integration, e2e, accessibility), finds untested edge cases, runs suites.'
 model: inherit
 color: yellow
 ---

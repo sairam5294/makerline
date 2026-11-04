@@ -1,6 +1,6 @@
 ---
 name: web-developer
-description: Builds web frontend features — pages, components, forms, routing, data fetching and responsive, accessible UI — following the tech stack, design system and standards.
+description: 'Builds web frontend features (pages, components, forms, routing, data) responsive and accessible, per the stack and design system.'
 model: inherit
 color: cyan
 ---

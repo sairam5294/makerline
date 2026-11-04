@@ -66,3 +66,12 @@ Scale test (`SCALE.md`), Tindi 1.0: 3 apps, a code monorepo and a product-docs r
 | Task packs | Payments 1,355 · Strategy 2,763 · Customer app 4,679 words | vs ~68k words of docs |
 
 **Graphify trial, Tindi monorepo (2026-11-04, Sonnet-class, one run each, 5 code-navigation questions):** index only 81.6k tokens · 7 calls · 21 s · 5/5 · 0 wrong; index + Graphify 94.7k · 7 calls · 19 s · 5/5 · 0 wrong. Not adopted (`GRAPHIFY.md`).
+
+## Run — 2026-11-04 · kit 0.17.0 (pre-release) · evaluate-idea Standard · ai-todo (blind runner, separate grader)
+
+| Case | Verdict (expected) | Score | Universal | Case-specific | Idea Pack items | New rules (advantage tag · novelty-tested Leapfrog · persona pack · teardown) | Hallucinations | Result |
+|---|---|---|---|---|---|---|---|---|
+| ai-todo | Pivot (Drop · Pivot) ✅ | 3.05 | 9.5/10 (SAM unsourced) | 8/8 | 10/12 (complaints from blogs, not reviews; competitor accessibility not checked) | 3/4 — Leapfrog left "candidate, unverified" | 0 (3 spot checks) | **Pass, 92%** |
+
+Cost: 173k tokens total, 62 tool calls (over the 45 Standard target), 11 searches + 10 page reads (inside budget), 7.8 min. Grader: 107k. Fixes in the same release: Leapfrog without the four novelty lines is scored Differentiator; persona panel and teardown are written in one call each. Note: the runner's environment exposed the owner's account memory (it cited the owner's hosting stack in §10) — run evals from a session without personal memory next time.
+

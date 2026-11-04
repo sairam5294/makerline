@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Save a handoff so any AI tool can continue. A short note of done, in progress, next, decisions and gotchas → HANDOFF.md, plus MEMORY, COSTS, STATUS and DECISIONS updates. Trigger with "handoff", "wrap up", "save progress", "switching tools", or at the end of every session.
+description: 'Save progress so any AI tool or person can continue: done, next, decisions, gotchas → HANDOFF.md; optional stakeholder update. Trigger: "handoff", "wrap up", "switching tools", "status update".'
 argument-hint: "<tool used, or nothing>"
 ---
 
@@ -65,6 +65,7 @@ Phase/task: <phase> · <T-xx>   Branch/worktree: <name>
 <commands to run, screen to open>
 ```
 
+1b. **Update for someone else?** ("status update", "update for my PM / investor") → `references/stakeholder-update.md`; draft only.
 2. **Promote to memory.** If `docs/MEMORY.md` exists, move anything long-lived from "Gotchas" and "Decisions" into it (environment quirks, what broke and the fix, do-not-touch areas, conventions) and condense it to ≤ 60 lines.
    - HANDOFF is for this session, MEMORY for every session.
 3. **Record costs.** Add a row to `docs/product/COSTS.md` if money was spent this session (e.g. API usage shown by the tool, a new service plan) and update its "Total to date".

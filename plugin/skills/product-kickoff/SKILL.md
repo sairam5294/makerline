@@ -1,7 +1,8 @@
 ---
 name: product-kickoff
-description: Run the whole MakerLine from one command. Covers idea to launch, phase by phase with approval gates, or in one go ("give me everything for this idea" runs the full Idea Pack; "set it all up" after approval runs naming/brand, stack, design system, full PRD, engineering docs and project setup). Trigger with "I have a new idea", "run the whole kit", "give me everything", "set it all up", "start a project", "kickoff", or "where are we / what's next?".
+description: 'The orchestrator behind start: runs the Idea Pack or the post-approval setup in one go, or phase by phase, with the approval gate.'
 argument-hint: "<idea, 'give me everything', 'set it all up', 'build it', or nothing to resume>"
+disable-model-invocation: true
 ---
 
 # /product-kickoff
@@ -39,6 +40,9 @@ Run the kit's phases in order. Each phase is a skill in `../<skill>/SKILL.md`; o
 ```
 
 ## Phases
+
+Run each phase by **reading `../<skill>/SKILL.md`** and following it. Sixteen of these skills don't trigger on their own (to save context), so the Skill tool can't start them; reading the file always works.
+
 
 | # | Skill | Output | Gate |
 |---|---|---|---|

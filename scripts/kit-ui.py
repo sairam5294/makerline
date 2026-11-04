@@ -202,7 +202,9 @@ def read_skills() -> list:
     for f in sorted(SKILLS_DIR.glob("*/SKILL.md")):
         text = f.read_text(encoding="utf-8", errors="replace")
         m = re.search(r"^description:\s*(.+)$", text, re.M)
-        desc = m.group(1).strip().strip('"') if m else ""
+        desc = m.group(1).strip() if m else ""
+        if len(desc) > 1 and desc[0] == desc[-1] and desc[0] in "'\"":
+            desc = desc[1:-1].replace("''", "'")
         first = re.split(r"(?<=[.!?])\s", desc, maxsplit=1)[0]
         skills.append({"name": f.parent.name, "summary": first})
     return skills

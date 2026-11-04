@@ -44,7 +44,7 @@ Spec one AI feature so it is justified, safe, evaluated and priced before anyone
 
 ## Workflow
 
-1. **Justify.** User problem, non-AI alternative, cost of a wrong answer, fallback when AI is down.
+1. **Justify.** User problem, non-AI alternative, cost of a wrong answer, fallback when AI is down. Looking for where AI could help across a whole product? Scan its workflows with `references/ai-patterns.md` first.
    - If a non-AI option is as good → recommend it and stop.
 2. **Design the UX** (owner leads; offer patterns): entry point, example prompts, waiting (stream/progress/cancel), output with "AI" label + sources, edit/regenerate/undo/turn off, feedback + report, errors with a non-AI path, quotas.
    - Include accessible behaviour (polite live region, alt text).

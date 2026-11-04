@@ -23,6 +23,7 @@ Output: `docs/product/COMPETITORS.md`. The evaluation summarises it in one secti
    4. Can this owner deliver it? — skills, time, budget, content, access.
    5. Can it be explained in one sentence?
    Keep differentiators that pass 1, 2, 4 and 5; for those that fail 3, name what makes them stick (community, data, distribution, local knowledge, trust, speed, focus).
+6b. **Teardown (Standard: top 1–2 · Deep: top 3).** Map the leader's whole product from its help-center index, pricing, changelog and reviews, then mark each item Copy / Adapt / Leapfrog / Ignore and list where we're already ahead: `teardown.md`.
 7. **Why hasn't anyone done this?** One honest paragraph: too small for incumbents, needs local or domain knowledge, regulation, they tried and stopped (find out why), or someone is doing it and research missed them.
 8. **Opening and positioning.** The gap worth taking, the wedge (narrowest audience × job where this idea can be clearly best), and a positioning statement.
 

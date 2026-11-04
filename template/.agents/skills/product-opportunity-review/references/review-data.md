@@ -15,7 +15,7 @@ Top-level fields:
 - A market below country level (a state, a city): list it as its own entry, e.g. `United States: Texas (if the pilot is there)`, and put the open choice in `unknowns`.
 - `rules`: launch-market rules, `{market, rule, applies, uncertainty, source_ids}`. `applies` is `yes`, `no`, `likely` or `unclear`. Not legal advice; escalate uncertain high-stakes questions.
 - `unknowns`: `{question, blocks, how_to_answer}`.
-- `options`: `{name, type, value_range, effort_range, evidence, test, source_ids}`. Ranges are strings that include units and explicit assumptions. `type` is build, fix, simplify, pricing, distribution, partnership or stop. `evidence` is `none`, `weak`, `some` or `strong`; strong evidence requires a source.
+- `options`: `{name, type, value_range, effort_range, evidence, test, source_ids}`. Ranges are strings that include units and explicit assumptions. `type` is build, fix, simplify, pricing, distribution, partnership or stop. `evidence` is `none`, `weak`, `some` or `strong`; strong evidence requires a source. Optional `advantage`: `parity` (any rival can copy it in a quarter), `differentiator` (copyable within a year) or `leapfrog` (no direct competitor offers it; lasting edge such as pooled data, switching costs or an approval rivals lack). A finished review with options but no `leapfrog` warns.
 - `next_actions`: `{action, owner, when, success_measure}`; action, owner and success measure are required.
 - When every step is `done` or `skipped`, `decision` can't still be "Pending evidence", and `options` and `next_actions` can't be empty.
 - `tool_plan`: `{job, primary, fallback, handoff}`. Use only tools the owner has; one owner per output.

@@ -36,7 +36,27 @@ if len(auto) > MAX_AUTO_SKILLS:
     errors.append(f"{len(auto)} skills trigger on their own (max {MAX_AUTO_SKILLS}): {', '.join(auto)}")
 if total > MAX_WORDS_TOTAL:
     errors.append(f"always-loaded descriptions total {total} words (max {MAX_WORDS_TOTAL})")
+# Cursor and Codex read template/.agents/skills: name must equal the folder, YAML must parse, and they
+# ignore disable-model-invocation, so every description is loaded there — keep that total bounded too.
+import importlib
+try:
+    yaml = importlib.import_module("yaml")
+except ImportError:
+    yaml = None
+tmpl_words = 0
+for f in sorted((kit / "template/.agents/skills").glob("*/SKILL.md")):
+    fm_text = f.read_text(encoding="utf-8").split("---")[1]
+    if yaml:
+        try:
+            fm = yaml.safe_load(fm_text)
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{f.relative_to(kit)}: frontmatter is not valid YAML ({e})"); continue
+        if fm.get("name") != f.parent.name:
+            errors.append(f"{f.relative_to(kit)}: name '{fm.get('name')}' must equal the folder name (Codex requirement)")
+        tmpl_words += len(str(fm.get("description", "")).split())
+if tmpl_words > 1100:
+    errors.append(f"Cursor/Codex would load {tmpl_words} words of skill descriptions (max 1100)")
 if errors:
     print("Budget check failed:\n  " + "\n  ".join(errors)); sys.exit(1)
-print(f"budget: {len(auto)} auto skills + agents = {total} words always loaded (~{int(total*1.35)} tokens); {len(hidden)} hidden skills routed by start")
+print(f"budget: Claude {len(auto)} auto skills + agents = {total} words (~{int(total*1.35)} tokens); {len(hidden)} hidden skills routed by start; Cursor/Codex load all {tmpl_words} words of skill descriptions")
 PY

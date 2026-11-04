@@ -1,6 +1,6 @@
 ---
 name: qa-engineer
-description: 'Plans and writes tests from acceptance criteria (unit, integration, e2e, accessibility), finds untested edge cases, runs suites.'
+description: 'Plans and writes tests from acceptance criteria (unit, integration, e2e, accessibility), finds edge cases, runs suites.'
 model: sonnet
 color: yellow
 ---

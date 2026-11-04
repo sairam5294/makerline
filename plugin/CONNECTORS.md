@@ -20,8 +20,15 @@ Skill files use `~~category` as a placeholder for whatever tool you connect in t
 | Email | `~~email` | Gmail | Outlook | new-idea, validate-idea (outreach drafts), product-opportunity-review, post-launch (feedback) |
 | Cloud storage | `~~cloud storage` | Google Drive | OneDrive, Dropbox, Box | new-idea, evaluate-idea, product-opportunity-review |
 | Calendar | `~~calendar` | Google Calendar | Outlook Calendar | validate-idea (interview slots), post-launch (weekly review), handoff |
-| Product analytics | `~~product analytics` | — | PostHog, Amplitude, Mixpanel | evaluate-idea (existing products), post-launch |
-| Monitoring | `~~monitoring` | — | Sentry, Datadog | post-launch, ship-checklist |
+| Product analytics | `~~product analytics` | PostHog | Amplitude, Mixpanel, GA4 | evaluate-idea (existing products), post-launch, product-audit, data-analyst |
+| Monitoring | `~~monitoring` | Sentry | Datadog | post-launch (when it breaks), build-feature (debug), ship-checklist |
+| Project tracker (work) | `~~project tracker` | Atlassian (Jira, Confluence) | Linear, Asana, GitHub Issues | client-work intake, product-audit, plan-build |
+| Payments | `~~payments` | Stripe | Razorpay (India; MCP via npm), Paddle | post-launch (revenue, churn), pricing-analyst, business case |
+| Support desk | `~~support desk` | Intercom | Zendesk, Freshdesk, Help Scout | client-work intake, ops-scan, post-launch feedback, research-synthesizer |
+| Design output | `~~design output` | Canva | Figma (exists) | gtm-pack (posts, ads, store images in the brand kit) |
+| Session replay | `~~session replay` | — | Microsoft Clarity, Hotjar, PostHog replay | product-audit (where users stall) |
+| Search and web analytics | `~~web analytics` | — | Google Search Console, GA4, Plausible | gtm-pack (demand, landing page results) |
+| App stores | `~~app stores` | — | App Store Connect, Play Console (community MCPs: vet before use) | ship-checklist, post-launch (reviews, crashes) |
 
 ## Context sweep: look in your own tools before asking you
 
@@ -50,7 +57,12 @@ The kit has no servers of its own and sends no telemetry. A connector runs under
 | Gmail | threads that match a search for the product or its users' feedback | a **draft** (interview invite, outreach) you then send yourself | send email, read unrelated mail, store addresses or message bodies |
 | Google Drive | docs, sheets and decks that match a search or that you name | a doc you ask for | edit, move, share or delete your files |
 | Google Calendar | free/busy and events that match the product | a suggested slot or event you confirm | invite others or change existing events without asking |
-| Analytics, monitoring | aggregate metrics and error summaries | — | export or store individual users' events or personal data |
+| PostHog, analytics | aggregate funnels, retention, feature usage; session replays only when you open one | — | export or store individual users' events, replays or personal data |
+| Sentry, monitoring | issues, stack traces, release health | a comment or resolve on an issue you ask for | change alert rules, delete issues |
+| Atlassian (Jira, Confluence) | issues, pages and spaces you can see, by search | an issue or page you ask for | transition or delete others' issues, change permissions |
+| Stripe / Razorpay | aggregate revenue, churn, failed payments; product and price lists | — | create charges, refunds, payouts; read card details |
+| Intercom / support desk | conversation themes and counts; a conversation you point to | a **draft** reply | send replies, close or assign conversations, export contacts |
+| Canva | your brand kit and designs | a design from approved copy, in a folder you name | publish or share designs |
 
 Data that leaves your machine goes only to the service you connected, under its own terms. Revoke a connector anytime in the plugin's **Connectors** tab or the service's settings.
 

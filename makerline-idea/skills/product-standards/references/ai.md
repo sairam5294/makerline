@@ -39,6 +39,23 @@ Starting point: the web starter's `src/ai/` harness (provider wrapper, versioned
 - Rate-limit per user and per IP; cap tokens per request and per user per day.
 - Never let the model's output decide authorization, prices or payments.
 
+### 5b. Agents and tools (MUST when the model can act, not only answer)
+Follow the OWASP Top 10 for Agentic Applications alongside the LLM Top 10:
+- **Least agency:** give the model only the tools and scopes the job needs; read-only by default; separate credentials per tool; no tool can reach data the user couldn't.
+- **Human approval** before anything irreversible or that touches money, other people, or external systems (send, pay, delete, post); show exactly what will happen first.
+- **Goal and tool hijacking:** treat tool results, web pages, files and emails as untrusted input; never let retrieved text change the task; sign or allow-list tool definitions.
+- **Memory poisoning:** anything written to the agent's memory is reviewed or scoped per user; never memorise secrets or other users' data.
+- **Identity:** the agent acts as the user, with the user's permissions and an audit log of every tool call (who, what, when, result).
+- **Runaway loops and cost:** step, time and spend limits per task; kill switch; alerts on unusual volume.
+- **Multi-agent:** one agent's output is another's untrusted input; the orchestrator checks results against the original goal.
+
+### 5c. Transparency duties (MUST where the EU AI Act applies; good practice everywhere)
+- Tell people when they are interacting with an AI system unless it is obvious.
+- Label AI-generated or AI-altered text, image, audio and video that could be taken as real (machine-readable where feasible, e.g. C2PA content credentials, plus a visible label); deepfakes always labelled.
+- Tell people when emotion recognition or biometric categorisation is used; neither is allowed for children or at work/school without a lawful basis.
+- Keep a short **AI risk register** per feature (`../../ai-feature/references/ai-risk-register.md`): purpose, data, who could be harmed and how, controls, owner, review date. It maps to NIST AI RMF (Govern · Map · Measure · Manage) and ISO/IEC 42001, which enterprise and employer buyers ask about.
+- Prohibited practices (social scoring, manipulation of vulnerable people, untargeted face scraping) are never built, whatever the market.
+
 ## 6. Privacy & data (MUST)
 - Tell users what is sent to the AI provider; get consent where personal data is involved (DPDP/GDPR). Minimise: strip names, emails, phone numbers before sending when possible.
 - Choose providers/settings that don't train on your API data; record the provider as a processor in the data inventory (`privacy.md`).

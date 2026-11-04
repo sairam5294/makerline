@@ -19,6 +19,7 @@ _Last measured 2026-10-22 · kit 0.14.1 plus the 0.15.0 changes · model: Claude
 | Quick Idea Pack, 0.11.0 | brief → one-pager | 157k | ~79k | 30 | — | checker clean after 3 trims |
 | Quick Idea Pack, 0.14.0 | same, after budget caps | 106k | **~28k** | 12 | — | checker clean first time |
 | Evaluation, Standard (ai-todo), 0.17 | evaluate-idea with persona panel + teardown | 159k | ~81k | 40 | 5.8 min | checker clean, verdict in range |
+| Opportunity review **refresh**, Lekka, 0.19 (sources reuse + research isolation) | refresh, 0 searches, 0 fetches, 24/24 sources reused | 121k | **~43k** | 8 | 1.6 min | check clean, 1 warning; same-day refresh (best case) |
 | Opportunity review, Lekka, 0.17 (+ persona panel, tech debt, Ideas Bank, roadmap blend) | standard, 9 searches, 6 fetches | 187k | ~109k | 35 | 6.3 min | check clean, 1 warning |
 | Opportunity review, Lekka (half-built) | standard depth, 8 searches, 8 fetches | 147k | ~69k | 29 | 3.4 min | check clean |
 | Opportunity review, Trust Kit (idea) | standard, 10 searches, 13 fetches (4 failed) | 142k | ~64k | 34 | 13.2 min | check clean |
@@ -56,7 +57,8 @@ _Last measured 2026-10-22 · kit 0.14.1 plus the 0.15.0 changes · model: Claude
 | Run | Now (share) | Target |
 |---|---|---|
 | Quick Idea Pack | ~28k | hold, ≤ 30k |
-| Opportunity review, standard | ~59–69k | ≤ 50k, same check result |
+| Opportunity review, standard (first run) | ~59–109k | ≤ 50k, same check result |
+| Opportunity review, refresh | **~43k (met, same-day)** | ≤ 50k at 30 days |
 | Context recovery with index or pack | ~17–22k | ≤ 20k, 10/10, 0 wrong claims |
 
 ## What to record per run

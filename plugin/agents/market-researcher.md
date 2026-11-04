@@ -17,6 +17,7 @@ Given the project brief, research with web search and return evidence, not opini
 3. Willingness-to-pay benchmarks: pricing and business models of comparable products.
 4. Trends and timing: is the category growing, consolidating or declining?
 5. Regulatory/platform constraints relevant to the idea.
+6. Look-ahead (Standard and Deep, inside the same budget): complaint themes seen 2+ times in leaders' recent 1–2 star reviews (a gap to win on); what the leader in 1–2 neighbouring markets did that nobody here has (payments, marketplace, self-serve); leaders' changelogs and job ads ("Signal: likely building X"); newly funded startups and new rules that will force product changes. Log each with its date.
 
 Output: concise tables + bullet findings, every fact with a source URL, clearly separated Evidence / Estimates (with math) / Unknowns. Never fabricate numbers or sources; say what you couldn't find.
 

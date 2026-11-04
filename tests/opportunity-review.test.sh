@@ -120,4 +120,27 @@ grep -q 'Evidence mix · 1 source' "$html" || { echo 'Evidence mix bar missing';
 grep -q 'Confidence: <strong>unknown</strong>' "$html" || { echo 'Confidence meter missing'; exit 1; }
 if grep -Eq '(src|href)="https?://[^"]*\.(css|js)' "$html"; then echo 'Report loads a CDN file'; exit 1; fi
 grep -q 'window.mlUI' "$html" && grep -q 'ml-drawer' "$html" || { echo 'Shared table/accordion UI not bundled'; exit 1; }
-echo 'opportunity-review: five routes with access checks, strict records, rules table, no overwrite, safe rendering, progress, source, manifest-version, shared-style and CSP checks passed'
+
+# Advantage tag: validated, rendered, and a finished review without a leapfrog option warns.
+python3 - "$TMP/idea" <<'PY'
+import json, pathlib, sys
+p = pathlib.Path(sys.argv[1]) / 'docs/product/opportunity/REVIEW.json'
+d = json.loads(p.read_text())
+for st in d['steps']:
+    st['status'] = 'done'; st['finding'] = 'Checked.'
+d['decision'] = 'Test'; d['decision_reason'] = 'Demand is unproven.'
+d['options'] = [{'name': 'Parity fix', 'type': 'fix', 'value_range': 'low', 'effort_range': '1 week', 'evidence': 'weak', 'test': 'ask 5 users', 'advantage': 'parity'}]
+d['next_actions'] = [{'action': 'Run the test', 'owner': 'owner', 'success_measure': '3 of 5 say yes'}]
+p.write_text(json.dumps(d))
+PY
+python3 "$KIT/scripts/opportunity_review.py" check "$TMP/idea" 2>"$TMP/warn.txt" >/dev/null
+grep -q 'advantage: leapfrog' "$TMP/warn.txt" || { echo 'Missing leapfrog warning'; exit 1; }
+python3 "$KIT/scripts/opportunity_review.py" render "$TMP/idea" >/dev/null 2>&1
+grep -q 'fix · parity' "$TMP/idea/docs/product/opportunity/index.html" || { echo 'Advantage tag not rendered'; exit 1; }
+python3 - "$TMP/idea" <<'PY'
+import json, pathlib, sys
+p = pathlib.Path(sys.argv[1]) / 'docs/product/opportunity/REVIEW.json'
+d = json.loads(p.read_text()); d['options'][0]['advantage'] = 'huge'; p.write_text(json.dumps(d))
+PY
+if python3 "$KIT/scripts/opportunity_review.py" check "$TMP/idea" >/dev/null 2>&1; then echo 'Invalid advantage accepted'; exit 1; fi
+echo 'opportunity-review: five routes with access checks, strict records, rules table, no overwrite, safe rendering, progress, source, manifest-version, shared-style, CSP and advantage-tag checks passed'

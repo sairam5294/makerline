@@ -37,3 +37,6 @@ next-env.d.ts
 # Your personal profile (hours, budget, accounts) — copied in by the kit, never committed
 docs/product/OWNER.md
 .product-kit-backup/
+
+# Optional code graph (project-setup references/graphify.md)
+graphify-out/

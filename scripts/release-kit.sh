@@ -26,6 +26,7 @@ bash tests/idea-pack.test.sh
 bash tests/opportunity-review.test.sh
 bash tests/context-check.test.sh
 bash tests/workspace.test.sh
+bash tests/references.test.sh
 
 # 3. Set the version everywhere it's shown.
 sed -i.bak "s/\"version\": *\"$OLD\"/\"version\": \"$NEW\"/" "$MANIFEST" && rm -f "$MANIFEST.bak"

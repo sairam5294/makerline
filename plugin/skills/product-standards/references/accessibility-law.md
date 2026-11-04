@@ -72,3 +72,22 @@ Accessibility and privacy obligations arrive together. Check `privacy.md` §2 an
 
 ## Sources (accessed 2026-10-19; Ontario and ISO re-checked 2026-10-20)
 ontario.ca/laws/regulation/110191 (IASR ss. 2–4, 7, 11–14, 80.45–80.51, 83, 86.1) · w3.org/WAI/news/2025-10-21/wcag22-iso · section508.gov applicability and conformance · itic.org VPAT page · McCarthy Tétrault 2026 AODA deadlines · ontario.ca compliance report page · Accessibility Standards Canada CAN/ASC-EN 301 549 summary · Seyfarth / Level Access 2025 lawsuit counts · ADA.gov web guidance · American Bar Association and Duane Morris notes on the Title II delay · US Access Board ICT standards · ITI VPAT · EUR-Lex 2019/882 and 2016/2102 · DWT EAA standards update (Sep 2026) · Level Access EAA enforcement (2026) · legislation.gov.uk Equality Act · GOV.UK accessibility monitoring · AZB & Partners on India's framework · guidelines.india.gov.in · AHRC digital guidelines release · IOE note on Japan's 2024 amendment · W3C WAI standards activity · App Store Connect help on accessibility labels.
+
+## Staff-facing and workplace software (front desk, housekeeping, back office, admin tools)
+
+A product used by employees is **employment**, not consumer, software — a different and often stricter set of duties applies, and "internal tool" is never an exemption:
+
+| Where | Duty | What it means for a staff app |
+|---|---|---|
+| USA | ADA Title I (employers with 15+ staff) and Section 503 (federal contractors): reasonable accommodation; EEOC guidance that inaccessible software can be a failure to accommodate; Section 508 for federal agencies' own tools | A screen-reader user or a worker with a motor disability must be able to do the job with the tool; procurement teams increasingly ask vendors for an ACR covering the staff screens |
+| EU / UK | EU Employment Equality Directive 2000/78/EC (reasonable accommodation) and national laws; UK Equality Act 2010 (employers' anticipatory duty); public-sector buyers cite EN 301 549 for all ICT they procure, including back-office tools | Vendors selling to hotels, hospitals or governments in Europe are asked for EN 301 549 conformance for staff screens, not only guest screens |
+| Canada | Ontario IASR employment standard (Part III) and the Accessible Canada Act for federally regulated employers | Accessible formats and accommodations for employees' tools and training |
+| India | RPwD Act 2016 §20–21 (equal opportunity in employment, reasonable accommodation) and GIGW for government bodies | Government and PSU buyers can require accessible staff software |
+| Australia | DDA 1992 (employment) | Same anticipatory duty |
+
+Practical rules for the audit and the build:
+- Audit the staff journeys (check-in, housekeeping task list, shift handover, reports) to the same WCAG 2.2 AA bar as guest journeys; add **operability under real conditions**: gloves, bright light, one-handed use, noise (housekeeping and front desk), and keyboard-only flows for desk staff.
+- Dense data screens (reservations grids, reports) need visible focus, proper table semantics, zoom to 200% without loss, and no colour-only status — the most common failures in back-office tools.
+- Desktop bridges to scanners and signature pads: the browser UI must announce device state; a signature pad has a keyboard or typed-name alternative.
+- Record the standard cited in the engagement (EN 301 549 for EU buyers; WCAG 2.2 AA + ACR for US buyers) and put staff screens in the ACR scope explicitly.
+

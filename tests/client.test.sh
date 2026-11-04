@@ -12,7 +12,7 @@ cp "$KIT/plugin/skills/client-work/templates/ENGAGEMENT.md" "$TMP/p/docs/product
 python3 - "$TMP/p/docs/product/ENGAGEMENT.md" <<'PY'
 import sys, pathlib
 p = pathlib.Path(sys.argv[1]); s = p.read_text()
-s = s.replace("- <other client names, codenames>", "- Acme Retail\n- Project Falcon")
+s = s.replace("- <other client names, codenames>", "- Acme Retail (a past client of my old agency)\n- Project Falcon — internal codename\n- Zeta Corp, Orion")
 p.write_text(s)
 PY
 B="$TMP/p/docs/product/exec/brief.md"
@@ -24,6 +24,9 @@ printf '# Brief\nLike we did for Acme Retail.\n' > "$B"
 check "Do-not-mention term fails" '! python3 "$R" make "$B" >/dev/null 2>&1'
 
 printf '# Brief\nContact priya@example.com or +91 98765 43210.\n' > "$TMP/p/docs/product/exec/c.client.md"
+printf '# Brief\nSee the Orion deck.\n' > "$B"
+check "term with a note, and comma lists, still match" '! python3 "$R" make "$B" >/dev/null 2>&1'
+
 check "email and phone fail" '! python3 "$R" check "$TMP/p/docs/product/exec/c.client.md" >/dev/null 2>&1'
 
 printf '# Brief\nOur margin on this is ₹2 lakh.\n' > "$TMP/p/docs/product/exec/d.client.md"

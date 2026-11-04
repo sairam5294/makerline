@@ -12,11 +12,11 @@
 
 ## Options
 
-| Option | What it takes | Expected effect (estimate) | Risk |
-|---|---|---|---|
-| Recommended: | | | |
-| Alternative: | | | |
-| Do nothing | — | <cost of waiting> | |
+| Option | What it takes | Expected effect (estimate) | Advantage | Risk |
+|---|---|---|---|---|
+| Recommended: | | | parity / differentiator / leapfrog | |
+| Alternative: | | | | |
+| Do nothing | — | <cost of waiting> | — | |
 
 ## Next 30 days
 

@@ -24,8 +24,9 @@ Turn MakerLine's evidence (AUDIT, REVIEW.json, EVALUATION, IDEAS, METRICS) into 
 1. **Answer first:** the recommendation and the decision needed in the first 3 lines; the evidence after.
 2. **Their goal in their words** (ENGAGEMENT.md), and an honest status — never "ready" without live users.
 3. One idea per section; tables over prose; plain words; each finding or option with a concrete example.
-4. Options always include a non-build move (pricing, process, partner, stop) and "do nothing" with its cost.
-5. Before a client-tier version: run the `devils-advocate` in **reader mode** and, for decisions, the `stakeholder-panel` (`docs/product/STAKEHOLDERS.md`); fix what they flag.
+4. Options always include a non-build move (pricing, process, partner, stop) and "do nothing" with its cost; each option carries its Advantage tag (scoring-rubric.md).
+5. **Every estimate shows its own maths** (inputs × expected change, each input sourced or "assumption"). Never reuse a share of a problem as the effect of the fix: "46% of tickets are schedule setup" is the size of the problem, not the tickets the fix will remove.
+6. Before a client-tier version: run the `devils-advocate` in **reader mode** and, for decisions, the `stakeholder-panel` (`docs/product/STAKEHOLDERS.md`); fix what they flag.
 
 ## Internal vs client versions (no second rewrite)
 

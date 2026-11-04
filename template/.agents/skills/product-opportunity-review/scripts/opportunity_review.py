@@ -580,6 +580,39 @@ def safe_review_path(project: pathlib.Path, rel: pathlib.Path) -> pathlib.Path:
     return path
 
 
+REUSE_DAYS = {"official": 180, "repo": 90, "internal": 90, "independent": 60, "vendor": 30, "community": 30}
+
+
+def source_reuse(project: pathlib.Path, today=None) -> tuple:
+    """Split known sources into reuse-as-is and recheck, so a run searches only for gaps.
+
+    Reads REVIEW.json sources (review_by, else date + REUSE_DAYS by kind, default 30) and
+    docs/product/research/*.md rows "| R1 | YYYY-MM-DD | fact | url | type |" (30 days).
+    """
+    import datetime as _dt
+    today = today or _dt.date.today()
+    reuse, recheck = [], []
+
+    def place(ident, title, date_s, days, review_by=None):
+        try:
+            due = _dt.date.fromisoformat(review_by) if review_by else _dt.date.fromisoformat(date_s) + _dt.timedelta(days=days)
+        except (TypeError, ValueError):
+            recheck.append(f"{ident} {title} (no valid date)"); return
+        (reuse if due >= today else recheck).append(f"{ident} {title[:70]} (until {due})" if due >= today else f"{ident} {title[:70]} (due {due})")
+
+    review = project / REVIEW_FILE
+    if review.exists():
+        for s in json.loads(review.read_text(encoding="utf-8")).get("sources", []):
+            if isinstance(s, dict):
+                place(s.get("id", "?"), str(s.get("title", "")), s.get("date"), REUSE_DAYS.get(s.get("kind"), 30), s.get("review_by"))
+    for f in sorted((project / "docs/product/research").glob("*.md")):
+        for line in f.read_text(encoding="utf-8").splitlines():
+            m = re.match(r"^\|\s*(R\d+)\s*\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^|]+)\|", line)
+            if m:
+                place(m.group(1), m.group(3).strip(), m.group(2), 30)
+    return reuse, recheck
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="command", required=True)
@@ -592,10 +625,17 @@ def main() -> int:
     ini.add_argument("--trigger", default="Review what to do next")
     ini.add_argument("--depth", choices=DEPTHS, default="standard")
     ini.add_argument("--mode", choices=MODES, default="first")
-    for name in ("check", "render"):
+    for name in ("check", "render", "sources"):
         sub.add_parser(name).add_argument("project", type=pathlib.Path)
     args = ap.parse_args()
     project = args.project.expanduser().resolve()
+    if args.command == "sources":
+        reuse, recheck = source_reuse(project)
+        print(f"REUSE ({len(reuse)}), cite without opening:")
+        print("\n".join("  " + r for r in reuse) or "  none")
+        print(f"RECHECK ({len(recheck)}), open only if the decision depends on it:")
+        print("\n".join("  " + r for r in recheck) or "  none")
+        return 0
     path = safe_review_path(project, REVIEW_FILE)
     if args.command == "init":
         if path.exists():

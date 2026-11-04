@@ -34,16 +34,16 @@ Connect an empty folder to a new chat, then type:
 
 | Command | What you get |
 |---|---|
-| `/start` | Runs the whole Idea Pack in one go, or resumes where you left off |
-| `/new-idea` | Discovery interview → `PROJECT_BRIEF.md` + `CLARITY.md` (every open question and what it blocks) |
-| `/evaluate-idea` | Honest, constructive evaluation → `EVALUATION.md` + `COMPETITORS.md`: strongest version, reality check, scorecard, differentiator test, path to Go, tools and cost, accessibility and compliance by launch market |
-| `/design-direction` | Principles, flows, screens, 2–3 visual directions, clickable wireframes → `DESIGN_DIRECTION.md` + `design/wireframes/` |
-| `/write-prd` | Draft PRD → `PRD.md` |
-| `/validate-idea` | Kill criteria, interviews, landing page, prototype test → `VALIDATION.md` |
-| `/tool-plan` | Which AI tool does which job, from the subscriptions you have → `TOOL_PLAN.md` |
-| `/makerline-idea` | The orchestrator: phases, depth (Quick / Standard / Deep), the one-pager and index |
+| `/makerline-idea:start` | Runs the whole Idea Pack in one go, or resumes where you left off |
+| `/makerline-idea:new-idea` | Discovery interview → `PROJECT_BRIEF.md` + `CLARITY.md` (every open question and what it blocks) |
+| `/makerline-idea:evaluate-idea` | Honest, constructive evaluation → `EVALUATION.md` + `COMPETITORS.md`: strongest version, reality check, scorecard, differentiator test, path to Go, tools and cost, accessibility and compliance by launch market |
+| `/makerline-idea:design-direction` | Principles, flows, screens, 2–3 visual directions, clickable wireframes → `DESIGN_DIRECTION.md` + `design/wireframes/` |
+| `/makerline-idea:write-prd` | Draft PRD → `PRD.md` |
+| `/makerline-idea:validate-idea` | Kill criteria, interviews, landing page, prototype test → `VALIDATION.md` |
+| `/makerline-idea:tool-plan` | Which AI tool does which job, from the subscriptions you have → `TOOL_PLAN.md` |
+| `/makerline-idea:idea-pack` | The orchestrator: phases, depth (Quick / Standard / Deep), the one-pager and index |
 
-Four agents run inside the evaluation: `market-researcher`, `devils-advocate`, `idea-champion`, `accessibility-strategist`.
+Five agents run inside the evaluation and validation: `market-researcher`, `devils-advocate`, `idea-champion`, `accessibility-strategist`, `user-panel`.
 
 ## What you end with
 

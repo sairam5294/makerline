@@ -141,7 +141,7 @@ You can. MakerLine is everything you'd have to remember to ask for, every time, 
 | Tells you to pivot or stop | Rarely; chats tend to agree with you | No | A verdict with a confidence level |
 | Accessibility law where you launch | If you know to ask | No | Every evaluation |
 | Writes down what it doesn't know | No | Partly | Every unknown, in `CLARITY.md` |
-| Stops before code until you approve | No | No | Enforced by hooks and CI |
+| Stops before code until you approve | No | No | Self-approval blocked in Claude Code; app code blocked by hooks and CI in kit-created projects |
 | Checks its own work | No | No | A checker, tests and axe |
 | Keeps your rules next session | No | No | In your repo, for 15 AI tools |
 | Where your work lives | A chat thread | One document | Plain files in your folder |

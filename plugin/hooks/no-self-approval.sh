@@ -1,49 +1,82 @@
 #!/usr/bin/env bash
 # MakerLine plugin hook (PreToolUse: Edit|Write|MultiEdit|Bash).
 # Only the owner approves an evaluation. This blocks an AI tool from:
-#   - writing "Evaluation: APPROVED" into docs/product/STATUS.md (Edit/Write/MultiEdit), and
+#   - writing "Evaluation: APPROVED" into a docs/product/STATUS.md (Edit/Write/MultiEdit), judged on the
+#     file as it would look after the edit, so swapping "PENDING" for "APPROVED (date)" is caught too, and
 #   - doing the same through the shell (sed -i, perl -pi, echo >>, python …) or running approve.sh.
-# It catches accidents and the obvious routes; it is not a security boundary.
-# Projects without docs/product/STATUS.md are never affected. Exit 2 = block.
+# STATUS.md is looked for at the project root and one or two folders down (a product workspace keeps
+# the repo in 04_repos/<slug>/). It catches accidents and the obvious routes; it is not a security
+# boundary. Projects without a docs/product/STATUS.md are never affected. Exit 2 = block.
 
-input="$(cat)"
-read_field() {
-  printf '%s' "$input" | python3 -c '
-import json, sys
-d = json.load(sys.stdin)
-for k in sys.argv[1].split("."):
-    d = d.get(k, "") if isinstance(d, dict) else ""
-if isinstance(d, list):
-    d = "\n".join(e.get("new_string", "") for e in d if isinstance(e, dict))
-print(d if isinstance(d, str) else "")' "$1" 2>/dev/null
-}
+command -v python3 >/dev/null 2>&1 || { echo "MakerLine: python3 not found, so the self-approval check is off." >&2; exit 0; }
 
-root="${CLAUDE_PROJECT_DIR:-$(pwd)}"
-status="$root/docs/product/STATUS.md"
-[ -f "$status" ] || exit 0
-grep -q "Evaluation: APPROVED" "$status" && exit 0   # already approved by the owner
+python3 -c '
+import glob, json, os, re, sys
 
-msg="Blocked: only the owner approves the evaluation. Ask them to run 'bash scripts/approve.sh' in their own terminal (no terminal: they edit the Evaluation line in docs/product/STATUS.md themselves)."
+MSG = ("Blocked: only the owner approves the evaluation. Ask them to run \"bash scripts/approve.sh\" in their "
+       "own terminal (no terminal: they edit the Evaluation line in docs/product/STATUS.md themselves).")
+MARK = "Evaluation: APPROVED"
 
-tool="$(read_field tool_name)"
-case "$tool" in
-  Bash)
-    cmd="$(read_field tool_input.command)"
-    copy_ok='^[[:space:]]*(mkdir -p [^;&|]+&&[[:space:]]*)?(cp|install|chmod)[[:space:]][^;&|]*approve\.sh[^;&|]*([[:space:]]*&&[[:space:]]*chmod[^;&|]*)?$'   # copying the script into the project is fine; running it is not
-    if printf '%s' "$cmd" | grep -Eq '(^|[^[:alnum:]_])approve\.sh' && ! printf '%s' "$cmd" | grep -Eq "$copy_ok"; then
-      echo "$msg" >&2; exit 2
-    fi
-    writes='sed[^|;&]*-i|perl[^|;&]*-[a-zA-Z]*i|>|tee|python|node|ruby|awk|(^|[[:space:]])(cp|mv|ed|ex|dd|truncate)[[:space:]]|git[[:space:]]+(apply|checkout|restore)'
-    if printf '%s' "$cmd" | grep -q 'STATUS' && printf '%s' "$cmd" | grep -q 'APPR' \
-       && printf '%s' "$cmd" | grep -Eq "$writes"; then
-      echo "$msg" >&2; exit 2
-    fi
-    ;;
-  Edit|Write|MultiEdit)
-    file="$(read_field tool_input.file_path)"
-    case "$file" in */docs/product/STATUS.md|docs/product/STATUS.md) ;; *) exit 0 ;; esac
-    new="$(read_field tool_input.content)$(read_field tool_input.new_string)$(read_field tool_input.edits)"
-    if printf '%s' "$new" | grep -q "Evaluation: APPROVED"; then echo "$msg" >&2; exit 2; fi
-    ;;
-esac
-exit 0
+def block():
+    print(MSG, file=sys.stderr)
+    sys.exit(2)
+
+def read(path):
+    try:
+        with open(path, encoding="utf-8", errors="replace") as f:
+            return f.read()
+    except OSError:
+        return ""
+
+try:
+    data = json.load(sys.stdin)
+except ValueError:
+    sys.exit(0)
+tool = data.get("tool_name") or ""
+ti = data.get("tool_input") or {}
+if not isinstance(ti, dict):
+    sys.exit(0)
+root = os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd()
+
+if tool in ("Edit", "Write", "MultiEdit"):
+    path = str(ti.get("file_path") or "")
+    if not re.search(r"(^|/)docs/product/STATUS\.md$", path):
+        sys.exit(0)
+    if not os.path.isabs(path):
+        path = os.path.join(root, path)
+    current = read(path)
+    if MARK in current:
+        sys.exit(0)                          # already approved by the owner
+    edits = ti.get("edits") if tool == "MultiEdit" else [ti]
+    edits = [e for e in (edits or []) if isinstance(e, dict)]
+    if tool == "Write":
+        after = str(ti.get("content") or "")
+    else:
+        after = current
+        for e in edits:
+            old, new = str(e.get("old_string") or ""), str(e.get("new_string") or "")
+            if old and old in after:
+                after = after.replace(old, new) if e.get("replace_all") else after.replace(old, new, 1)
+    added = " ".join(str(e.get("new_string") or "") for e in edits) + str(ti.get("content") or "")
+    if MARK in after or MARK in added:
+        block()
+    sys.exit(0)
+
+if tool == "Bash":
+    statuses = [p for p in [os.path.join(root, "docs/product/STATUS.md")]
+                + glob.glob(os.path.join(root, "*/docs/product/STATUS.md"))
+                + glob.glob(os.path.join(root, "*/*/docs/product/STATUS.md")) if os.path.isfile(p)]
+    if not any(MARK not in read(p) for p in statuses):
+        sys.exit(0)                          # no STATUS.md, or the owner already approved
+    cmd = str(ti.get("command") or "")
+    copy_ok = (r"^\s*(mkdir -p [^;&|]+&&\s*)?(cp|install|chmod)\s[^;&|]*approve\.sh[^;&|]*"
+               r"(\s*&&\s*chmod[^;&|]*)?$")   # copying the script into the project is fine; running it is not
+    if re.search(r"(^|[^\w])approve\.sh", cmd) and not re.search(copy_ok, cmd):
+        block()
+    writes = (r"sed[^|;&]*-i|perl[^|;&]*-[a-zA-Z]*i|>|tee|python|node|ruby|awk|(^|\s)(cp|mv|ed|ex|dd|truncate)\s"
+              r"|git\s+(apply|checkout|restore)")
+    target = re.search(r"STATUS|docs/product|ST\*|ST\?", cmd)
+    if target and "APPR" in cmd and re.search(writes, cmd):
+        block()
+sys.exit(0)
+' <<<"$(cat)"

@@ -55,7 +55,7 @@ makerline/
 | 2b | write-prd (draft): problem, metrics, personas, scope, stories, risks, release plan | PRD.md v0 |
 | 3 | validate-idea: kill criteria, interviews, landing page, prototype test with the wireframes | VALIDATION.md |
 | ✦ | **Idea Pack**: one-pager + index of everything above — say "give me everything for this idea" to run 1 → 2b in one go | ONE_PAGER.md · README.md |
-| ★ | **Approval gate**: no app code before `Evaluation: APPROVED` (enforced) | STATUS.md |
+| ★ | **Approval gate**: no app code before `Evaluation: APPROVED` (Claude Code: the plugin blocks self-approval; projects from `new-project.sh` also block app code in a git hook and CI) | STATUS.md |
 | 4–8 | name-product (+ **brand**: logo, guidelines, colours, fonts, icons) · tech-stack · design-system · write-prd · **engineering-docs** (architecture, database, security, code style, testing, rules, memory, lifecycle) · **project-setup** (README, setup, folder structure, commented `.env.example`, GitHub rules, `.claude` / `.cursor` / `.github` rules) · plan-build | NAMING · BRAND · TECH_STACK · DESIGN_SYSTEM · PRD · `docs/*.md` · PLAN |
 | 9 | build-feature (+ design-qa against Figma) | code + tests |
 | 10–12 | quality-review · test-plan · ship-checklist (incl. expert review) | reviews/ · TEST_PLAN · RELEASE |
@@ -67,7 +67,7 @@ makerline/
 
 | Layer | Catches | Works for |
 |---|---|---|
-| Claude Code hooks + permissions | code before approval, AI self-approval, `rm -rf`, force-push, push to main, reading `.env` secrets, destructive DB commands; auto-formats edits | Claude Code |
+| Claude Code hooks + permissions | AI self-approval (plugin); in projects from `new-project.sh` also code before approval, `rm -rf`, force-push, push to main, reading `.env` secrets, destructive DB commands; auto-formats edits | Claude Code |
 | `permissions.json` + `.cursorignore` | secrets and risky commands | Cursor |
 | `.codex/config.toml` | sandboxed writes, no network without asking | Codex |
 | lefthook git hooks | approval gate, leaked secrets, lint, format; no direct push to main; full check before push | every tool |

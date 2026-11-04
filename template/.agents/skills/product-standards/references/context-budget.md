@@ -3,7 +3,7 @@
 Tokens = cost + quality. Most tokens are not the documents — they are the conversation re-read on every tool call. A 50-call run re-reads its history 50 times.
 
 ## 1. MUST (every phase)
-- Always-loaded text stays small: ≤ 10 skills trigger on their own, every description ≤ 35 words, the rest are `disable-model-invocation` and routed by `start` (`tests/budget.test.sh`).
+- Always-loaded text stays small: ≤ 11 skills trigger on their own, every description ≤ 35 words, the rest are `disable-model-invocation` and routed by `start` (`tests/budget.test.sh`).
 - Read only what the task needs: AGENTS.md → HANDOFF/STATUS → the one task or story → the 1–2 standards it touches. Resume from STATUS.md + HANDOFF.md only; never scan `docs/product/` to work out where you are.
 - Search before reading (`rg`, file ranges). Never read `node_modules`, lockfiles, build output, generated native folders or media.
 - Subagents return ≤ 300-word summaries; reviewers get the diff + their standard files only.

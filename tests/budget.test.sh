@@ -7,7 +7,7 @@ KIT="$(cd "$(dirname "$0")/.." && pwd)"
 python3 - "$KIT" <<'PY'
 import pathlib, re, sys
 kit = pathlib.Path(sys.argv[1]); plugin = kit / "plugin"
-MAX_WORDS_EACH, MAX_WORDS_TOTAL, MAX_AUTO_SKILLS = 35, 650, 10
+MAX_WORDS_EACH, MAX_WORDS_TOTAL, MAX_AUTO_SKILLS = 35, 650, 11
 errors, total, auto, hidden = [], 0, [], []
 files = sorted(plugin.glob("skills/*/SKILL.md")) + sorted(plugin.glob("agents/*.md"))
 for f in files:

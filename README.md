@@ -17,7 +17,7 @@ MakerLine is a free, open-source Claude plugin for designers and solo makers who
 **What you get**
 - A 13-phase workflow from discovery interview to post-launch retro, with an approval gate AI tools cannot bypass
 - An **Idea Pack** for every idea before any code: honest, constructive evaluation, competitors and a differentiator test, a strengthening plan, draft design direction with clickable wireframes, a draft PRD and a one-pager, with an accessibility, inclusion and compliance lens (who it excludes, AODA / ADA / EAA / RPwD obligations by launch market). Three depths — Quick (~120k tokens measured), Standard, Deep — and `check_idea_pack.py` to verify the pack before you see it
-- 26 skills and 15 specialist agents (strategist, persona panel, UX reviewer, accessibility auditor and accessibility strategist, security reviewer, QA, devil's advocate and idea champion…)
+- 30 skills and 16 specialist agents (strategist, persona panel, stakeholder panel, UX reviewer, accessibility auditor and accessibility strategist, security reviewer, QA, devil's advocate and idea champion…)
 - Standards for accessibility (WCAG 2.2 AA), UX, security, testing, backend and AI features — split into small files so only the relevant ones load
 - Three tested starters: Expo + Supabase (iOS / Android / web) and Next.js (landing page + waitlist), both with axe, Lighthouse and contrast tests, plus a Python + PyObjC macOS menu-bar app with VoiceOver-label, keyboard and contrast tests
 - Safety hooks, git hooks and GitHub Actions that block dangerous commands, leaked secrets and code before approval
@@ -29,7 +29,7 @@ Licensed under [MIT](LICENSE). Contributions welcome — see [CONTRIBUTING.md](C
 
 ```
 makerline/
-├── plugin/        THE SOURCE — edit only here (26 skills, 15 agents, standards). Installs into Claude.
+├── plugin/        THE SOURCE — edit only here (30 skills, 16 agents, standards). Installs into Claude.
 ├── template/      Copied into every project: AGENTS.md, safety settings, CI, git hooks, MCP, Cursor/Codex adapters
 ├── starter/       Tested Expo (iOS/Android/Web) + Supabase app: i18n (en/te/hi), Sentry, PostHog
 ├── starter-web/   Tested Next.js site: landing page + waitlist (nonce CSP, rate limit, optional Turnstile), AI harness with evals; Lighthouse 1.0/1.0/1.0
@@ -133,7 +133,7 @@ One rulebook (`AGENTS.md`) for Claude, Cursor, Codex, Copilot, Gemini CLI, Winds
 
 ## Token-saving design
 
-- Always-loaded text is about 710 tokens in 0.17 (10 skills that trigger on their own + 15 agents, descriptions ≤ 35 words; `tests/budget.test.sh` enforces it). The other 16 skills keep their `/makerline:` commands but load only when `start` routes to them. 0.16 used ~2,400; v0.1 ~3,000 for 13 skills.
+- Always-loaded text is about 790 tokens in 0.18 (11 skills that trigger on their own + 16 agents, descriptions ≤ 35 words; `tests/budget.test.sh` enforces it). The other 19 skills keep their `/makerline:` commands but load only when `start` routes to them. 0.16 used ~2,400; v0.1 ~3,000 for 13 skills.
 - Checklist agents run on a faster model; research is cached in `docs/product/research/`; drafts can use a free local model (`scripts/local-ai.sh`).
 - Skills load their detail only when used. Standards are split into 10 files, and only the relevant ones are read.
 - Subagents return summaries of 300 words or less. Reviewers get the diff plus one standard file.

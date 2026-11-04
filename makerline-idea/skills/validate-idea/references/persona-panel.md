@@ -52,7 +52,7 @@ Then **Questions for real users**: every guessed answer that changed a verdict, 
 
 ## Stakeholder mode (pitching to someone who decides)
 
-For a pitch to a partner, investor, client or your own employer: one card per decision maker (e.g. founder, finance, tech lead), built **only from what they have said or done** (Stated / Observed, with date and where) — never guesses about their personality or private life. Each reads the document and gives: first 30 seconds, what they like (the line), what worries them (the line), the first question they'd ask, what would make them say yes, the likely counter-offer. Output: changes before sending, prepared answers, questions to ask the real person. Internal only; never quote it back to them. When the real person disagrees, the real person wins and the card is updated.
+Use the `stakeholder-panel` agent: one card per decision maker in `docs/product/STAKEHOLDERS.md`, built only from what they've said or done, run before a proposal, deck or pricing goes out. Internal only.
 
 ## Keep it honest
 

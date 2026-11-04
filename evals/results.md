@@ -75,3 +75,5 @@ Scale test (`SCALE.md`), Tindi 1.0: 3 apps, a code monorepo and a product-docs r
 
 Cost: 173k tokens total, 62 tool calls (over the 45 Standard target), 11 searches + 10 page reads (inside budget), 7.8 min. Grader: 107k. Fixes in the same release: Leapfrog without the four novelty lines is scored Differentiator; persona panel and teardown are written in one call each. Note: the runner's environment exposed the owner's account memory (it cited the owner's hosting stack in §10) — run evals from a session without personal memory next time.
 
+**Re-measure, 2026-11-04 (after the one-call panel/teardown fix):** ai-todo Standard, blind runner, no memory tools · Pivot (in range) · 2.85 · 158.7k tokens (−8% vs 173k) · **40 tool calls (target ≤ 45; was 62)** · 13 searches + 9 page reads (1 failed; inside budget with the search-for-read trade) · persona panel + Todoist teardown run · checker 0 fail / 0 warn. Quality check this time is the verdict range and the checker only; the full grade stays the 92% run above.
+

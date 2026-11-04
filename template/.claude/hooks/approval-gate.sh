@@ -18,10 +18,27 @@ status="$root/docs/product/STATUS.md"
 
 # --- Rule 2: no self-approval -------------------------------------------------------------
 if [ "$rel" = "docs/product/STATUS.md" ]; then
-  new_text="$(read_field tool_input.content)$(read_field tool_input.new_string)"
-  if printf '%s' "$new_text" | grep -q "Evaluation: APPROVED" && ! grep -q "Evaluation: APPROVED" "$status" 2>/dev/null; then
-    echo "Blocked: only the owner can approve the evaluation. Ask them to run: scripts/approve.sh" >&2
-    exit 2
+  grep -q "Evaluation: APPROVED" "$status" 2>/dev/null && exit 0
+  # Judge the file as it would look after the edit (Write, Edit or MultiEdit), so swapping
+  # "PENDING" for "APPROVED (date)" is caught too.
+  if command -v python3 >/dev/null 2>&1; then
+    printf '%s' "$input" | python3 -c '
+import json, sys
+d = json.load(sys.stdin); ti = d.get("tool_input") or {}
+try: cur = open(sys.argv[1], encoding="utf-8").read()
+except OSError: cur = ""
+edits = ti.get("edits") if isinstance(ti.get("edits"), list) else [ti]
+after = str(ti.get("content") or "") if "content" in ti else cur
+added = str(ti.get("content") or "")
+for e in edits:
+    if not isinstance(e, dict): continue
+    old, new = str(e.get("old_string") or ""), str(e.get("new_string") or "")
+    added += new
+    if old and old in after: after = after.replace(old, new) if e.get("replace_all") else after.replace(old, new, 1)
+sys.exit(2 if "Evaluation: APPROVED" in after + added else 0)' "$status"
+    [ $? -eq 2 ] && { echo "Blocked: only the owner can approve the evaluation. Ask them to run: scripts/approve.sh" >&2; exit 2; }
+  elif printf '%s' "$(read_field tool_input.content)$(read_field tool_input.new_string)" | grep -q "Evaluation: APPROVED"; then
+    echo "Blocked: only the owner can approve the evaluation. Ask them to run: scripts/approve.sh" >&2; exit 2
   fi
   exit 0
 fi

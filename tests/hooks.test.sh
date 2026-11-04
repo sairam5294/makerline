@@ -30,6 +30,8 @@ check "validation landing page allowed" 0 "$(gate validation/index.html 'x')"
 check "AI can't self-approve (Edit)" 2 "$(gate docs/product/STATUS.md 'Evaluation: APPROVED (today)')"
 check "AI can't self-approve (Write)" 2 "$(gate docs/product/STATUS.md 'Evaluation: APPROVED (today)' Write)"
 check "AI may edit STATUS otherwise" 0 "$(gate docs/product/STATUS.md '| 1 | Discovery | Done |')"
+python3 -c 'import json;print(json.dumps({"tool_name":"MultiEdit","tool_input":{"file_path":"docs/product/STATUS.md","edits":[{"old_string":"PENDING","new_string":"APPROVED (today)"}]}}))' \
+  | (cd "$P" && CLAUDE_PROJECT_DIR="$P" "$H/approval-gate.sh" 2>/dev/null); check "template gate blocks MultiEdit PENDING to APPROVED swap" 2 $?
 sed -i.bak 's/^Evaluation: PENDING.*/Evaluation: APPROVED (2026-01-01)/' "$P/docs/product/STATUS.md"
 check "app code allowed after approval" 0 "$(gate src/app.tsx 'x')"
 check "editing STATUS after approval ok" 0 "$(gate docs/product/STATUS.md 'Evaluation: APPROVED (2026-01-01)')"
@@ -48,11 +50,13 @@ for c in "sed -i 's/^Evaluation: .*/Evaluation: APPROVED/' docs/product/STATUS.m
          "perl -pi -e 's/PENDING/APPROVED/' docs/product/STATUS.md" \
          "echo 'Evaluation: APPROVED' >> docs/product/STATUS.md" \
          "python3 -c \"open('docs/product/STATUS.md','a').write('APPROVED')\"" \
-         'bash scripts/approve.sh' 'echo YES | scripts/approve.sh' './scripts/approve.sh "landing page"'; do
+         'bash scripts/approve.sh' 'echo YES | scripts/approve.sh' './scripts/approve.sh "landing page"' \
+         'sh scripts/approve.sh' 'cd /tmp && ./scripts/approve.sh'; do
   pj "$c" | CLAUDE_PROJECT_DIR="$Q" bash "$SH" 2>/dev/null; check "plugin hook blocks: $c" 2 $?
   bash_json "$c" | CLAUDE_PROJECT_DIR="$Q" "$H/guard-bash.sh" 2>/dev/null; check "guard-bash blocks: $c" 2 $?
 done
 for c in 'grep "Evaluation: APPROVED" docs/product/STATUS.md' \
+         'grep -n "approve.sh" plugin/skills/evaluate-idea/SKILL.md' 'cat scripts/approve.sh' \
          "perl -pi -e 's/Not started/Waiting for owner/' docs/product/STATUS.md" \
          'mkdir -p scripts && cp /x/skills/evaluate-idea/scripts/approve.sh scripts/approve.sh && chmod +x scripts/approve.sh' \
          'npm test'; do

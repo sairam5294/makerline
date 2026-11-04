@@ -35,7 +35,8 @@ printf '%s' "$cmd" | grep -Eqi 'supabase[[:space:]]+db[[:space:]]+reset[[:space:
 status="${CLAUDE_PROJECT_DIR:-$(pwd)}/docs/product/STATUS.md"
 if [ -f "$status" ] && ! grep -q "Evaluation: APPROVED" "$status"; then
   copy_ok='^[[:space:]]*(mkdir -p [^;&|]+&&[[:space:]]*)?(cp|install|chmod)[[:space:]][^;&|]*approve\.sh[^;&|]*([[:space:]]*&&[[:space:]]*chmod[^;&|]*)?$'
-  printf '%s' "$cmd" | grep -Eq '(^|[^[:alnum:]_])approve\.sh' && ! printf '%s' "$cmd" | grep -Eq "$copy_ok" \
+  runs='(^|[;&|(`]|\$\()[[:space:]]*([[:alnum:]_]+=[^[:space:]]*[[:space:]]+)*((((ba|z|da)?sh|source|exec)[[:space:]]+(-[[:alnum:]]+[[:space:]]+)*)|\.[[:space:]]+)?[[:alnum:]_./~-]*approve\.sh'   # running it, not naming it in grep/cat/cp
+  printf '%s' "$cmd" | grep -Eq "$runs" && ! printf '%s' "$cmd" | grep -Eq "$copy_ok" \
     && block "only the owner runs scripts/approve.sh, in their own terminal."
   writes='sed[^|;&]*-i|perl[^|;&]*-[a-zA-Z]*i|>|tee|python|node|ruby|awk|(^|[[:space:]])(cp|mv|ed|ex|dd|truncate)[[:space:]]|git[[:space:]]+(apply|checkout|restore)'
   if printf '%s' "$cmd" | grep -q 'STATUS' && printf '%s' "$cmd" | grep -q 'APPR' && printf '%s' "$cmd" | grep -Eq "$writes"; then

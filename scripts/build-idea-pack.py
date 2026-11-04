@@ -29,7 +29,8 @@ STANDALONE = ROOT / "standalone" / "makerline-idea"
 OUT = ROOT / "makerline-idea"
 
 SKILLS = ["new-idea", "evaluate-idea", "design-direction", "write-prd", "validate-idea", "tool-plan", "product-standards"]
-AGENTS = ["market-researcher", "devils-advocate", "idea-champion", "accessibility-strategist", "user-panel"]
+AGENTS = ["market-researcher", "devils-advocate", "idea-champion", "accessibility-strategist", "user-panel",
+          "pricing-analyst", "research-synthesizer", "product-strategist"]  # every agent the pack's skills call
 
 # Path rewrites: the orchestrator replaces product-kickoff, and the one test-plan
 # reference the pack needs is copied into the orchestrator's folder.
@@ -42,15 +43,35 @@ REWRITES = [
 ]
 
 
+PACK_GATE = ("9. **Decision.** Only the owner decides go, change or stop. They write it, with the date, on the "
+             "`Decision:` line of STATUS.md, and you quote their words in DECISIONS.md; never write that line yourself. "
+             "Then offer `design-direction`, `validate-idea`, or the full MakerLine kit when they decide to build.")
+
+
+def full_kit_only(text: str, shipped: set) -> str:
+    """A path into a skill the pack doesn't ship becomes a plain pointer to the full kit."""
+    def name(skill: str, rest: str) -> str:
+        return f"`{skill}/{rest}` in the full MakerLine kit"
+    pat = r"(?:\.\./)+([a-z-]+)/([\w./-]*)"
+    text = re.sub(r"\[([^\]]+)\]\(" + pat + r"\)",
+                  lambda m: m.group(0) if m.group(2) in shipped else f"{m.group(1)} ({name(m.group(2), m.group(3))})", text)
+    return re.sub(r"`" + pat + r"`",
+                  lambda m: m.group(0) if m.group(1) in shipped else name(m.group(1), m.group(2)), text)
+
+
 def build(out: pathlib.Path) -> None:
     if out.exists():
         shutil.rmtree(out)
     (out / "skills").mkdir(parents=True)
     (out / "agents").mkdir()
     for s in SKILLS:
-        shutil.copytree(SRC / "skills" / s, out / "skills" / s, ignore=shutil.ignore_patterns(".DS_Store"))
+        shutil.copytree(SRC / "skills" / s, out / "skills" / s, ignore=shutil.ignore_patterns(".DS_Store", "approve.sh"))
     for a in AGENTS:
         shutil.copy2(SRC / "agents" / f"{a}.md", out / "agents" / f"{a}.md")
+    # Git keeps no empty folders, so drop any left by the ignore list (or --check fails on a fresh clone).
+    for d in sorted((out / "skills").rglob("*"), reverse=True):
+        if d.is_dir() and not any(d.iterdir()):
+            d.rmdir()
 
     orch = out / "skills" / "idea-pack"  # the orchestrator skill keeps its name: /makerline-idea:idea-pack
     (orch / "templates").mkdir(parents=True)
@@ -71,11 +92,17 @@ def build(out: pathlib.Path) -> None:
     shutil.copy2(STANDALONE / "CONNECTORS.md", out / "CONNECTORS.md")
     shutil.copy2(STANDALONE / ".mcp.json", out / ".mcp.json")
 
+    shipped = {d.name for d in (out / "skills").iterdir() if d.is_dir()}
     for f in out.rglob("*.md"):
         text = f.read_text(encoding="utf-8")
         new = text
         for a, b in REWRITES:
             new = new.replace(a, b)
+        if "templates" not in f.parts:
+            new = full_kit_only(new, shipped)
+        if f == out / "skills" / "evaluate-idea" / "SKILL.md":
+            # The pack has no approval script or hook; its STATUS gate line is "Decision:".
+            new = re.sub(r"^9\. \*\*Gate\.\*\*.*$", PACK_GATE, new, count=1, flags=re.M)
         if new != text:
             f.write_text(new, encoding="utf-8")
 
@@ -101,7 +128,9 @@ def build(out: pathlib.Path) -> None:
     for f in out.rglob("*.md"):
         if "templates" in f.parts:
             continue  # templates are project documents; their ../ links point into the project
-        for ref in re.findall(r"(?<!\.\./)\.\./([a-z-]+)/", f.read_text(encoding="utf-8")):
+        for ref in re.findall(r"(?:\.\./)+([a-z-]+)/", f.read_text(encoding="utf-8")):
+            if ref in ("skills", "agents", "docs", "design", "scripts"):
+                continue
             if not (out / "skills" / ref).is_dir():
                 missing.add(f"{f.relative_to(out)} → ../{ref}/")
     if missing:

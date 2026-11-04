@@ -23,7 +23,7 @@ Otherwise this is the short entry point: read `../idea-pack/SKILL.md` and follow
 | Owner says | Mode |
 |---|---|
 | an idea and "everything" (add "quick" or "deep" for depth) | run all phases in one go |
-| nothing specific | read STATUS.md, say where the project is in one line and offer the next step |
+| nothing specific | read STATUS.md, say where the project is in one line and offer the next step. **No STATUS.md** → show: **Try it** — *Evaluate my idea honestly: …* · *Quick first look at an idea* · *Who are my competitors and my real differentiator?* · *Sketch wireframes for my idea* · *Write a draft PRD* — then "…or type `/makerline-idea:start` with your idea in any chat", and wait |
 
 ## Related
 

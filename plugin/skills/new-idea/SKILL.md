@@ -91,6 +91,9 @@ A question is **blocking** if a phase can't sensibly proceed without it and it h
 
 ## If connectors available
 
+If **~~email**, **~~cloud storage** or **~~chat** is connected:
+- Run the context sweep (CONNECTORS.md): search for the product's name, pre-fill from what matches, cite items by type/date/role, and end the summary with a *"Used: …"* line.
+
 If **~~knowledge base** is connected:
 - Search prior notes, decks and research on the idea and pre-fill the brief from them; list what you found and let the owner correct it, instead of re-asking.
 

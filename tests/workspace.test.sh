@@ -73,6 +73,17 @@ s=importlib.util.spec_from_file_location('p','scripts/portfolio.py'); m=importli
 print(m.one_liner(pathlib.Path(sys.argv[1])))" "$B")"
 check "portfolio card reads the one-pager line"   '[ "$what" = "For <cooks> who plan meals, a planner." ]'
 check "portfolio bundles the table UI and view switch" 'grep -q "window.mlUI" "$TMP/pf.html" && grep -q "data-view=\"table\"" "$TMP/pf.html" && grep -q "data-sortable" "$TMP/pf.html"'
+
+# Kit activity (Adoption / Activity / You) is counted locally from dated table rows; old dates don't count.
+A="$TMP/act/app/docs/product"; mkdir -p "$A"; today="$(date +%F)"
+printf '# Status — Act · updated %s · kit v0.16.0\nEvaluation: pending\n\n| # | Phase | Status | Date |\n|---|---|---|---|\n| 1 | Discovery | Done | %s |\n| 2 | Evaluation | Done | 2020-01-01 |\n' "$today" "$today" > "$A/STATUS.md"
+printf '| Date | Decision |\n|---|---|\n| %s | Web first |\n| 2020-01-01 | Old |\n' "$today" > "$A/DECISIONS.md"
+act="$(cd "$KIT" && python3 -c "
+import importlib.util,sys,pathlib
+s=importlib.util.spec_from_file_location('p','scripts/portfolio.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m)
+p=m.parse_status(pathlib.Path(sys.argv[1])); print(p['steps_30'], p['decisions_90']); open(sys.argv[2],'w').write(m.render_html([p], ''))" "$A/STATUS.md" "$TMP/act.html")"
+check "activity counts recent steps and decisions" '[ "$act" = "1 1" ]'
+check "portfolio shows Adoption, Activity and You" 'grep -q ">Adoption<" "$TMP/act.html" && grep -q ">Activity<" "$TMP/act.html" && grep -q ">You<" "$TMP/act.html"'
 check "portfolio page works without a server"     '! grep -Eq "(src|href)=\"https?://" "$TMP/pf.html"'
 
 echo "workspace: $pass passed, $fail failed"

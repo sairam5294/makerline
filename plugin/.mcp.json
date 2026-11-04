@@ -23,6 +23,22 @@
     "linear": {
       "type": "http",
       "url": "https://mcp.linear.app/mcp"
+    },
+    "gmail": {
+      "type": "http",
+      "url": ""
+    },
+    "google calendar": {
+      "type": "http",
+      "url": ""
+    },
+    "google drive": {
+      "type": "http",
+      "url": ""
+    },
+    "slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp"
     }
   }
 }

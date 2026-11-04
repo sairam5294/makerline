@@ -20,10 +20,10 @@ Judge a product that already exists — yours, a client's or your employer's —
 | Lens | Method | Standard file |
 |---|---|---|
 | Usability | Walk each journey; heuristics (visibility, match, control, consistency, error prevention, recognition, efficiency, minimalism, recovery, help); count steps and decisions to first value | `../product-standards/references/ux.md` |
-| Accessibility | Automated scan (axe/Lighthouse) + manual keyboard, focus, contrast, zoom 200%, screen-reader spot checks; WCAG 2.2 AA; the launch markets' law | `accessibility.md`, `accessibility-law-summary.md` |
+| Accessibility | Automated scan (axe/Lighthouse) + manual keyboard, focus, contrast, zoom 200%, screen-reader spot checks; WCAG 2.2 AA; the launch markets' law; **staff-facing screens are employment software** (gloves, light, noise, one hand, keyboard-only; `accessibility-law.md` → "Staff-facing and workplace software") | `accessibility.md`, `accessibility-law-summary.md` |
 | Performance | Lighthouse / Core Web Vitals or app start time on a mid-range device | `performance.md` |
 | Content | Microcopy against `../design-direction/references/ux-copy-checklist.md` | — |
-| Trust and privacy | Consent, permissions, data asks vs need, privacy policy match | `privacy.md` |
+| Trust and privacy | Consent, permissions, data asks vs need, privacy policy match; guest/visitor flows without accounts (`privacy.md` §5c); anything near card data → PCI scope (§5b) | `privacy.md` |
 | Funnel (if analytics) | Drop-off per journey step; where the biggest loss is | — |
 | Operations (Standard: from what you can see; Deep: with their data and a walkthrough) | The company behind the product: support, onboarding, sales, billing (`references/ops-scan.md`) | — |
 | Delivery health | DORA metrics from deploys and incidents (`../post-launch/references/heart-metrics.md`) | — |

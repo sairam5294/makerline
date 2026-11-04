@@ -36,6 +36,16 @@ Connect an empty folder to a new chat, then type one of these:
 
 Run `/makerline:start` with nothing else in a new folder to see this menu inside Claude.
 
+## Skills that start on their own, and skills you type
+
+To keep every chat light, 10 skills start on their own when your words match: `start`, `evaluate-idea`, `validate-idea`, `design-direction`, `write-prd`, `build-feature`, `quality-review`, `product-opportunity-review`, `post-launch`, `handoff`.
+
+The other 16 don't load into every chat. Reach them any of three ways:
+
+1. **Just ask through start:** *"/makerline:start set up the repo"*, *"/makerline:start which stack should I use?"* — start routes to the right one.
+2. **Type the command:** `/makerline:new-idea` · `/makerline:name-product` · `/makerline:tech-stack` · `/makerline:design-system` · `/makerline:engineering-docs` · `/makerline:project-setup` · `/makerline:plan-build` · `/makerline:ai-feature` · `/makerline:design-qa` · `/makerline:test-plan` · `/makerline:ship-checklist` · `/makerline:portfolio` · `/makerline:tool-plan` · `/makerline:product-standards` · `/makerline:standards-refresh` · `/makerline:product-kickoff`.
+3. **Run the whole sequence:** *"set it all up"* after approval runs naming → stack → design system → PRD → engineering docs → repo setup for you.
+
 …or type `/makerline:` in any chat to see every skill.
 
 ## One command runs the whole kit

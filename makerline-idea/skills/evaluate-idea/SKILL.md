@@ -83,6 +83,9 @@ Give the owner an honest, researched verdict on their idea — and the best vers
 
 ## If connectors available
 
+If **~~email**, **~~cloud storage** or **~~chat** is connected:
+- Run the context sweep (CONNECTORS.md): search for the product's name, use matching notes, decks and user feedback as first-party evidence before searching the web, cite items by type/date/role, and end the summary with a *"Used: …"* line.
+
 If **~~knowledge base** is connected:
 - Search prior research, specs and decisions on the topic before searching the web.
 

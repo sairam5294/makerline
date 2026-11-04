@@ -17,6 +17,7 @@ Their goal in their words, the constraint (time, budget, team), and why this dec
 | Time to first result | | | |
 | Main risk | | | |
 | Reversible? | | | |
+| Advantage | parity / differentiator / leapfrog | | — |
 | Evidence | <IDs> | | |
 
 ## If you choose <recommended>

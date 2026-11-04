@@ -5,8 +5,6 @@ Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it start
 
 ## 0.17.0 — 2026-11-04
 Lighter kit with the same commands; six on-demand additions; your own tools as context; Try it menu; activity panel; what-to-build-next methods. Details:
-
-## Unreleased
 **Lighter kit, same commands.** Ten skills trigger on their own (start, evaluate-idea, validate-idea, design-direction, write-prd, build-feature, quality-review, product-opportunity-review, post-launch, handoff); the other sixteen are `disable-model-invocation`, so they cost nothing per session but keep their `/makerline:` commands, and `start` routes to them through a table (orchestrators read the SKILL.md files). All descriptions rewritten to ≤ 35 words with triggers: always-loaded text ~2,400 → ~710 tokens. New `tests/budget.test.sh` (CI and release) enforces the caps, quoting and routing. `sync.py` and the cockpit read quoted descriptions.
 **Six additions as on-demand references** (adapted from Anthropic's Engineering, Design and Product Management plugins, written for a solo maker): build-feature **debug mode** (reproduce → isolate → failing test → fix → prove), post-launch **when it breaks** (size, stop the harm, tell people, fix, 15-line postmortem, runbook), opportunity-review **tech debt check**, design-qa **handoff spec** per screen, design-direction **UX copy checklist**, handoff **stakeholder update**. Hand-offs to Anthropic's Data plugin (post-launch metrics) and Enterprise Search (context sweep) when installed.
 **Eval:** ai-todo Standard run 92% (verdict in range, 0 hallucinations); fixes: an untested Leapfrog is scored Differentiator, persona panel and teardown written in one call each.

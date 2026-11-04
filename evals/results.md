@@ -67,7 +67,7 @@ Scale test (`SCALE.md`), Tindi 1.0: 3 apps, a code monorepo and a product-docs r
 
 **Graphify trial, Tindi monorepo (2026-11-04, Sonnet-class, one run each, 5 code-navigation questions):** index only 81.6k tokens · 7 calls · 21 s · 5/5 · 0 wrong; index + Graphify 94.7k · 7 calls · 19 s · 5/5 · 0 wrong. Not adopted (`GRAPHIFY.md`).
 
-## Run — 2026-11-04 · kit 0.16.0 (pre-release) · evaluate-idea Standard · ai-todo (blind runner, separate grader)
+## Run — 2026-11-04 · kit 0.17.0 (pre-release) · evaluate-idea Standard · ai-todo (blind runner, separate grader)
 
 | Case | Verdict (expected) | Score | Universal | Case-specific | Idea Pack items | New rules (advantage tag · novelty-tested Leapfrog · persona pack · teardown) | Hallucinations | Result |
 |---|---|---|---|---|---|---|---|---|

@@ -24,7 +24,7 @@ A blocked or paid source → "not checked", no workaround.
 
 **Insight test.** A teardown row that would not change a decision (what to build, how to position, what to test) is noise: cut it. Every kept row ends with "→ so we…".
 
-**Where signals go.** Dated moves (releases, pricing, hiring, funding, rules) also go to the industry's Signals log (`../../portfolio/references/industry-brain.md`) so the next product in this industry starts ahead.
+**Where signals go.** Dated moves (releases, pricing, hiring, funding, rules) also go to the industry's Signals log (`portfolio/references/industry-brain.md` in the full MakerLine kit) so the next product in this industry starts ahead.
 
 ## 2. Output (tables, not prose)
 

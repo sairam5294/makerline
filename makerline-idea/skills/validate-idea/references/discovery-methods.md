@@ -13,7 +13,7 @@ Outcome (north star or one input metric)
    └─ Opportunity: …
 ```
 
-Rules: opportunities come only from real users (interviews, support, reviews, analytics), never from the team's wishes; every solution hangs under one opportunity; test the riskiest assumption, not the whole solution; prune branches that stop mattering. Weekly rhythm: one interview, one tree update, one assumption test (see `../../client-work/references/weekly-review.md` for the team version).
+Rules: opportunities come only from real users (interviews, support, reviews, analytics), never from the team's wishes; every solution hangs under one opportunity; test the riskiest assumption, not the whole solution; prune branches that stop mattering. Weekly rhythm: one interview, one tree update, one assumption test (see `client-work/references/weekly-review.md` in the full MakerLine kit for the team version).
 
 ## JTBD interview script (45 minutes, one person)
 

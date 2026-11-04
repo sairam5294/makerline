@@ -69,7 +69,7 @@ Give the owner an honest, researched verdict on their idea — and the best vers
 7. **Present** (≤ 15 lines): verdict · what's promising · top 3 risks · top 3 strengthening moves · the cheapest test that could change the verdict · 3–6 questions.
 8. **Refine** each round: bump the brief version, update only affected sections, add a revision-log row. Re-score only on new facts — never because the owner pushed back; a good argument without evidence becomes a test.
    - Never regenerate the whole report: add a *What changed in v{n}* block under the title line (≤ 5 bullets, each citing its trigger — brief version, Q-id, V-id). Results from validate-idea arrive here.
-9. **Gate.** Only the owner approves: they run `bash scripts/approve.sh` in their own terminal (types YES; writes STATUS + DECISIONS + commit). No `scripts/approve.sh` in the project → copy it there from this skill's `scripts/approve.sh` first. Never write `Evaluation: APPROVED` or run the script yourself (in Claude Code a hook blocks both); with no terminal, the owner edits the Evaluation line in STATUS.md themselves, or you write it only after their explicit words in this conversation, quoted in DECISIONS.md. Then offer `design-direction`, `validate-idea` or `name-product`.
+9. **Decision.** Only the owner decides go, change or stop. They write it, with the date, on the `Decision:` line of STATUS.md, and you quote their words in DECISIONS.md; never write that line yourself. Then offer `design-direction`, `validate-idea`, or the full MakerLine kit when they decide to build.
 
 ## Output
 

@@ -71,7 +71,11 @@ if tool == "Bash":
     cmd = str(ti.get("command") or "")
     copy_ok = (r"^\s*(mkdir -p [^;&|]+&&\s*)?(cp|install|chmod)\s[^;&|]*approve\.sh[^;&|]*"
                r"(\s*&&\s*chmod[^;&|]*)?$")   # copying the script into the project is fine; running it is not
-    if re.search(r"(^|[^\w])approve\.sh", cmd) and not re.search(copy_ok, cmd):
+    # Running the script (as a command, after bash/sh/source, or after ; && | ( ) is blocked; naming it in
+    # grep, cat or cp is not.
+    runs = (r"(^|[;&|(`]|\$\()\s*(\w+=\S*\s+)*(((ba|z|da)?sh|source|exec)\s+(-\w+\s+)*|\.\s+)?"
+            r"[\w./~-]*approve\.sh\b")
+    if re.search(runs, cmd) and not re.search(copy_ok, cmd):
         block()
     writes = (r"sed[^|;&]*-i|perl[^|;&]*-[a-zA-Z]*i|>|tee|python|node|ruby|awk|(^|\s)(cp|mv|ed|ex|dd|truncate)\s"
               r"|git\s+(apply|checkout|restore)")

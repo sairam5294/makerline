@@ -1,6 +1,6 @@
 ---
 name: start
-description: Give me everything for my product idea. Covers discovery, evaluation, competitors, design direction with wireframes, draft PRD and one-pager in one go, or the next phase. Trigger with "/makerline-idea:start", "start", "run everything", "give me everything for this idea", or "continue".
+description: Give me everything for my product idea. Covers discovery, evaluation, competitors, design direction with wireframes, draft PRD and one-pager in one go, or the next phase. Trigger with "/makerline-idea:start", "I have an idea", "start", "run everything", "give me everything for this idea", or "continue".
 argument-hint: "<idea + 'everything' (add 'quick' or 'deep'), or nothing to resume>"
 ---
 

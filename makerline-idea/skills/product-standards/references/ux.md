@@ -84,7 +84,7 @@ Deceptive ("dark") patterns are illegal or fined in the EU (DSA/UCPD), the US (F
 Design and review follow ISO 9241-210 (human-centred design: understand context of use, specify user needs, design, evaluate with users, iterate) and ISO 9241-110 (interaction principles: suitability for the task, self-descriptiveness, conformity with expectations, learnability, controllability, robustness to error, user engagement). Cite these in client audits and ACR/VPAT-style reports where a buyer asks "which standard".
 
 ## 9. Measuring UX
-- Use the **HEART** framework (`../../post-launch/references/heart-metrics.md`): Happiness, Engagement, Adoption, Retention, Task success — pick 1–2 per product, each with a goal, a signal and a metric.
+- Use the **HEART** framework (`post-launch/references/heart-metrics.md` in the full MakerLine kit): Happiness, Engagement, Adoption, Retention, Task success — pick 1–2 per product, each with a goal, a signal and a metric.
 
 - Define one task-success metric per core flow (e.g. "% of new users who complete first lesson in session 1").
 - Run a 5-user usability test on the prototype before building, and again before launch.

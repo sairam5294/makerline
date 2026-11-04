@@ -53,7 +53,7 @@ Follow the OWASP Top 10 for Agentic Applications alongside the LLM Top 10:
 - Tell people when they are interacting with an AI system unless it is obvious.
 - Label AI-generated or AI-altered text, image, audio and video that could be taken as real (machine-readable where feasible, e.g. C2PA content credentials, plus a visible label); deepfakes always labelled.
 - Tell people when emotion recognition or biometric categorisation is used; neither is allowed for children or at work/school without a lawful basis.
-- Keep a short **AI risk register** per feature (`../../ai-feature/references/ai-risk-register.md`): purpose, data, who could be harmed and how, controls, owner, review date. It maps to NIST AI RMF (Govern · Map · Measure · Manage) and ISO/IEC 42001, which enterprise and employer buyers ask about.
+- Keep a short **AI risk register** per feature (`ai-feature/references/ai-risk-register.md` in the full MakerLine kit): purpose, data, who could be harmed and how, controls, owner, review date. It maps to NIST AI RMF (Govern · Map · Measure · Manage) and ISO/IEC 42001, which enterprise and employer buyers ask about.
 - Prohibited practices (social scoring, manipulation of vulnerable people, untargeted face scraping) are never built, whatever the market.
 
 ## 6. Privacy & data (MUST)

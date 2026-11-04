@@ -27,6 +27,7 @@ If the user only wants a fresh Idea Pack and no opportunity review, use `/makerl
 
 - `docs/product/opportunity/REVIEW.json` is the durable source of progress and evidence.
 - `docs/product/opportunity/index.html` is a portable, local HTML report. Open it in a browser; no server or CDN is needed. Run the same script with `render .` after editing the JSON.
+- **No shell or no python3** (the Claude app without a linked computer, for example): skip `init`, `check` and `render`. Write the same review as `docs/product/opportunity/REVIEW.md` instead: decision and confidence, options compared, evidence with source IDs and dates, the roadmap, the cheapest next test and open questions. Say once that the HTML report needs the script and can be made later from a computer.
 - The MakerLine cockpit reads the same review when the project is inside `--projects`.
 - Check: run the same script with `check .`. It fails on missing or invalid fields and prints warnings (uncited sources, sources without a kind, markets still proposed): fix those too. Verify that the HTML's current step, decision, sources and next actions match the JSON. Run the kit's accessibility checks when changing the report renderer.
 

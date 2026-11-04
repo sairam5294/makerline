@@ -61,7 +61,7 @@ Give the repo one shared source of truth that every AI tool reads, plus the file
    - `.claude/skills/` from `templates/claude-skill/SKILL.template.md` for the 1–3 jobs this project repeats most, with real paths and commands. No CLAUDE.md inside `.claude/`.
    - Other agents: keep the kit's pointers (`GEMINI.md`, `.aider.conf.yml`, `.continue/rules/00-agents-md.md`); tools that read AGENTS.md natively need none (`docs/kit/AGENT-ADAPTERS.md`).
    - `docs/CONTEXT_PACK.md` (`templates/CONTEXT_PACK.md`): ≤ 1 page for tools and people who can't read the repo; regenerate when RULES or BRAND change.
-7b. **Optional code graph** — several apps or hundreds of code files? Offer Graphify (`references/graphify.md`): owner installs it, `graphify-out/` in `.gitignore`, one AGENTS.md line. Skip for small or docs-only repos.
+7b. **Optional code graph** — only for very large code bases (a 3-app trial cost 16% more tokens than the index): offer Graphify (`references/graphify.md`): owner installs it, `graphify-out/` in `.gitignore`, one AGENTS.md line. Skip for small or docs-only repos.
 8. **Check:**
    - a fresh clone → follow SETUP.md literally in a clean folder (or the kit's `scripts/new-project.sh` output) and confirm `install → run → test` works
    - every `.mdc` glob matches at least one existing path (`ls` the globs)

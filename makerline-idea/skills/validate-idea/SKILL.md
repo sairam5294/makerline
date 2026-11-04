@@ -52,6 +52,7 @@ Get evidence that real people want this, for the least time and money.
 ## Workflow
 
 1. **Pick the assumptions.** Include any "Questions for real users" the persona panel left in `PERSONAS.md` (`references/persona-panel.md`) — guesses that changed a verdict are prime tests. From EVALUATION.md pick the 1–3 riskiest assumptions. For each, set a **kill criterion** before testing (e.g. "< 40 waitlist signups from 1,000 visitors in 14 days → rethink"). Record them in `docs/product/VALIDATION.md` (template: `references/validation-template.md`).
+1b. **Discovery tools:** the JTBD interview script, Opportunity Solution Tree and Kano in `references/discovery-methods.md`; raw notes go to the `research-synthesizer`, never summarised by hand.
 2. **Choose tests** (cheapest first):
    - **Interviews** (5–10): use `references/interview-guide.md`. Ask about past behaviour, never "would you use…?".
    - **Landing page + waitlist**: one-page promise, 3 benefits, one CTA, privacy note; track visits → signups. Build it as a **separate project** (`new-project.sh ~/Projects/<name>-landing --web`; owner approves it with `scripts/approve.sh "validation landing page"`), or as static files in this project's `validation/` folder — both pass the approval gate. Deploy on Vercel.

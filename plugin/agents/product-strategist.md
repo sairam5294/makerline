@@ -1,6 +1,6 @@
 ---
 name: product-strategist
-description: 'Shapes product strategy: positioning, MVP scope, prioritisation, metrics, monetisation and go-to-market.'
+description: 'Shapes product strategy: positioning, MVP scope, prioritisation, metrics, monetisation, go-to-market.'
 model: inherit
 color: magenta
 ---

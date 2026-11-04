@@ -43,3 +43,24 @@ For another AI tool, first check whether it supports the [Agent Skills format](h
 4. Check for `docs/product/opportunity/REVIEW.json` and `index.html`. Open the HTML in a browser.
 
 Installing a skill does not automatically authorize deployment, publishing, sending messages or giving an AI tool private client data.
+
+## Verify that skills trigger (2 minutes per tool, after every kit update)
+
+What is known without testing: Claude honours `disable-model-invocation`, so only the 11 auto skills are in context there. Cursor and Codex ignore that field and load all 30 skill descriptions from `.agents/skills` (about 930 tokens), so every skill can trigger on its own in those tools; `tests/budget.test.sh` keeps that total bounded and checks that each skill's `name` equals its folder (Codex requires it).
+
+What needs a human in each tool, in a project folder with `docs/product/STATUS.md` present:
+
+| Say | Expected | Claude | Cursor | Codex |
+|---|---|---|---|---|
+| "evaluate my idea: a booking app for small physio clinics" | evaluate-idea starts (asks nothing if a brief exists) | | | |
+| "set up the repo" | Claude: start routes to project-setup · Cursor/Codex: project-setup directly | | | |
+| "which stack should I use?" | tech-stack | | | |
+| "write a test plan" | test-plan | | | |
+| "it's broken: the login page shows a blank screen" | build-feature in debug mode | | | |
+| "for my client: audit their checkout" | client-work → product-audit | | | |
+
+Tick the cells and paste the table into `evals/results.md` with the date and tool version. A miss means the description's trigger words need a change (keep it ≤ 35 words) or, in Claude, a row in `start`'s route table.
+
+## Connector sign-in from the plugin
+
+The plugin lists its connectors in `.mcp.json`; the Claude app shows them under the plugin's **Connectors** tab and asks you to sign in to each the first time a skill needs it. Gmail, Google Calendar and Google Drive are listed without a server address, the way Anthropic's own plugins list them, and the app supplies the connection. Check once per tool: open the Connectors tab, connect one Google service and PostHog or Sentry, then in a new chat ask "what's in my Drive about <product>?" — the context sweep should cite a document. If the tab shows no connectors, the app build is older than plugin connectors; update the app.

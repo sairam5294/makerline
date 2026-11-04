@@ -1,6 +1,6 @@
 ---
 name: architect
-description: 'Designs architecture and makes technology decisions (stack, data model, APIs, auth, integrations, cost), recorded as ADRs.'
+description: 'Designs architecture and technology decisions (stack, data model, APIs, auth, integrations, cost), recorded as ADRs.'
 model: inherit
 color: blue
 ---

@@ -49,6 +49,8 @@ Run five specialist reviews on the same change and hand the owner one verified, 
 
 ## Workflow
 
+Reviewers: accessibility, UX, security, **privacy** (`privacy-reviewer`: DPDP, GDPR, children, consent, retention), code and tests; add the agentic-AI checks (`../product-standards/references/ai.md` §5b) when the change gives a model tools.
+
 1. **Set the scope.** Diff/branch/files/screens + stories implemented; prefer `git diff main...`. Adopted project with no diff → boot-path modules, `tests/`, config and workflows, sampled by code path.
    - Reviewers also get `docs/SECURITY.md` (security) and `docs/CODE_STYLE.md` (code) when they exist; a finding that changes a rule updates that doc.
 2. **Run the applicable reviewers** in parallel (subagents) or in sequence; skip non-applicable ones and say so.

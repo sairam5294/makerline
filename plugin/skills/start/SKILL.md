@@ -1,6 +1,6 @@
 ---
 name: start
-description: 'Start or continue MakerLine: a new idea, the whole Idea Pack, setup after approval, or what''s next; routes every MakerLine job. Trigger: "start", "I have an idea", "continue", "set it all up".'
+description: 'Start or continue MakerLine: a new idea, the whole Idea Pack, setup after approval, or what''s next; routes every job. Trigger: "start", "I have an idea", "continue", "set it all up".'
 argument-hint: "<idea + 'everything' | 'set it all up' | 'build it' | nothing to resume>"
 ---
 
@@ -72,6 +72,13 @@ Show exactly this, then wait:
 - What should I improve next in my live app?
 
 …or type `/makerline:start` with your idea in any chat.
+
+**By stage** (say any of these in plain words; `start` routes them):
+- *Idea:* new idea · evaluate · competitors · validate · wireframes · PRD
+- *Build:* name and brand · stack · design system · engineering docs · repo setup · plan · build · debug · design QA · review · tests · ship
+- *Live:* how is it doing · what next · it's down · metrics
+- *Clients and work:* for my client · audit this product · brief for my PM · business case · launch copy · rehearse the meeting
+- *Kit:* my projects · which tool for which job · which rules apply · are the standards current
 
 ## Rules
 

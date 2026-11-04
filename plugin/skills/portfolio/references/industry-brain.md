@@ -31,3 +31,11 @@ Rules: 3–6 open at a time; at least one **contrarian** (most people believe th
 - **Monthly** (from `post-launch` step 5b, ~15 minutes): score due theses, update the hit rate, add first-party signals, move any "Not yet" pattern that is now arriving. Optional: a 5-line "state of the industry" note that can become a newsletter or LinkedIn post — public facts and your opinions only, no private user details, checked with the devils-advocate's reader mode.
 - **Watch (optional, ask first):** a weekly scheduled task that searches the last 7 days for the player and rule list and appends verified rows to the signals log. It uses AI usage on every run; suggest pausing it if two months produce little. Never daily by default.
 - Before a review or evaluation in this industry, read sections 1, 7 and 8 only (≤ 500 words) — not the log.
+
+## The loop, in code
+
+`python3 <kit>/scripts/brain_check.py portfolio/industries/<industry>.md` reads the Theses and Signals log tables and prints: theses due for scoring, open theses with no signal in 60 days, the hit rate (all, and for calls at 70%+ confidence), patterns marked "Not yet" with recent signals (candidates to move), and the log's last date (stale after 45 days). Run it in post-launch step 5b and at the start of any review in that industry; the "This month we learned" lines come from its output, not from re-reading the log.
+
+## Setting up the watch (opt-in, asked once)
+
+When a Brain is created, offer the weekly watch in one line with its cost: "a scheduled task every Monday that searches the last 7 days for your player and rule list and appends verified rows; roughly one short run a week". The prompt to paste is in `watch-prompt.md`. Never daily; suggest pausing after two quiet months.

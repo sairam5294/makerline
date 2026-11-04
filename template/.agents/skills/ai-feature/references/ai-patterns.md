@@ -16,6 +16,18 @@ Use before choosing an AI feature, or in a Deep `product-opportunity-review`. Go
 
 Module · workflow today (steps, time) · pattern · what AI does, with an example · value (time saved, revenue, retention; labelled estimate) · **data needed and whether the product already has it** · risk (wrong answers, money movement, personal or health data) and the **human approval step** for anything that moves money or speaks to other people · **running cost per use** vs value · **the non-AI alternative** (a better form, a rule, a template) and why AI beats it · effort · already in PLAN.md or IDEAS.md?
 
+## Readiness and scoring (so the scan ends in decisions, not a list)
+
+| Check | Question | Why |
+|---|---|---|
+| **API readiness** | Can an agent do this through the product's own APIs today? | Missing endpoints are usually the real first build; list them |
+| **Data readiness** | Is the data clean, labelled and allowed for this use (consent, DPDP/GDPR)? | A pattern without its data is a research project |
+| **Risk class** | Does it inform, suggest, act with approval, or act alone? Money, health, children or other people involved? | Sets the approval step and the risk register (`ai-risk-register.md`) |
+| **Cost at scale** | tokens × price × uses per active user per month, vs the value | Some "wins" lose money at 10× users |
+| **Non-AI first** | Would a rule, template or better form get 80% of the value? | Cheaper, predictable, offline |
+
+Score each opportunity 1–5 on value, data readiness and inverse risk; shortlist the top 3; each becomes an `AI_FEATURE_<name>.md` through this skill. The same scan runs on the company's own operations in `../../product-audit/references/ops-scan.md`.
+
 ## Rules
 
 - **AI-readiness:** an agent can only do what the product's APIs allow. List which workflows have the APIs an agent needs; missing APIs are often the real first build.

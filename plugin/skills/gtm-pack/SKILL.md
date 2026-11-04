@@ -24,6 +24,7 @@ EVALUATION (positioning statement, wedge), COMPETITORS, PERSONAS, DESIGN_DIRECTI
    - **Social posts:** 3–5 per platform in the owner's voice (use their writing style if a profile exists), one idea each.
    - **Ad variants:** 3 headlines × 2 descriptions per audience, following the platform's policy (no personal attributes like health or finances targeted or implied).
    - **Email:** announcement and a follow-up.
+4b. **Pricing on the page?** Ask the `pricing-analyst` for the comparables and the honest anchor; no fake discounts or countdowns (`../product-standards/references/ux.md` §8b). Images and video: alt text, captions, and a content-credentials or visible label on anything AI-generated.
 5. **Check before anything is published:** the `devils-advocate` in **reader mode** (cuts unproven claims, hype, jabs), then the `user-panel` message test (what did they understand, would they click, where did they stop). Fix, then show the owner the final copy; publishing is always the owner's action.
 
 ## Rules

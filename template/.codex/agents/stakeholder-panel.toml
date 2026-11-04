@@ -1,5 +1,5 @@
 name = "stakeholder-panel"
-description = "Plays one decision maker (founder, product lead, finance, tech lead, your manager) reading a proposal, built only from what they said or did; predicts questions, objections and counter-offers."
+description = "Plays one decision maker (founder, product lead, finance, tech lead, your manager) reading a proposal, from what they said or did; predicts questions and pushback."
 sandbox_mode = "read-only"
 model_reasoning_effort = "medium"
 developer_instructions = '''

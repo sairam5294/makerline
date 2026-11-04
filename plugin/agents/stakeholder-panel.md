@@ -1,6 +1,6 @@
 ---
 name: stakeholder-panel
-description: 'Plays one decision maker (founder, product lead, finance, tech lead, your manager) reading a proposal, built only from what they said or did; predicts questions, objections and counter-offers.'
+description: 'Plays one decision maker (founder, product lead, finance, tech lead, your manager) reading a proposal, from what they said or did; predicts questions and pushback.'
 model: sonnet
 color: orange
 tools: Read, Grep, Glob

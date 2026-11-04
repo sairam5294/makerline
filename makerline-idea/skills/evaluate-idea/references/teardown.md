@@ -12,9 +12,19 @@ Map a leader's whole product from what is public, then say plainly what they do 
 | Pricing page | Packaging: which feature sits in which tier, limits, trial |
 | Changelog / release notes / app-store "What's new" | What shipped recently and how fast they move |
 | Reviews ("what I like / dislike") | What users value and where it breaks (already mined in Leader profiles — reuse the R-ids) |
-| API docs, integrations, job ads, status page | Platform depth, what they're building next, reliability |
+| API docs, integrations marketplace | Platform depth, who builds on them, what partners they court |
+| Job ads (careers page, LinkedIn) | What they're building next: "Signal: likely building <X> in 6–12 months" |
+| Status page, security/trust page, terms | Reliability record, certifications, data location, lock-in terms |
+| Pricing history (web archive snapshots) | Direction of travel: tiers added, limits tightened, prices raised |
+| Community (forum, subreddit, Discord), conference talks by their engineers | Unmet needs in users' words; how the product really works inside |
+| Demo videos and webinars | Real screens and flows (describe; never copy frames) |
+| Public sandbox or free trial | Hands-on proof: only if the owner signs up themselves; look, don't create real data or contact staff |
 
 A blocked or paid source → "not checked", no workaround.
+
+**Insight test.** A teardown row that would not change a decision (what to build, how to position, what to test) is noise: cut it. Every kept row ends with "→ so we…".
+
+**Where signals go.** Dated moves (releases, pricing, hiring, funding, rules) also go to the industry's Signals log (`../../portfolio/references/industry-brain.md`) so the next product in this industry starts ahead.
 
 ## 2. Output (tables, not prose)
 

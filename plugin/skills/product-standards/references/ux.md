@@ -74,7 +74,14 @@ The kit's one list: **loading, empty, error, offline, success, permission denied
 
 - Motion explains change (where something came from/went); 150–300 ms for UI transitions; respect reduced-motion.
 
+## 8b. No deceptive patterns (MUST)
+Deceptive ("dark") patterns are illegal or fined in the EU (DSA/UCPD), the US (FTC) and India (CCPA Guidelines for Prevention and Regulation of Dark Patterns, 2023). Never: false urgency or scarcity, pre-ticked consent, confirmshaming, hidden costs or drip pricing, subscription traps (cancel must be as easy as sign-up), nagging, forced action or account creation to do a basic task, disguised ads, trick wording, interface interference (hiding the cheaper option), bait and switch, or sneaking items into a basket. Consent screens: equal weight for accept and refuse; granular choices; withdrawal in the same place. Review every pricing, consent and cancellation flow against this list and record the result in the PR's UX checklist.
+
+## 8c. Standard behind the method
+Design and review follow ISO 9241-210 (human-centred design: understand context of use, specify user needs, design, evaluate with users, iterate) and ISO 9241-110 (interaction principles: suitability for the task, self-descriptiveness, conformity with expectations, learnability, controllability, robustness to error, user engagement). Cite these in client audits and ACR/VPAT-style reports where a buyer asks "which standard".
+
 ## 9. Measuring UX
+- Use the **HEART** framework (`../../post-launch/references/heart-metrics.md`): Happiness, Engagement, Adoption, Retention, Task success — pick 1–2 per product, each with a goal, a signal and a metric.
 
 - Define one task-success metric per core flow (e.g. "% of new users who complete first lesson in session 1").
 - Run a 5-user usability test on the prototype before building, and again before launch.

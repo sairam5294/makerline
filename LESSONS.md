@@ -36,3 +36,6 @@ After each project (post-launch retro), add what the kit got wrong or missed. Tu
 | 2026-11-03 | kit review | Reviews could rank options without saying whether any was more than parity, and could re-suggest ideas the owner had declined | Advantage tag + leapfrog warning (`opportunity_review.py`), Ideas Bank re-pitch rule | 0.17.0 |
 | 2026-11-03 | kit review | Half-built products got new ideas as a separate list beside the old plan | roadmap-blend.md (Keep / Trim / Move up / Hold / Drop) | 0.17.0 |
 | 2026-11-03 | kit review | Persona panel, teardown, switching playbook, Industry Brain added from an external method set — **proposed: remove any that no run trips over by 0.18** | persona-panel.md, teardown.md, switching.md, industry-brain.md | 0.17.0 |
+| 2026-11-04 | Lekka opportunity review | Blended roadmap had nowhere to go in REVIEW.json; Leapfrog novelty test assumed a COMPETITORS.md; tech-debt cap of 8 files too tight | `roadmap` field + render + test; rubric wording; tech-debt.md | 0.18.0 |
+| 2026-11-04 | ai-todo re-measure | Panel and teardown as separate edits pushed a Standard run to 62 calls; writing each in one call brought it to 40 | context-budget.md §4.6 | 0.17.0 |
+

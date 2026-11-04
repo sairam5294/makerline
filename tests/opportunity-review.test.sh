@@ -143,4 +143,23 @@ p = pathlib.Path(sys.argv[1]) / 'docs/product/opportunity/REVIEW.json'
 d = json.loads(p.read_text()); d['options'][0]['advantage'] = 'huge'; p.write_text(json.dumps(d))
 PY
 if python3 "$KIT/scripts/opportunity_review.py" check "$TMP/idea" >/dev/null 2>&1; then echo 'Invalid advantage accepted'; exit 1; fi
-echo 'opportunity-review: five routes with access checks, strict records, rules table, no overwrite, safe rendering, progress, source, manifest-version, shared-style, CSP and advantage-tag checks passed'
+python3 - "$TMP/idea" <<'PY'
+import json, pathlib, sys
+p = pathlib.Path(sys.argv[1]) / 'docs/product/opportunity/REVIEW.json'
+d = json.loads(p.read_text()); d['options'][0]['advantage'] = 'leapfrog'
+d['roadmap'] = [{'horizon': 'later', 'item': 'Bet B', 'label': 'new', 'why': 'w', 'gate': 'g'}, {'horizon': 'now', 'item': 'Fix setup', 'label': 'move up', 'why': 'blocks users', 'gate': '5 outside users finish setup'}]
+p.write_text(json.dumps(d))
+PY
+python3 "$KIT/scripts/opportunity_review.py" render "$TMP/idea" >/dev/null 2>&1
+grep -q 'Roadmap: Now / Next / Later' "$TMP/idea/docs/product/opportunity/index.html" || { echo 'Roadmap not rendered'; exit 1; }
+python3 - "$TMP/idea/docs/product/opportunity/index.html" <<'PY'
+import sys; t = open(sys.argv[1]).read()
+sys.exit(0 if t.index('Fix setup') < t.index('Bet B') else 'roadmap not sorted now → later')
+PY
+python3 - "$TMP/idea" <<'PY'
+import json, pathlib, sys
+p = pathlib.Path(sys.argv[1]) / 'docs/product/opportunity/REVIEW.json'
+d = json.loads(p.read_text()); d['roadmap'][0]['horizon'] = 'someday'; p.write_text(json.dumps(d))
+PY
+if python3 "$KIT/scripts/opportunity_review.py" check "$TMP/idea" >/dev/null 2>&1; then echo 'Invalid roadmap horizon accepted'; exit 1; fi
+echo 'opportunity-review: five routes with access checks, strict records, rules table, no overwrite, safe rendering, progress, source, manifest-version, shared-style, CSP, advantage-tag and roadmap checks passed'

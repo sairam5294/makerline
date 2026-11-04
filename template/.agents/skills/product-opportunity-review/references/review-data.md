@@ -16,6 +16,7 @@ Top-level fields:
 - `rules`: launch-market rules, `{market, rule, applies, uncertainty, source_ids}`. `applies` is `yes`, `no`, `likely` or `unclear`. Not legal advice; escalate uncertain high-stakes questions.
 - `unknowns`: `{question, blocks, how_to_answer}`.
 - `options`: `{name, type, value_range, effort_range, evidence, test, source_ids}`. Ranges are strings that include units and explicit assumptions. `type` is build, fix, simplify, pricing, distribution, partnership or stop. `evidence` is `none`, `weak`, `some` or `strong`; strong evidence requires a source. Optional `advantage`: `parity` (any rival can copy it in a quarter), `differentiator` (copyable within a year) or `leapfrog` (no direct competitor offers it; lasting edge such as pooled data, switching costs or an approval rivals lack). A finished review with options but no `leapfrog` warns.
+- `roadmap` (optional, for `partial`, `delayed`, `live`): `{horizon, item, label, why, gate}`. `horizon` is `now`, `next`, `later` or `hold`; `label` is `keep`, `trim`, `move up`, `hold`, `drop` (existing plan items) or `new`; `gate` is the measurable checkpoint to move on. Rendered as the Now / Next / Later table (roadmap-blend.md).
 - `next_actions`: `{action, owner, when, success_measure}`; action, owner and success measure are required.
 - When every step is `done` or `skipped`, `decision` can't still be "Pending evidence", and `options` and `next_actions` can't be empty.
 - `tool_plan`: `{job, primary, fallback, handoff}`. Use only tools the owner has; one owner per output.

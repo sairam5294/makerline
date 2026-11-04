@@ -15,6 +15,9 @@
 | ISO 9241-210:2019, 9241-110:2020 | referenced for UX method and audits | 2026-11-04 |
 | Deceptive patterns | EU DSA Art. 25, FTC 2022 report + 2024 click-to-cancel (court status to re-check), India CCPA Dark Patterns Guidelines Nov 2023 (13 patterns) | 2026-11-04 |
 | C2PA content credentials | spec 2.x | 2026-11-04 |
+| NIST SSDF 1.1 / SLSA v1.0 | supply-chain checklist (`security.md` §5b) | 2026-11-04 |
+| PCI DSS 4.0 | fully in force 31 Mar 2025; SAQ types per processor | 2026-11-04 |
+| Workplace accessibility (ADA Title I/503, EU 2000/78/EC, UK EqA, Ontario IASR Part III, India RPwD §20–21, AU DDA) | staff-software section in `accessibility-law.md` | 2026-11-04 |
 | HEART, Opportunity Solution Tree, Kano, JTBD, DORA | method references (no version) | 2026-11-04 |
 
 ## Watch list (not pinned yet; `standards-refresh` checks these each quarter)

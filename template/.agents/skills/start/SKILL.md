@@ -24,7 +24,7 @@ Otherwise this is the short entry point to the kit's orchestrator: read `../prod
 
 ## Routes to the other skills
 
-Ten MakerLine skills trigger on their own. The other sixteen stay out of every session's context to save tokens: run them by **reading their `SKILL.md` file** (not the Skill tool). The owner can still type any of them as `/makerline:<name>`.
+Eleven MakerLine skills trigger on their own (including `client-work` for a client's or employer's product). The other nineteen stay out of every session's context to save tokens: run them by **reading their `SKILL.md` file** (not the Skill tool). The owner can still type any of them as `/makerline:<name>`.
 
 | Owner asks for | Read |
 |---|---|
@@ -44,6 +44,9 @@ Ten MakerLine skills trigger on their own. The other sixteen stay out of every s
 | which rules apply, definition of done | `../product-standards/SKILL.md` |
 | are the kit's standards current? | `../standards-refresh/SKILL.md` |
 | the whole pack or the whole setup | `../product-kickoff/SKILL.md` |
+| audit a live product (UX, accessibility, performance) | `../product-audit/SKILL.md` |
+| brief, decision memo, deck, business case for leadership | `../exec-pack/SKILL.md` |
+| positioning, launch, store listing, landing page, ads, posts | `../gtm-pack/SKILL.md` |
 
 ## Modes
 

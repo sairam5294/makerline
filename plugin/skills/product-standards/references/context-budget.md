@@ -15,7 +15,7 @@ Tokens = cost + quality. Most tokens are not the documents — they are the conv
 ## 2. Idea Pack depth (pick before starting; default Standard)
 | Mode | Use when | Produces | Research budget | Target |
 |---|---|---|---|---|
-| **Quick** — one guide: `../../evaluate-idea/references/quick-run.md` | "Worth a weekend?" | brief, CLARITY, short EVALUATION (500–1,000 prose words), COMPETITORS Lite (`../../evaluate-idea/references/competitors-lite.md`), ONE_PAGER | ≤ 4 searches, ≤ 1 page read (batched; no snippet trade) | ≤ 12 tool calls · ~70–100k target (measured 120k at 0.12.1 with 7 searches, 4 reads, 19 calls) |
+| **Quick** — one guide: `../../evaluate-idea/references/quick-run.md` | "Worth a weekend?" | brief, CLARITY, short EVALUATION (500–1,000 prose words), COMPETITORS Lite (`../../evaluate-idea/references/competitors-lite.md`), ONE_PAGER | ≤ 6 searches, ≤ 2 page reads (batched) | ≤ 15 tool calls · ~110–120k total (measured 117k at 0.19.1 with 4 searches; a plain prompt with ~10 searches cost ~105k and graded higher, so research is not where Quick should save) |
 | **Standard** | Deciding whether to build | + DESIGN_DIRECTION, wireframes (≤ 8 screens), PRD draft | ≤ 15 searches, ≤ 8 page reads | ≤ 45 tool calls · ~120–150k |
 | **Deep** | Before spending money or pitching | + all four competitor rings, 12+ screens, Figma, payer research | ≤ 30 searches | ~250k+ |
 

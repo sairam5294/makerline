@@ -3,6 +3,9 @@
 Versions follow MAJOR.MINOR.PATCH. Each project records the kit version it started from in `docs/product/STATUS.md`.
 
 
+## 0.19.2 — 2026-11-04
+Deep-scan release: self-approval hook checks the result and finds workspace STATUS; borrowed passages rewritten and concepts renamed (Industry File, Idea Log, Predictions); only GitHub and Figma connectors on by default; idea pack ships the agents it calls; half-built product quick start.
+
 ## Unreleased
 **Connectors opt-in.** Only GitHub and Figma are switched on at install (`plugin/.mcp.json`, `makerline-idea/.mcp.json`); the other eleven hosted servers are a copy-paste snippet in CONNECTORS.md, and Google services come from the Claude app's own connectors. Fewer tools load into every session.
 

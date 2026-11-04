@@ -1,5 +1,5 @@
 name = "security-reviewer"
-description = "Reviews code, APIs, database policies and configuration for security and privacy issues — OWASP Top 10:2025, MASVS, secrets, authorization, RLS, dependency risk and data-protection compliance."
+description = "Reviews code, APIs, database policies and config for security and privacy: OWASP Top 10:2025, MASVS, secrets, RLS, dependencies."
 sandbox_mode = "read-only"
 model_reasoning_effort = "high"
 developer_instructions = '''

@@ -1,7 +1,8 @@
 ---
 name: standards-refresh
-description: Check whether the kit standards are still current. Looks for outdated rules (WCAG, OWASP, MASVS, DPDP/GDPR/COPPA, App Store/Play rules, framework versions, accessibility law, AI models and prices) and propose edits → report table, then VERSIONS.md + CHANGELOG with approval. Trigger with "update standards", "are our rules current?", or quarterly.
+description: 'Check whether the kit''s standards, laws, platform rules, frameworks and AI prices are still current, and propose edits.'
 argument-hint: "<area to check (e.g. accessibility law, AI models), or nothing for all>"
+disable-model-invocation: true
 ---
 
 # /standards-refresh

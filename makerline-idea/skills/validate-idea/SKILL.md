@@ -1,6 +1,6 @@
 ---
 name: validate-idea
-description: Test demand before building anything. Covers kill criteria set up front, then the cheapest tests that fit (user interviews, landing page + waitlist, prototype usability test, concierge MVP, pre-sale) — and record results → VALIDATION.md + VALIDATION_RESULTS.md. Trigger with "validate demand", "test before building", "interview users", "here are my interview notes", or after evaluation.
+description: 'Test demand before building: kill criteria, then the cheapest tests (interviews, landing page, prototype test) and their results → VALIDATION.md. Trigger: "validate", "interview users", "here are my interview notes".'
 argument-hint: "<assumption to test, or nothing to pick from EVALUATION.md>"
 ---
 

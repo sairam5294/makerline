@@ -27,6 +27,7 @@ Skill files use `~~category` as a placeholder for whatever tool you connect in t
 
 When email, cloud storage, calendar or chat is connected, a skill that needs background (new-idea, evaluate-idea, validate-idea, product-opportunity-review, post-launch) first searches them **with the product's name and 1–2 key terms**, then pre-fills what it found and asks you only what's still missing.
 
+- **Enterprise Search on?** If Anthropic's Enterprise Search plugin is installed, run the sweep through it as one search across your tools instead of one per connector; same limits and citing rules.
 - **Budget:** ≤ 3 searches per connector per run, ≤ 5 items opened in total; skip at Quick depth unless you ask.
 - **Read only what matches.** Never browse whole inboxes, drives or DMs; Slack only in channels you name or that match the product.
 - **Cite, don't copy.** Facts go to `docs/product/research/` as `first-party` rows (research-cache.md) citing the item by type, date and role ("email from a beta user, 2026-10-12"), never names, addresses or message bodies.

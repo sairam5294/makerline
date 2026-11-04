@@ -1,6 +1,6 @@
 ---
 name: build-feature
-description: Build the next task with tests first. Covers scope, branch, failing tests, code, checks, self-review, evidence, commit and STATUS update. Trigger with "build", "implement", "next task", "start T-xx", or after plan-build.
+description: 'Build the next task test-first, or debug something broken: scope, failing test, fix, checks, evidence, commit. Trigger: "build", "next task", "implement", "it''s broken", "debug this".'
 argument-hint: "<T-xx, or nothing for the current task in STATUS.md>"
 ---
 
@@ -52,6 +52,8 @@ Load only these (use search / grep instead of reading whole large files):
 - Ask the owner only if blocked.
 
 ## Workflow
+
+**Something broken** (a failing build, a bug, "it stopped working")? Follow `references/debug.md` instead of steps 4–5: reproduce → isolate → failing test → fix → prove.
 
 1. **Load context** — only the inputs above; grep rather than read large files whole.
 2. **State scope** in 3–7 bullets; ask only if blocked.

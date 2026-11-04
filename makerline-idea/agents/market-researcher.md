@@ -1,6 +1,6 @@
 ---
 name: market-researcher
-description: Researches market evidence for a product idea — competitors, substitutes, app-store reviews, pricing, audience size data and trends — with sources.
+description: 'Researches market evidence with sources: competitors, substitutes, reviews, pricing, audience size, trends, look-ahead signals.'
 model: sonnet
 color: cyan
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch

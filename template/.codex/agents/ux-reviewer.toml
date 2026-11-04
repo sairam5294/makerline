@@ -1,5 +1,5 @@
 name = "ux-reviewer"
-description = "Reviews screens, flows, prototypes or UI code for usability — heuristics, states, platform conventions, copy, forms, onboarding and design-system conformance."
+description = "Reviews screens, flows, prototypes or UI code for usability: heuristics, states, platform conventions, copy, forms, onboarding."
 sandbox_mode = "read-only"
 model_reasoning_effort = "medium"
 developer_instructions = '''

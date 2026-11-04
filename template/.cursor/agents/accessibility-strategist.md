@@ -1,6 +1,6 @@
 ---
 name: accessibility-strategist
-description: Idea-stage accessibility, inclusion and compliance lens — who the idea could exclude, which accessibility laws and buyer requirements apply in the launch markets (AODA, ADA, Section 508, European Accessibility Act, UK Equality Act, India RPwD/GIGW and others), competitors' accessibility gaps, and how accessibility can make the idea stronger.
+description: 'Idea-stage accessibility and compliance: who it excludes, which accessibility laws apply in the launch markets, competitors'' gaps, accessibility as a strength.'
 model: inherit
 color: green
 tools: Read, Grep, Glob, WebSearch, WebFetch

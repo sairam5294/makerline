@@ -83,7 +83,7 @@ Show exactly this, then wait:
 ## Rules
 
 - Never write `Evaluation: APPROVED` yourself; the owner approves between the Idea Pack and setup.
-- Everything else (depth, gate, checks) lives in `../product-kickoff/SKILL.md`; the owner-unavailable path is kickoff step 8 plus `../new-idea/SKILL.md` → Owner unavailable (Quick: quick-run.md step 3 only) — don't improvise.
+- Everything else (depth, gate, checks) lives in `../product-kickoff/SKILL.md`; the owner-unavailable path is kickoff step 8 plus `../new-idea/SKILL.md` → Owner unavailable (Quick: quick-run.md step 1 only) — don't improvise.
 
 ## Related
 
